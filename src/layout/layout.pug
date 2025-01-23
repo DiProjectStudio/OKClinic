@@ -1,0 +1,54 @@
+- const isDev = process.env.NODE_ENV === 'development'
+
+doctype html
+html(lang="ru")
+
+    block title
+
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+        title= title || 'Страница'
+
+
+        // Styles::Start
+        include ../includes/_loadCss
+        // Styles::End
+
+        if yandexMap === true
+            script(data-skip-moving="true" src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")
+
+        include ../includes/_favicon
+
+    include ../includes/_mixins
+
+    body
+
+        // Header::Start
+        block header
+            include ../includes/_header
+        // Header::End
+
+        // Main::Start
+        main
+            if (page)
+                div(class= page ? page : '')
+                    block main
+            else
+                block main
+        // Main::End
+
+        // Footer::Start
+        block footer
+            include ../includes/_footer
+        // Footer::End
+
+        // Popups::Start
+        include ../components/popups
+        // Popups::End
+
+        // Scripts::Start
+        include ../includes/_loadScripts
+        // Scripts::End

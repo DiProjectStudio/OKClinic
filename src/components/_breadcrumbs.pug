@@ -1,0 +1,27 @@
+mixin breadcrumbs(title, ...items)
+
+    if page !== 'page-demo'
+
+        .page-header
+
+            .breadcrumbs.swiper
+
+                .breadcrumbs-wrapper.swiper-wrapper
+
+                    .swiper-slide
+                        .breadcrumbs-item
+                            a(href='/') Главная
+
+                    each item in items
+
+                        .swiper-slide
+
+                            if item === items[items.length - 1]
+                                span.breadcrumbs-separator /
+                                .breadcrumbs-item
+                                    span= item
+
+                            else
+                                span.breadcrumbs-separator /
+                                .breadcrumbs-item
+                                    a(href="#")= item

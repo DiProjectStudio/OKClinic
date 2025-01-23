@@ -1,0 +1,25 @@
+:root {
+  --color-white: #fff;
+  --color-white-subdied: #FFFFFFCC;
+  --color-black: #1C1C1C;
+  --color-gray-dark: #6F797F;
+  --color-gray-subdied: #F7F7F7;
+  --color-stroke: #DBDBDB;
+  --color-blue-dark: #007AC5;
+  --color-blue-lite: #1FA3E4;
+  --color-blue-secondary: #C2E8FF;
+  --color-blue-subdied: #E4EEF4;
+  --transition-style: all 0.3s ease-in-out;
+}
+
+$white: var(--color-white);
+$white-subdied: var(--color-white-subdied);
+$black: var(--color-black);
+$gray-dark: var(--color-gray-dark);
+$gray-subdied: var(--color-gray-subdied);
+$stroke: var(--color-stroke);
+$blue-dark: var(--color-blue-dark);
+$blue-lite: var(--color-blue-lite);
+$blue-secondary: var(--color-blue-secondary);
+$blue-subdied: var(--color-blue-subdied);
+$transition: var(--transition-style);

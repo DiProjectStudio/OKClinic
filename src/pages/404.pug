@@ -1,0 +1,18 @@
+extends /layout/layout
+
+block title
+    - var title = 'Страница 404'
+    - var page = 'page-404'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('', '404')
+    section.error-page
+        .container
+            .error-page__inner
+                p 404
+                p Страница не найдена
+                p Неправильно набран адрес или такой страницы не существует
+                .error-page__inner-buttons
+                    a(href='javascript:void(0)').btn.btn--primary Перейти на главную
+                    a(href='javascript:void(0)').btn.btn--secondary-orange Вернуться в каталог

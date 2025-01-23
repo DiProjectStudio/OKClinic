@@ -1,0 +1,327 @@
+@use "mixins" as *;
+@use "variables" as *;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-text-size-adjust: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: .4s;
+}
+
+body.overflow-hidden {
+  overflow: hidden;
+}
+
+body b {
+  font-weight: 700;
+  color: inherit;
+}
+
+body.compensate-for-scrollbar {
+  overflow: visible !important;
+  padding: 0 !important;
+}
+
+main {
+  min-height: calc(max(calc(100vh - 614px), 350px));
+  overflow: hidden;
+}
+
+.hide {
+  display: none !important;
+}
+
+#page {
+  position: relative;
+  min-width: 360px;
+  min-height: 100%;
+  max-width: 100%;
+  @include flexColumn;
+}
+
+#page::before {
+  content: '';
+}
+
+section {
+  position: relative;
+}
+
+li {
+  list-style: none;
+}
+
+
+/////////////////////
+/// SCROLLBAR
+/////////////////////
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-track {
+
+}
+
+::-webkit-scrollbar-thumb {
+
+}
+
+
+/////////////////////
+/// INPUTS
+/////////////////////
+
+/* Убираем стрелки в Chrome, Safari, Edge, Opera */
+.range-values input::-webkit-outer-spin-button,
+.range-values input::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"], {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none !important;
+  //border-radius: 0;
+}
+
+input:focus,
+input:focus-visible,
+input:focus::after,
+input:focus-visible::after {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+input {
+  outline: none;
+  border: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Убирает стандартный стиль в Firefox */
+}
+
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 0;
+}
+
+// Checkbox
+.checkbox {
+  input {
+    display: none;
+  }
+
+  label {
+    display: flex;
+    user-select: none;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+
+    }
+
+    &.disabled {
+      cursor: default;
+    }
+  }
+
+  input:checked + label {
+    &::before {
+      content: '';
+
+    }
+
+    &.disabled::before {
+
+    }
+  }
+
+  & ~ .checkbox {
+
+  }
+}
+
+// Radiobutton
+.radio {
+  input {
+    display: none;
+  }
+
+  label {
+    display: flex;
+    user-select: none;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+
+    }
+  }
+
+  input:checked + label {
+    &::before {
+      content: '';
+
+    }
+  }
+
+  & ~ .radio {
+    margin-top: 8px;
+  }
+}
+
+/////////////////////
+/// BUTTONS
+/////////////////////
+
+.btn {
+  border-radius: 8px;
+  font-size: 11px;
+  padding: 8px 32px;
+  transition: $transition;
+
+  @include breakpoint(md) {
+    font-size: 13px;
+    border-radius: 12px;
+    padding: 16px 32px;
+  }
+
+  @include breakpoint(lg) {
+    font-size: 16px;
+  }
+
+  &.btn--blue-dark {
+    color: $white;
+    background-color: $blue-dark;
+
+    &:hover {
+      background-color: $blue-lite;
+    }
+  }
+
+  &.btn--transparent-blue-dark {
+    border: 1px solid $blue-dark;
+    color: #404751;
+
+    &:hover {
+      background-color: $blue-subdied;
+      color: $blue-dark;
+    }
+  }
+
+  &.btn--gray-subdied {
+    background-color: $gray-subdied;
+    color: $blue-dark;
+
+    &:hover {
+      background-color: $blue-lite;
+      color: $white;
+    }
+  }
+
+  &.btn--transparent-blue-secondary {
+    border: 1px solid $blue-secondary;
+    color: $black;
+
+    &:hover {
+      background: $blue-subdied;
+      color: $blue-dark;
+    }
+  }
+
+  &.btn--white {
+    background-color: $white;
+    color: $blue-dark;
+
+    &:hover {
+      background-color: $blue-lite;
+      color: $white;
+    }
+  }
+}
+
+/////////////////////
+/// LINKS
+/////////////////////
+a {
+  display: inline-block;
+}
+
+/////////////////////
+/// ICONS
+/////////////////////
+
+
+/////////////////////
+/// OTHERS
+/////////////////////
+
+video {
+  width: 100%;
+  height: 100%;
+}
+
+section + section {
+
+}
+
+/////////////////////
+/// CARDS & CATALOG
+/////////////////////
+
+
+/////////////////////
+/// TYPOGRAPHY
+/////////////////////
+
+h1 {
+  font-size: 33px;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: -3%;
+
+  @include breakpoint(lg) {
+    font-size: 40px;
+    letter-spacing: 0;
+  }
+}
+
+.section-title {
+  font-size: 29px;
+  line-height: 120%;
+  letter-spacing: -3%;
+
+  @include breakpoint(lg) {
+    font-size: 33px;
+    letter-spacing: 0;
+  }
+}
+
+/////////////////////
+/// SWIPER SLIDER
+/////////////////////

@@ -1,0 +1,10 @@
+.pagination
+    a(href="prev" title="Предыдущая страница").pagination-item.pagination-arrow.disabled
+        +svg('Chevron-left')
+    a(href="1" title="Страница 1").pagination-item.active 1
+    a(href="2" title="Страница 2").pagination-item 2
+    a(href="...").pagination-item.pagination-dots ...
+    a(href="7" title="Страница 10").pagination-item 20
+    a(href="next" title="Следующая страница").pagination-item.pagination-arrow
+        
+        +svg('Chevron-right')
