@@ -7,12 +7,14 @@ import { getBrowserName } from './includes/checkbrowser.js';
 // import { initializeMap } from './includes/map.js';
 import { initializePopup } from './includes/popup.js';
 // import { initializeSlider } from './includes/slider.js';
+import Header from "./includes/header.js";
 
 document.addEventListener('DOMContentLoaded', (event) => {
     getBrowserName();
     // initializeMap();
     initializePopup();
     // initializeSlider();
+    new Header();
 });
 
 // Если браузер определен, добавляем соответствующий класс к тегу html

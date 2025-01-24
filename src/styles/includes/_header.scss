@@ -1,0 +1,325 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.header {
+  padding: 12px 0;
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 10;
+
+  .scroll {
+    border-bottom: 1px solid $stroke;
+  }
+
+  @include breakpoint(md) {
+    padding: 9px 0;
+  }
+
+  @include breakpoint(lg) {
+    padding: 16px 0;
+  }
+
+  &__inner {
+    @include flexCenterBetween;
+
+    @include breakpoint(lg) {
+      justify-content: unset;
+    }
+
+    &-logo {
+
+      @include breakpoint(md) {
+        @include flexCenterCenter;
+        gap: 9px;
+      }
+
+      @include breakpoint(lg) {
+        gap: 12px;
+      }
+
+      @include breakpoint(xl) {
+        gap: 15px;
+      }
+
+      svg {
+        width: 43px;
+        height: auto;
+
+        @include breakpoint(md) {
+          width: 45px;
+        }
+
+        @include breakpoint(lg) {
+          width: 56px;
+        }
+
+        @include breakpoint(xl) {
+          width: 72px;
+        }
+      }
+
+      span {
+        display: none;
+
+        @include breakpoint(md) {
+          display: inline;
+          color: #007AC5;
+          text-align: center;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        }
+
+        @include breakpoint(lg) {
+          font-size: 25px;
+        }
+
+        @include breakpoint(xl) {
+          font-size: 32px;
+        }
+      }
+    }
+
+    &-nav {
+      display: none;
+
+      @include breakpoint(lg) {
+        display: grid;
+        gap: 12px;
+        margin-left: 32px;
+      }
+
+      @include breakpoint(xl) {
+        margin-left: 48px;
+      }
+
+      &-top {
+        color: $gray-dark;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 150%; /* 19.5px */
+        @include flexAlignCenter;
+        gap: 24px;
+      }
+
+      &-bottom {
+        font-weight: 400;
+        line-height: 150%; /* 24px */
+        ul {
+          @include flexAlignCenter;
+          gap: 24px;
+
+          li {
+            transition: $transition;
+            &:hover {
+              color: $blue-dark;
+
+              &:after {
+                transform: rotate(180deg);
+              }
+            }
+
+
+            &.with-submenu {
+              @include flexAlignCenter;
+              gap: 4px;
+              position: relative;
+              cursor: pointer;
+
+              &:after {
+                content: "";
+                display: block;
+                background: url("../icons/icon_chevron-down--blue.svg") no-repeat center;
+                width: 20px;
+                height: 20px;
+                transition: $transition;
+              }
+
+              &:before {
+                content: "";
+                width: calc(100% + 5px);
+                height: 35px;
+                position: absolute;
+                top: 100%;
+              }
+
+              &:hover .submenu {
+                @include flexColumn;
+              }
+            }
+          }
+
+          .submenu {
+            border-radius: 24px;
+            border: 1px solid $stroke;
+            background: $white;
+            padding: 16px;
+            display: none;
+            gap: 4px;
+            align-items: flex-start;
+            position: absolute;
+            top: calc(100% + 32px);
+            left: 0;
+            min-width: 228px;
+            li {
+              width: 100%;
+            }
+
+            a {
+              font-weight: 400;
+              line-height: 150%; /* 24px */
+              padding: 4px 12px;
+              white-space: nowrap;
+              color: $black;
+              transition: $transition;
+              width: 100%;
+
+              &:hover {
+                background: $gray-subdied;
+                border-radius: 8px;
+                color: $blue-dark;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &-additional {
+
+      @include breakpoint(md) {
+        @include flexCenterBetween;
+      }
+
+      @include breakpoint(lg) {
+        flex-direction: column;
+        gap: 5px;
+        margin-left: auto;
+      }
+
+      &-top {
+        @include flexAlignCenter;
+        gap: 12px;
+
+        @include breakpoint(lg) {
+          gap: 16px;
+        }
+
+        &-phone {
+          font-size: 14px;
+
+          @include breakpoint(md) {
+            font-size: 16px;
+          }
+        }
+
+        &-socials {
+          @include flexCenterCenter;
+          gap: 4px;
+
+          @include breakpoint(md) {
+            gap: 8px;
+          }
+
+          a {
+            @include flexCenterCenter;
+
+            svg {
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+      }
+
+      &-bottom {
+        display: none;
+        gap: 4px;
+
+        @include breakpoint(lg) {
+          @include flexCenterCenter;
+        }
+
+        .search-button {
+          width: 32px;
+          height: 32px;
+          border-radius: 8px;
+          background: $blue-subdied;
+          @include flexCenterCenter;
+
+          svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+
+        .btn {
+          padding: 8px 38px;
+          border-radius: 8px;
+          height: 32px;
+          font-size: 11px;
+        }
+
+        &.copy {
+          @include breakpoint(md) {
+            @include flexAlignCenter;
+          }
+
+          @include breakpoint(lg) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav-menu-js {
+  display: none;
+  padding: 24px 32px;
+  background: $white;
+  border-top: 1px solid $stroke;
+  position: relative;
+
+  .header__inner-nav-bottom {
+    transition: $transition;
+    ul {
+      @include flexColumn;
+      gap: 0;
+      align-items: flex-start;
+      li {
+        padding: 20px 0;
+        border-bottom: 1px solid $stroke;
+        width: 100%;
+
+        &.with-submenu {
+          justify-content: space-between;
+
+          &:after {
+            display: none;
+          }
+          ul {
+            display: none;
+          }
+
+          &:hover {
+            .submenu{
+              display: none;
+            }
+            &:after {
+              transform: unset;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  &.active {
+    display: block;
+  }
+}

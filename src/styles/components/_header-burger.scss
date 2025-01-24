@@ -1,0 +1,195 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.header-burger {
+  border-radius: 12px;
+  background: $blue-subdied;
+  transition: $transition;
+  @include flexCenterCenter;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  overflow: hidden;
+
+  @include breakpoint(lg) {
+    display: none;
+  }
+
+  &.active {
+    background-color: $blue-dark;
+  }
+}
+
+/* menu start */
+.menu {
+  background-color: $blue-dark;
+  width: 16px;
+  height: 1px;
+}
+
+.menu.animate{
+  animation-name: menu-menu;
+  animation-duration: 0.3s;
+}
+
+@keyframes menu-menu {
+  0% {
+    width:0;
+    height:0;
+  }
+  50% {
+    width:0;
+    height:0;
+  }
+  51%{
+    background-color: $blue-dark;
+    width: 16px;
+    height: 1px;
+  }
+}
+
+.menu:after {
+  content: "";
+  position: absolute;
+  background-color: $blue-dark;
+  width: 16px;
+  height: 1px;
+  margin-top: -4px;
+}
+
+.menu.animate:after {
+  animation-name: menu-after;
+  animation-duration: 0.3s;
+}
+
+@keyframes menu-after {
+  0% {
+    transform: rotate(-45deg);
+    margin-top:0;
+  }
+  50% {
+    transform: rotate(0deg);
+    margin-top:0;
+  }
+  100%{
+    transform: rotate(0deg);
+    margin-top:-4px;
+  }
+}
+
+.menu:before {
+  content: "";
+  position: absolute;
+  background-color: $blue-dark;
+  width: 16px;
+  height: 1px;
+  margin-top: 4px;
+}
+
+.menu.animate:before{
+  animation-name: menu-before;
+  animation-duration: 0.3s;
+}
+@keyframes menu-before {
+  0% {
+    transform: rotate(45deg);
+    margin-top:0;
+  }
+  50% {
+    transform: rotate(0deg);
+    margin-top:0;
+  }
+  100%{
+    transform: rotate(0deg);
+    margin-top: 4px;
+  }
+}
+/* menu end */
+
+/* close start */
+.close {
+  position: absolute;
+  @include flexCenterCenter;
+}
+
+.close.animate{
+  animation-name: close-close;
+  animation-duration: 0.3s;
+}
+
+@keyframes close-close {
+  0% {
+    position: absolute;
+    background-color: $white;
+    width: 16px;
+    height: 1px;
+    margin-top: 4px;
+  }
+  50% {
+    display:none;
+    width:16px;
+    height:5px;
+  }
+  100%{
+    width:0;
+    height:0;
+  }
+}
+
+.close:after {
+  content: "";
+  position: absolute;
+  background-color: $white;
+  width: 16px;
+  height: 1px;
+  transform: rotate(45deg);
+}
+
+.animate.close:after {
+  animation-name: close-after;
+  animation-duration: 0.3s;
+}
+
+@keyframes close-after {
+  0% {
+    transform: rotate(0deg);
+    margin-top: 4px;
+  }
+  50% {
+    transform: rotate(0deg);
+    margin-top: 0;
+  }
+  100%{
+    transform: rotate(45deg);
+  }
+}
+
+.close:before {
+  content: "";
+  position: absolute;
+  background-color: $white;
+  width: 16px;
+  height: 1px;
+  transform: rotate(-45deg);
+}
+
+.animate.close:before {
+  animation-name: close-before;
+  animation-duration: 0.3s;
+}
+
+@keyframes close-before {
+  0% {
+    transform: rotate(0deg);
+    margin-top:-4px;
+  }
+  50% {
+    transform: rotate(0deg);
+    margin-top:0;
+  }
+  100%{
+    transform: rotate(-45deg);
+  }
+}
+/* close end */

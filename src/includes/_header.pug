@@ -2,3 +2,62 @@ block header
     header#header.header
         .container
             .header__inner
+                a(href='/').header__inner-logo
+                    include ../../public/assets/images/logo.svg
+                    span OK.clinic
+                .header__inner-nav
+                    .header__inner-nav-top
+                        a(href='javascript:void(0)').header__inner-nav-top-address Санкт-Петербург, Смоленская., д. 14
+                        .header__inner-nav-top-worktime Пн-Вс 8:00 - 21:00
+                        a(href='mailto:info@domain.com').header__inner-nav-top-mail info@domain.com
+                    .header__inner-nav-bottom
+                        nav
+                            ul
+                                li.with-submenu
+                                    a(href='javascript:void(0)') Услуги
+                                    ul.submenu
+                                        li
+                                            a(href='javascript:void(0)') Направления
+                                        li
+                                            a(href='javascript:void(0)') Программы здоровья
+                                        li
+                                            a(href='javascript:void(0)') Справки
+                                li
+                                    a(href='javascript:void(0)') Чекапы
+                                li
+                                    a(href='javascript:void(0)') Врачи
+                                li
+                                    a(href='javascript:void(0)') Анализы
+                                li
+                                    a(href='javascript:void(0)') Диагностика
+                                li
+                                    a(href='javascript:void(0)') Заболевания
+                                li.with-submenu
+                                    a(href='javascript:void(0)') Клиника
+                                    ul.submenu
+                                        li
+                                            a(href='javascript:void(0)') Акции
+                                        li
+                                            a(href='javascript:void(0)') Новости
+                                        li
+                                            a(href='javascript:void(0)') Отзывы
+                                        li
+                                            a(href='javascript:void(0)') Контакты
+                .header__inner-additional
+                    .header__inner-additional-top
+                        a(href='tel:78129892424').header__inner-additional-top-phone + 7 812 989-24-24
+                        .header__inner-additional-top-socials
+                                noindex
+                                    a(href='javascript:void(0)' rel='nofollow')
+                                        include ../icons/icon_whatsapp.svg
+                                noindex
+                                    a(href='javascript:void(0)' rel='nofollow')
+                                        include ../icons/icon_telegram.svg
+                    .header__inner-additional-bottom
+                        a(href='javascript:void(0)').search-button
+                            include ../icons/icon_search.svg
+                        a(href='javascript:void(0)').btn.btn--blue-dark Запись на прием
+
+                include ../components/_header-burger
+
+        .nav-menu-js#navMenuJS
