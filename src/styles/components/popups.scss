@@ -1,0 +1,92 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.popup {
+  display: none;
+  border-radius: 24px;
+  width: 100%;
+  padding: 16px;
+
+  &#popupSearch {
+    margin-top: 50px;
+
+    @include breakpoint(md) {
+      margin-top: 90px;
+    }
+
+    @include breakpoint(xl) {
+      max-width: 1132px;
+    }
+    .popup__inner {
+      @include flexAlignCenter;
+
+    }
+
+    form {
+      display: grid;
+      gap: 12px;
+      width: 100%;
+
+      @include breakpoint(md) {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        margin-right: 56px;
+      }
+    }
+
+    input {
+      &::placeholder {
+        font-size: 13px;
+      }
+    }
+
+    .btn {
+      height: 56px;
+      padding: 16px;
+      font-weight: 400;
+      font-size: 16px;
+      margin-bottom: 72px;
+
+      @include breakpoint(md) {
+        margin-bottom: 0;
+        padding: 16px 32px;
+      }
+    }
+
+    .f-button.is-close-btn {
+      background: transparent;
+      width: 44px;
+      height: 44px;
+      bottom: 0;
+      top: unset;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      @include breakpoint(md) {
+        right: -7px;
+        left: unset;
+      }
+
+
+      svg {
+        filter: none;
+        path {
+          stroke: #0F172A;
+        }
+      }
+    }
+  }
+
+}
+
+.fancybox__backdrop {
+  background: #00000099;
+}
+
+.fancybox__slide {
+  padding: 16px;
+
+  &::before {
+    display: none;
+  }
+}

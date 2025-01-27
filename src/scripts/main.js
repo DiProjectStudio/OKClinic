@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     initializePopup();
     // initializeSlider();
     new Header();
+
 });
 
 // Если браузер определен, добавляем соответствующий класс к тегу html

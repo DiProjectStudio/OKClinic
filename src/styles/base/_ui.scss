@@ -56,15 +56,30 @@ li {
   list-style: none;
 }
 
+#overlay {
+  display: none;
+
+  &.show {
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: #00000099;
+    z-index: 5;
+  }
+}
+
 
 /////////////////////
 /// SCROLLBAR
 /////////////////////
 
-::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-}
+//::-webkit-scrollbar {
+//  width: 0;
+//  height: 0;
+//}
 
 ::-webkit-scrollbar-track {
 
@@ -127,6 +142,24 @@ input[type="submit"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   border-radius: 0;
+}
+
+.input {
+  border-radius: 12px;
+  border: 1px solid $stroke;
+  height: 56px;
+  width: 100%;
+  padding: 0 16px;
+
+  &::placeholder {
+    color: $gray-dark;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  &:focus{
+    border: 1px solid $blue-secondary;
+  }
 }
 
 // Checkbox
@@ -274,6 +307,46 @@ a {
   display: inline-block;
 }
 
+a.arrow-link {
+  width: 48px;
+  height: 48px;
+  @include flexCenterCenter;
+  transition: $transition;
+  border-radius: 12px;
+  cursor: pointer;
+
+  &:after {
+    content: '';
+    width: 24px;
+    height: 24px;
+  }
+
+  &.arrow-link--white {
+    background: $white;
+    &:after {
+      background: url("../icons/icon_arrow-up-right--blue.svg") no-repeat center;
+    }
+
+    &:hover {
+      background: $blue-secondary;
+    }
+  }
+
+  &.arrow-link--blue {
+    background: $blue-dark;
+
+    &:after {
+      background: url("../icons/icon_arrow-up-right--white.svg") no-repeat center;
+    }
+
+    &:hover {
+      background: $blue-lite;
+    }
+  }
+
+
+}
+
 /////////////////////
 /// ICONS
 /////////////////////
@@ -315,11 +388,11 @@ h1 {
   font-size: 33px;
   font-weight: 600;
   line-height: 120%;
-  letter-spacing: -3%;
+  letter-spacing: -1px;
 
-  @include breakpoint(lg) {
+  @include breakpoint(md) {
     font-size: 40px;
-    letter-spacing: 0;
+    letter-spacing: -1.2px;
   }
 }
 

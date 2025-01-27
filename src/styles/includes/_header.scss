@@ -1,5 +1,6 @@
 @use "../base/mixins" as *;
 @use "../base/variables" as *;
+@use "../base/container" as *;
 
 .header {
   padding: 12px 0;
@@ -7,6 +8,7 @@
   left: 0;
   top: 0;
   z-index: 10;
+  background: $white;
 
   .scroll {
     border-bottom: 1px solid $stroke;
@@ -114,6 +116,7 @@
 
           li {
             transition: $transition;
+
             &:hover {
               color: $blue-dark;
 
@@ -139,15 +142,26 @@
               }
 
               &:before {
-                content: "";
-                width: calc(100% + 5px);
-                height: 35px;
-                position: absolute;
-                top: 100%;
+                @include breakpoint(lg) {
+                  content: "";
+                  width: calc(100% + 5px);
+                  height: 35px;
+                  position: absolute;
+                  top: 100%;
+                }
+
               }
 
               &:hover .submenu {
                 @include flexColumn;
+              }
+
+              .submenu-action {
+                width: 60px;
+                height: auto;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
               }
             }
           }
@@ -164,6 +178,7 @@
             top: calc(100% + 32px);
             left: 0;
             min-width: 228px;
+
             li {
               width: 100%;
             }
@@ -183,6 +198,8 @@
                 color: $blue-dark;
               }
             }
+
+
           }
         }
       }
@@ -283,17 +300,54 @@
   background: $white;
   border-top: 1px solid $stroke;
   position: relative;
+  min-height: 746px;
+  height: calc(100vh - 66px);
+  overflow-y: auto;
+
+  @include breakpoint(md) {
+    width: 227px;
+    padding: 24px;
+    border-radius: 24px;
+    position: absolute;
+    top: calc(60px + $container);
+    right: $container;
+    min-height: 463px;
+    height: unset;
+  }
+
+  &:before {
+    //content: "";
+    //width: 100%;
+    //height: 100%;
+    //top: 60px;
+    //left: 0;
+    //position: fixed;
+    //background: linear-gradient(0deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%), lightgray 50% / cover no-repeat;
+    //z-index: -1;
+  }
 
   .header__inner-nav-bottom {
     transition: $transition;
+
     ul {
       @include flexColumn;
       gap: 0;
       align-items: flex-start;
+
       li {
         padding: 20px 0;
         border-bottom: 1px solid $stroke;
         width: 100%;
+
+        @include breakpoint(md) {
+          padding: 8px;
+        }
+
+        a {
+          @include breakpoint(md) {
+            font-size: 14px;
+          }
+        }
 
         &.with-submenu {
           justify-content: space-between;
@@ -301,14 +355,16 @@
           &:after {
             display: none;
           }
+
           ul {
             display: none;
           }
 
           &:hover {
-            .submenu{
+            .submenu {
               display: none;
             }
+
             &:after {
               transform: unset;
             }
@@ -317,9 +373,100 @@
       }
     }
 
+    &.submenu-opened {
+      display: none;
+    }
+
   }
 
   &.active {
-    display: block;
+    display: grid;
+    grid-template-rows: 1fr fit-content(100%) fit-content(100%);
+  }
+
+
+  .submenu-block {
+    display: none;
+
+    &__title {
+      display: flex;
+      border-bottom: 1px solid $stroke;
+      padding: 20px 0;
+
+      @include breakpoint(md) {
+        padding: 8px 0;
+      }
+
+      a {
+        margin: 0 auto;
+        @include breakpoint(md) {
+          font-size: 14px;
+        }
+      }
+
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+
+    .submenu {
+      li {
+        padding: 20px 0;
+        border-bottom: 1px solid $stroke;
+
+        @include breakpoint(md) {
+          padding: 8px;
+        }
+
+        a {
+          font-weight: 400;
+
+          @include breakpoint(md) {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+  }
+
+  .header__inner-nav-top {
+    display: grid;
+    gap: 8px;
+    font-size: 16px;
+    align-self: flex-end;
+    margin-bottom: 48px;
+
+    @include breakpoint(md) {
+      margin-bottom: 0;
+      margin-top: 20px;
+      gap: 12px;
+      font-size: 13px;
+    }
+  }
+
+  .header__inner-additional-bottom {
+    @include flexAlignCenter;
+    gap: 8px;
+    height: fit-content;
+    align-self: flex-end;
+
+    @include breakpoint(md) {
+      display: none;
+    }
+
+    .search-button {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 14px;
+      font-size: 13px;
+      font-weight: 400;
+      height: 48px;
+    }
   }
 }
