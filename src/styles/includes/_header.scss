@@ -10,7 +10,7 @@
   z-index: 10;
   background: $white;
 
-  .scroll {
+  &.scroll {
     border-bottom: 1px solid $stroke;
   }
 
@@ -101,14 +101,12 @@
       &-top {
         color: $gray-dark;
         font-size: 13px;
-        font-weight: 400;
         line-height: 150%; /* 19.5px */
         @include flexAlignCenter;
         gap: 24px;
       }
 
       &-bottom {
-        font-weight: 400;
         line-height: 150%; /* 24px */
         ul {
           @include flexAlignCenter;
@@ -184,7 +182,6 @@
             }
 
             a {
-              font-weight: 400;
               line-height: 150%; /* 24px */
               padding: 4px 12px;
               white-space: nowrap;
@@ -227,6 +224,7 @@
 
         &-phone {
           font-size: 14px;
+          font-weight: 700;
 
           @include breakpoint(md) {
             font-size: 16px;
@@ -266,6 +264,11 @@
           border-radius: 8px;
           background: $blue-subdied;
           @include flexCenterCenter;
+          transition: $transition;
+
+          &:hover {
+            background: $blue-secondary;
+          }
 
           svg {
             width: 20px;
@@ -303,12 +306,13 @@
   min-height: 746px;
   height: calc(100vh - 66px);
   overflow-y: auto;
+  z-index: 10;
 
   @include breakpoint(md) {
     width: 227px;
     padding: 24px;
     border-radius: 24px;
-    position: absolute;
+    position: fixed;
     top: calc(60px + $container);
     right: $container;
     min-height: 463px;
@@ -392,6 +396,7 @@
       display: flex;
       border-bottom: 1px solid $stroke;
       padding: 20px 0;
+      font-weight: 700;
 
       @include breakpoint(md) {
         padding: 8px 0;
@@ -419,8 +424,6 @@
         }
 
         a {
-          font-weight: 400;
-
           @include breakpoint(md) {
             font-size: 14px;
           }
@@ -465,7 +468,6 @@
       width: 100%;
       padding: 14px;
       font-size: 13px;
-      font-weight: 400;
       height: 48px;
     }
   }

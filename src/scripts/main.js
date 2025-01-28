@@ -4,17 +4,19 @@ import Inputmask from 'inputmask';
 
 // Import Scripts
 import { getBrowserName } from './includes/checkbrowser.js';
-// import { initializeMap } from './includes/map.js';
+import { initializeMap } from './includes/map.js';
 import { initializePopup } from './includes/popup.js';
 // import { initializeSlider } from './includes/slider.js';
 import Header from "./includes/header.js";
+import Footer from './includes/footer.js';
 
 document.addEventListener('DOMContentLoaded', (event) => {
     getBrowserName();
-    // initializeMap();
+    initializeMap();
     initializePopup();
     // initializeSlider();
     new Header();
+    new Footer();
 
 });
 

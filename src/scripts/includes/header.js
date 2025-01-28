@@ -21,7 +21,7 @@ export default class Header {
         this.createMobileNavbar();
         this.insertSVGToMenuItems();
         this.mobileMenuActions();
-        // this.scrollHeader();
+        this.scrollHeader();
     }
 
 
@@ -65,10 +65,14 @@ export default class Header {
             headerInnerElement.insertBefore(clonedAdditionalBottomElement, this.clickWrapper);
         }
     }
-
+    /** Изменение стилей хедера при скролле */
     scrollHeader() {
-        this.headerElement.addEventListener('scroll', () => {
-
+        window.addEventListener('scroll', (e) => {
+            if (window.scrollY > 0) {
+                this.headerElement.classList.add('scroll');
+            } else {
+                this.headerElement.classList.remove('scroll');
+            }
         })
     }
 
@@ -143,6 +147,8 @@ export default class Header {
         }
     }
 
+
+    /** Отвечает за переключение состояния бургера */
     burgerAnimate() {
         if (!this.clickWrapper.classList.contains("active")) {
             this.clickWrapper.children[0].className = "menu animate"

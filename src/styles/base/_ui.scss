@@ -343,8 +343,13 @@ a.arrow-link {
       background: $blue-lite;
     }
   }
+}
 
-
+.link-hover {
+  transition: $transition;
+  &:hover {
+    color: $blue-dark;
+  }
 }
 
 /////////////////////
