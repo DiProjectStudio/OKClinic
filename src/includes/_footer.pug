@@ -91,3 +91,41 @@ block footer
                             #map(style="width:100%; height:100%;")
                             .map__wrapper-address Санкт-Петербург, Смоленская, д. 14
 
+                .footer__inner-middle
+                    .footer__inner-middle-main
+                        a(href='/').footer__logo
+                            include ../../public/assets/images/logo.svg
+                            span OK.clinic
+                        p Многопрофильный центр неврологии, кардиологии, иммунологии, эндокринологии, аллергологии, общей терапии и педиатрии "ОКclinic"
+                    .footer__inner-middle-contacts
+                        .footer__contacts-top
+                            a(href='tel:78129892424').footer__phone.link-hover + 7 812 989-24-24
+                            noindex
+                                a(href='javascript:void(0)' rel='nofollow')
+                                    include ../icons/icon_whatsapp.svg
+                            noindex
+                                a(href='javascript:void(0)' rel='nofollow')
+                                    include ../icons/icon_telegram.svg
+                        .footer__contacts-bottom
+                            a(href='https://yandex.ru/maps/-/CHeIFW06' target='_blank').link-hover Санкт-Петербург, ул. Смоленская., д. 14
+                    .footer__inner-middle-socials
+                        .footer__socials
+                            noindex
+                                a(href='javascript:void(0)' rel='nofollow')
+                                    include ../icons/icon_vk.svg
+                            noindex
+                                a(href='javascript:void(0)' rel='nofollow')
+                                    include ../icons/icon_telegram.svg
+                        p Социальные сети
+                    .footer__inner-middle-mail
+                        a(href='mailto:info@domain.com').link-hover info@domain.com
+                        p Пн-Вс 8:00 - 21:00
+                    .footer__inner-middle-requests
+                        a(data-src='#popupAppointment' data-fancybox).btn.btn--blue-dark Запись на прием
+                        a(data-src='#popupCallDoctor' data-fancybox).btn.btn--gray-subdied Вызов врача на дом
+                .footer__inner-bottom
+                    .footer__devs
+                        a(href="https://di-project.studio/").link-hover Сделано в Di-Project.Studio
+                    .footer__rights © Все права защищены <span></span>
+                    .footer__policy
+                        a(href="policy.html").link-hover Политика конфиденциальности

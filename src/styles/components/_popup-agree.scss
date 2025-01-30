@@ -1,0 +1,14 @@
+@use "../../styles/base/variables" as *;
+@use "../../styles/base/mixins" as *;
+
+.popup__agree {
+  color: $gray-dark;
+  font-size: 11px;
+  line-height: 16px; /* 145.455% */
+  margin-top: 10px;
+
+  a {
+    color: $blue-dark;
+    display: inline;
+  }
+}

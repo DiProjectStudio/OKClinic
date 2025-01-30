@@ -26,7 +26,7 @@ export function initializeMap() {
                 myMap.geoObjects.add(myPlacemark);
             });
 
-            ymapsTouchScroll(myMap, {preventScroll: true, preventTouch: false});
+            ymapsTouchScroll(myMap, {preventScroll: true, preventTouch: true});
 
         }
 

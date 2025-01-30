@@ -132,6 +132,9 @@ $hd: 1920px;
     max-width: calc((100vw - var(--container) * 2) / 12 * $count);
 }
 
-@mixin columnXlWidth($count) {
-    width: calc((var(--container-max-width) - var(--container) * 2) / 12 * $count);
+@mixin columnCountXlWidth($count) {
+    width: calc(var(--container-max-width) / 12 * $count);
+}
+@mixin columnCountMaxXlWidth($count) {
+    max-width: calc(var(--container-max-width) / 12 * $count);
 }

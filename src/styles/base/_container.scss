@@ -2,7 +2,7 @@
 
 :root {
     --container: 16px;
-    --max-width: 1360px;
+    --container-max-width: 1360px;
 
     @include breakpoint(md) {
         --container: 16px;
@@ -18,7 +18,7 @@
 }
 
 $container: var(--container);
-$max-width: var(--max-width);
+$max-width: var(--container-max-width);
 
 .container {
     margin: 0 auto;

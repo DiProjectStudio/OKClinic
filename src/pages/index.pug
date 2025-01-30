@@ -1,47 +1,11 @@
-extends /layout/layout
+extends ../layout/layout
 
 block title
-    - var title = 'Главная'
-    - var page = 'page-main'
+    - title = 'Главная'
+    - page = 'page-main'
 
 block main
-
-    section.hero
-        .container
-            .hero__inner
-                .hero__wrapper
-                    .hero__wrapper-main
-                        h1 Многопрофильная клиника в Санкт-Петербурге
-                        p Дарим заботу и внимание каждому посетителю нашей клиники
-                        a().btn.btn--blue-dark Записаться на прием
-                        .hero__wrapper-main-image
-                            +img('hero-doctor.png')
-                        picture
-                            source(srcset="assets/images/cross-line-xl.png", media="(min-width: 1600px)")
-                            source(srcset="assets/images/cross-line-lg.png", media="(min-width: 1200px)")
-                            source(srcset="assets/images/cross-line-md.png", media="(min-width: 744px)")
-                            +img('cross-line-s.png')
-                    .hero__wrapper-actions
-                        .actions__promotion
-                            p МРТ шейного отдела + консультация врача -15%
-                            p Спешите записаться, акция действует с 11 по 31 января 2025
-                            a().btn.btn--white Подробнее об услуге
-                            .actions__promotion-crosses
-                                +img('crosses.png')
-                            .actions__promotion-mri
-                                +img('mri.png')
-
-                        .actions__record
-                            p Запись онлайн
-                            p Воспользуйтесь онлайн записью. Это быстро и удобно
-                            a(href='javascript:void(0)').arrow-link.arrow-link--white
-                        .action__diagnostics
-                            p Диагностика
-                            p Используем современное оборудование
-                            a(href='javascript:void(0)').arrow-link.arrow-link--blue
-                            .action__diagnostics-image
-                                +img('diagnostics.png')
-                            .action__diagnostics-crossline
-                                +img('cross-line-small-block.png')
+    include ../components/sections/_section-hero
+    include ../components/sections/_section-services
 
 

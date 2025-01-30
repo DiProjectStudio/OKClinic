@@ -302,11 +302,12 @@
   padding: 24px 32px;
   background: $white;
   border-top: 1px solid $stroke;
-  position: relative;
+  position: fixed;
   min-height: 746px;
   height: calc(100vh - 66px);
   overflow-y: auto;
   z-index: 10;
+  width: 100%;
 
   @include breakpoint(md) {
     width: 227px;

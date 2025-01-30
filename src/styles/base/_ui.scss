@@ -115,7 +115,6 @@ input[type="submit"], {
   -webkit-appearance: none;
   -moz-appearance: none;
   outline: none !important;
-  //border-radius: 0;
 }
 
 input:focus,
@@ -135,15 +134,6 @@ input[type="number"] {
   -moz-appearance: textfield; /* Убирает стандартный стиль в Firefox */
 }
 
-textarea,
-input[type="text"],
-input[type="button"],
-input[type="submit"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  border-radius: 0;
-}
-
 .input {
   border-radius: 12px;
   border: 1px solid $stroke;
@@ -161,6 +151,7 @@ input[type="submit"] {
     border: 1px solid $blue-secondary;
   }
 }
+
 
 // Checkbox
 .checkbox {
@@ -300,6 +291,8 @@ input[type="submit"] {
   }
 }
 
+
+
 /////////////////////
 /// LINKS
 /////////////////////
@@ -307,7 +300,7 @@ a {
   display: inline-block;
 }
 
-a.arrow-link {
+.arrow-link {
   width: 48px;
   height: 48px;
   @include flexCenterCenter;
@@ -350,6 +343,31 @@ a.arrow-link {
   &:hover {
     color: $blue-dark;
   }
+}
+
+.tag-link {
+  border-radius: 999px;
+  background: $blue-subdied;
+  color: $blue-dark;
+  cursor: pointer;
+  padding: 4px 12px;
+  transition: $transition;
+  font-size: 14px;
+
+  @include breakpoint(md) {
+    font-size: 16px;
+  }
+
+  &:hover {
+    background: $blue-lite;
+    color: $white;
+  }
+
+  &:active, &:focus, &.active {
+    background: $blue-secondary;
+    color: $blue-dark;
+  }
+
 }
 
 /////////////////////
@@ -405,10 +423,46 @@ h1 {
   font-size: 29px;
   line-height: 120%;
   letter-spacing: -3%;
+  font-weight: 600;
 
   @include breakpoint(lg) {
     font-size: 33px;
     letter-spacing: 0;
+  }
+}
+
+.section-top {
+
+  @include breakpoint(lg) {
+    display: flex;
+    justify-content: space-between;
+  }
+  .section-title {
+    margin-bottom: 16px;
+
+    @include breakpoint(md) {
+      margin-bottom: 0;
+    }
+  }
+
+  .section-description {
+    @include breakpoint(lg) {
+      @include columCountMaxWidth(6);
+    }
+
+    @include breakpoint(xl) {
+      @include columnCountMaxXlWidth(6);
+    }
+  }
+}
+
+.section-description {
+  color: $gray-dark;
+  font-size: 14px;
+  line-height: 150%; /* 21px */
+
+  @include breakpoint(md) {
+    font-size: 16px;
   }
 }
 

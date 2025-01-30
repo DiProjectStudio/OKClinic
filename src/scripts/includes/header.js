@@ -35,6 +35,7 @@ export default class Header {
 
                 if (this.navMenuJS.classList.contains('active')) {
                     Overlay.showOverlay();
+                    this.overlayClickHandler();
                 } else {
                     Overlay.hideOverlay();
                 }
@@ -44,15 +45,21 @@ export default class Header {
             this.createSubmenu();
         }
 
-        // document.addEventListener('click', (e) => {
-        //     if (this.navMenuJS.classList.contains('active') && !this.navMenuJS.contains(e.target) && !this.clickWrapper.contains(e.target)) {
-        //         this.navMenuJS.classList.remove('active');
-        //         this.clickWrapper.classList.remove('active');
-        //         this.burgerAnimate();
-        //         Overlay.hideOverlay();
-        //         console.log(e.target);
-        //     }
-        // });
+
+    }
+
+    overlayClickHandler() {
+        document.getElementById('overlay').addEventListener('click', () => {
+            this.closeBurger();
+            this.burgerAnimate();
+        })
+    }
+
+    closeBurger() {
+        this.navMenuJS.classList.remove('active');
+        this.clickWrapper.classList.remove('active');
+        Overlay.hideOverlay();
+        document.body.classList.remove('overflow-hidden');
     }
 
     /** Копирует элемент .header__inner-additional-bottom в .header__inner */

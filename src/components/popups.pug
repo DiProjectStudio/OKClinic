@@ -1,5 +1,37 @@
-.popup#popupSearch
+
+// ЗАПИСЬ НА ПРИЕМ
+.popup.popup--small#popupAppointment
     .popup__inner
+        .popup__title Запись на прием
         form
-            input(type='search' placeholder='Поиск по сайту').input
-            button.btn.btn--blue-dark Найти
+            input(type='text' placeholder='Имя' required).input
+            input(type='text' placeholder='E-mail' required).input
+            input(type='text' placeholder='Телефон' required data-phone-number ).input
+            include _popup-agree
+            button.btn.btn--blue-dark Отправить запрос
+
+
+// ВЫЗВАТЬ ВРАЧА НА ДОМ
+.popup.popup--big#popupCallDoctor
+    .popup__inner
+        .popup__title Запись на прием
+        form
+            .popup__form_inputs
+                input(type='text' placeholder='Имя' required).input
+                input(type='text' placeholder='E-mail' required).input
+                input(type='text' placeholder='Телефон' required data-phone-number ).input
+                textarea(placeholder='Район, Адрес, какого врача вызвать').input
+            .popup__form_bottom
+                include _popup-agree
+                button.btn.btn--blue-dark Отправить запрос
+
+
+
+
+
+// ПОПАП ПОИСКА
+.popup__search#popupSearch
+        .popup__inner
+            form
+                input(type='search' placeholder='Поиск по сайту').input
+                button.btn.btn--blue-dark Найти

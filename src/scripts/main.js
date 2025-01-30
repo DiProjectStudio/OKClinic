@@ -9,6 +9,7 @@ import { initializePopup } from './includes/popup.js';
 // import { initializeSlider } from './includes/slider.js';
 import Header from "./includes/header.js";
 import Footer from './includes/footer.js';
+import {actualYear} from "./includes/actual-year.js";
 
 document.addEventListener('DOMContentLoaded', (event) => {
     getBrowserName();
@@ -17,6 +18,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // initializeSlider();
     new Header();
     new Footer();
+    actualYear();
 
 });
 
