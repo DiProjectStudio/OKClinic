@@ -7,9 +7,9 @@ block header
                     span OK.clinic
                 .header__inner-nav
                     .header__inner-nav-top
-                        a(href='javascript:void(0)').header__inner-nav-top-address Санкт-Петербург, Смоленская., д. 14
+                        a(href='https://yandex.ru/maps/-/CHeIFW06' target='_blank').header__inner-nav-top-address.link-hover Санкт-Петербург, Смоленская., д. 14
                         .header__inner-nav-top-worktime Пн-Вс 8:00 - 21:00
-                        a(href='mailto:info@domain.com').header__inner-nav-top-mail info@domain.com
+                        a(href='mailto:info@domain.com').header__inner-nav-top-mail.link-hover info@domain.com
                     .header__inner-nav-bottom
                         nav
                             ul
@@ -60,45 +60,4 @@ block header
 
                 include ../components/_header-burger
 
-        .nav-menu-js#navMenuJS
-
-script.
-  document.addEventListener('DOMContentLoaded', function() {
-    const elements = document.querySelectorAll('.body-mri__image-cross');
-    elements.forEach(element => {
-      element.addEventListener('click', function() {
-        rotateElement(element);
-      });
-    });
-  });
-
-  function rotateElement(element) {
-    const rect = element.querySelector('rect');
-    if (!rect) return;
-
-    // Получаем атрибуты x, y, width и height
-    const x = parseFloat(rect.getAttribute('x'));
-    const y = parseFloat(rect.getAttribute('y'));
-    const width = parseFloat(rect.getAttribute('width'));
-    const height = parseFloat(rect.getAttribute('height'));
-
-    // Вычисляем центр элемента
-    const centerX = x + width / 2;
-    const centerY = y + height / 2;
-
-    // Проверяем, есть ли класс 'rotated'
-    const isRotated = element.classList.contains('rotated');
-
-    // Если элемент повернут, возвращаем его в исходное состояние
-    const newAngle = isRotated ? 0 : 45;
-
-    // Устанавливаем новый атрибут transform с вычисленным центром
-    element.setAttribute('transform', `rotate(${newAngle} ${centerX} ${centerY})`);
-
-    // Добавляем или удаляем класс 'rotated'
-    if (isRotated) {
-      element.classList.remove('rotated');
-    } else {
-      element.classList.add('rotated');
-    }
-  }
+    .nav-menu-js#navMenuJS

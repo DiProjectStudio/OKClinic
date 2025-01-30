@@ -1,6 +1,93 @@
+
 block footer
-
     footer#footer.footer
-
         .container
+            .footer__inner
+                .footer__inner-top
+                    .footer__inner-top-links
+                        .links-block.links-block--showdown
+                            .links-block__title Диагностика
+                            .links-block__items
+                                ul
+                                    li
+                                        a(href='javascript:void(0)').link-hover МРТ
+                                    li
+                                        a(href='javascript:void(0)').link-hover УЗИ
+                                    li
+                                        a(href='javascript:void(0)').link-hover ЭКГ
+                                    li
+                                        a(href='javascript:void(0)').link-hover Рентген
+
+                        .links-block.links-block--showdown
+                            .links-block__title Анализы
+                            .links-block__items
+                                ul
+                                    li
+                                        a(href='javascript:void(0)').link-hover Лабораторные анализы
+
+                        .links-block.links-block--showdown
+                            .links-block__title Обследования
+                            .links-block__items
+                                ul
+                                    li
+                                        a(href='javascript:void(0)').link-hover Чекапы
+                                    li
+                                        a(href='javascript:void(0)').link-hover Программы здоровья
+                        .links-block.links-block--showdown
+                            .links-block__title Направления
+                            .links-block__items
+                                ul
+                                    li
+                                        a(href='javascript:void(0)').link-hover Гастроэнтерология
+                                    li
+                                        a(href='javascript:void(0)').link-hover Инфектология
+                                    li
+                                        a(href='javascript:void(0)').link-hover Кардиология
+                                    li
+                                        a(href='javascript:void(0)').link-hover Косметология
+                                    li
+                                        a(href='javascript:void(0)').link-hover Маммология
+                                    li
+                                        a(href='javascript:void(0)').link-hover Неврология
+                                    li
+                                        a(href='javascript:void(0)').link-hover Общая хирургия
+                                    li
+                                        a(href='javascript:void(0)').link-hover Онкология
+                                    li
+                                        a(href='javascript:void(0)').link-hover Офтальмология
+                                    li
+                                        a(href='javascript:void(0)').link-hover Педиатрия
+                        .links-block
+                            .links-block__title О клинике
+                            .links-block__items
+                                ul
+                                    li
+                                        a(href='javascript:void(0)').link-hover Услуги
+                                    li
+                                        a(href='javascript:void(0)').link-hover Справки
+                                    li
+                                        a(href='javascript:void(0)').link-hover Врачи
+                                    li
+                                        a(href='javascript:void(0)').link-hover Анализы
+                                    li
+                                        a(href='javascript:void(0)').link-hover Диагностика
+                                    li
+                                        a(href='javascript:void(0)').link-hover Заболевания
+                                    li
+                                        a(href='javascript:void(0)').link-hover Отзывы
+                                    li
+                                        a(href='javascript:void(0)').link-hover Акции
+                                    li
+                                        a(href='javascript:void(0)').link-hover Контакты
+
+                    .footer__inner-top-map
+                        script.
+                            let placemarks = [{
+                                coordinates: [59.90523263569599,30.322833620156818],
+                            },]
+                            let centerPoint = [59.90523263569599,30.322833620156818];
+                            let zoomValue = 16;
+                        .map__wrapper
+                            #map(style="width:100%; height:100%;")
+                            .map__wrapper-address Санкт-Петербург, Смоленская, д. 14
 
