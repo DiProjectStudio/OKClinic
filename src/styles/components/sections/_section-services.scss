@@ -2,32 +2,80 @@
 @use "../../base/variables" as *;
 
 .services {
+  .section-title {
+    @include breakpoint(lg) {
+      max-width: 237px;
+    }
+  }
+
   .services__block {
     border-radius: 32px;
     background: $gray-subdied;
     padding: 20px 16px;
+    margin: 24px -16px 0;
+    @include flexColumn;
+    gap: 16px;
+
+    @include breakpoint(md) {
+      margin: 32px 0 0;
+      padding: 32px;
+      gap: 24px;
+    }
 
     &-top-items {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 16px;
     }
 
     &-main-items {
-      column-count: 2;
-      column-gap: 12px;
-      a {
-        color: $blue-dark;
-        font-size: 14px;
-        line-height: 150%; /* 21px */
 
-        & + a {
-          margin-top: 4px;
+      ul {
+        column-count: 2;
+
+        @include breakpoint(md) {
+          column-gap: 140px;
+        }
+
+        @include breakpoint(lg) {
+          column-count: 4;
+          column-gap: unset;
+        }
+
+        li {
+          & + li {
+            margin-top: 4px;
+
+            @include breakpoint(md) {
+              margin-top: 12px;
+            }
+          }
+
+          a {
+            color: $blue-dark;
+            font-size: 14px;
+            line-height: 150%; /* 21px */
+            text-wrap: wrap;
+
+            &:hover {
+              text-decoration: underline;
+            }
+
+            @include breakpoint(md) {
+              font-size: 16px;
+            }
+          }
         }
       }
     }
-  }
 
+    .btn {
+      padding: 16px 32px;
+      width: fit-content;
+      margin: 0 auto;
+      font-size: 16px;
+      border-radius: 12px;
+    }
+  }
 }
 

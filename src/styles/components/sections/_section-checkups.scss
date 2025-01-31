@@ -1,0 +1,145 @@
+@use "../../base/mixins" as *;
+@use "../../base/variables" as *;
+
+.checkups {
+  &__inner {
+    &-top {
+      @include flexColumn;
+      gap: 24px;
+      margin-bottom: 12px;
+
+      @include breakpoint(md) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+
+      .btn {
+        font-size: 13px;
+        padding: 14px 32px;
+        width: fit-content;
+        border-radius: 12px;
+      }
+    }
+
+    &-items {
+      display: grid;
+      gap: 12px;
+
+      @include breakpoint(lg) {
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+      }
+
+      .checkups__item {
+        border-radius: 24px;
+        background: $gray-subdied;
+        padding: 24px;
+        position: relative;
+
+        @include breakpoint(md) {
+          padding: 32px;
+          display: grid;
+          grid-template-columns: repeat(2, fit-content(100%));
+          grid-template-rows: repeat(2, fit-content(100%));
+          justify-content: space-between;
+        }
+
+        @include breakpoint(lg) {
+          @include flexColumn;
+          justify-content: flex-start;
+        }
+
+        &:first-child, &:nth-child(2), &:nth-child(3) {
+          @include breakpoint(lg) {
+            grid-row: 1 / 2;
+            grid-column: span 4;
+          }
+
+        }
+
+        &:nth-child(4), &:nth-child(5), &:nth-child(6), &:nth-child(7) {
+          @include breakpoint(lg) {
+            grid-column: span 3;
+          }
+        }
+
+        &-title {
+          font-size: 23px;
+          font-weight: 600;
+          line-height: 120%; /* 27.6px */
+          letter-spacing: -0.23px;
+          padding: 10px 0;
+          margin-bottom: 16px;
+
+          @include breakpoint(md) {
+          }
+        }
+
+        ul {
+          @include flexColumn;
+          gap: 8px;
+
+          @include breakpoint(md) {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+          }
+
+          @include breakpoint(lg) {
+            margin-bottom: 32px;
+          }
+
+
+          li {
+            a {
+              color: $blue-dark;
+              font-size: 14px;
+              line-height: 150%; /* 21px */
+
+              @include breakpoint(md) {
+                font-size: 16px;
+              }
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+
+        .btn {
+          padding: 16px 32px;
+          font-size: 13px;
+          line-height: 150%; /* 19.5px */
+          border-radius: 12px;
+          width: fit-content;
+          margin-top: 24px;
+
+          @include breakpoint(md) {
+            grid-row: 2 / 3;
+            align-self: flex-end;
+            margin: 0;
+          }
+
+          @include breakpoint(lg) {
+            align-self: unset;
+            margin-top: auto;
+          }
+        }
+
+        &-image {
+          border-radius: 12px;
+          background: $white;
+          width: 48px;
+          height: 48px;
+          padding: 8px;
+          @include flexCenterCenter;
+          position: absolute;
+          top: 24px;
+          right: 24px;
+        }
+      }
+    }
+  }
+}

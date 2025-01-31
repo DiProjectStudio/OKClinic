@@ -24,7 +24,7 @@ section.services
                             "Медицинские справки",
                             "ДМС",
                             "УЗИ",
-                        ]
+                        ];
                     each servicesTopItem in servicesTopItems
                         a(href='javascript:void(0)').tag-link= servicesTopItem
                 .services__block-main-items
@@ -60,6 +60,9 @@ section.services
                             "Эндокринология",
                             "Эндоскопия"
                         ];
-                    each item in mainItems
-                        a(href='')= item
+
+                    ul
+                        each item in mainItems
+                            li
+                                a(href='javascript:void(0)')= item
                 a(href='javascript:void(0)').btn.btn--transparent-blue-secondary Смотреть все

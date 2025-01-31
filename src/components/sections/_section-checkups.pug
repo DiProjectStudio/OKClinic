@@ -1,0 +1,77 @@
+section.checkups
+    .container
+        .checkups__inner
+            .checkups__inner-top
+                .section-title Чек-апы
+                a(href='javascript:void(0)').btn.btn--transparent-blue-secondary Все программы
+            .checkups__inner-items
+                -
+                    var checkupsItems = [
+                        {
+                            title: "Гинекология",
+                            details: [
+                                "Чекап «Скан женского здоровья»",
+                                "Чекап «Женское здоровье»",
+                                "Чекап «УЗИ. Женское здоровье»",
+                            ]
+                        },
+                        {
+                            title: "Гастроэнтерология",
+                            details: [
+                                "Чекап «Проверь пищеварение»",
+                                "Чекап «Желудок без проблем»",
+                                "Чекап «УЗИ ЖКТ»",
+                            ]
+                        },
+                        {
+                            title: "Иммунология",
+                            details: [
+                                "Чекап «Проверь иммунитет» (стандарт)",
+                                "Чекап «Проверь иммунитет» (премиум)",
+                                "Чекап «Проверка на вирусы герпеса»",
+                            ]
+                        },
+                        {
+                            title: "Кардиология",
+                            details: [
+                                "Чекап «Проверь сердце» (стандарт)",
+                                "Чекап «Проверь сердце» (премиум)",
+                                "Чекап «Ритмы сердца»",
+                            ]
+                        },
+                        {
+                            title: "Пульмонология",
+                            details: [
+                                "Чекап «Проверь сердце» (стандарт)",
+                                "Чекап «Проверь сердце» (премиум)",
+                                "Чекап «Ритмы сердца»",
+                            ]
+                        },
+                        {
+                            title: "Урология",
+                            details: [
+                                "Чекап «Мужское здоровье»",
+                                "Чекап «Скан мужского здоровья» ",
+                                "Чекап «УЗИ. Мужское здоровье»",
+                            ]
+                        },
+                        {
+                            title: "Эндокринология",
+                            details: [
+                                "Чекап «Проверь эндокринную систему»",
+                                "Чекап «Щитовидная железа» ",
+                                "Чекап «УЗИ. Щитовидная железа»",
+                            ]
+                        },
+                    ]
+                each item, index in checkupsItems
+                    .checkups__item
+                        .checkups__item-title= item.title
+                        ul
+                            each detail in item.details
+                                li
+                                    a(href='javascript:void(0)')= detail
+
+                        a(href='javascript:void(0)').btn.btn--transparent-blue-secondary Смотреть все
+                        .checkups__item-image
+                            +img(`icon_checkups-${index + 1}.svg`)

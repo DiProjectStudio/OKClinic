@@ -1,0 +1,41 @@
+section.call
+    .container
+        .call__inner
+            .call__inner-main
+                .call__inner-main-top
+                    .call__title Выезд врача на дом
+                    .call__description Доктор у вас дома: не нужно ехать, ждать, вызывать скорую - просто вызовите врача.
+                a(data-src='#popupCallDoctor' data-fancybox).btn.btn--gray-subdied Вызвать врача на дом
+            .call__inner-discticts
+                -
+                    var districts = [
+                        "Адмиралтейский",
+                        "Василеостровский",
+                        "Выборгский",
+                        "Калининский",
+                        "Кировский",
+                        "Колпинский",
+                        "Красногвардейский",
+                        "Красносельский",
+                        "Кронштадтский",
+                        "Курортный",
+                        "Ломоносовский",
+                        "Московский",
+                        "Невский",
+                        "Павловский",
+                        "Центральный",
+                        "Петроградский",
+                        "Петродворцовый",
+                        "Приморский",
+                        "Пушкинский",
+                        "Фрунзенский"
+                    ];
+                each district in districts
+                    a(data-src='#popupCallDoctor' data-fancybox).tag-link= district
+            .call__crossline
+                picture
+                    source(srcset="assets/images/services-crossline-lg.png", media="(min-width: 1200px)")
+                    source(srcset="assets/images/services-crossline-md.png", media="(min-width: 744px)")
+                    +img('services-crossline-s.png')
+            .call__image
+                +img('services-doctor.png')

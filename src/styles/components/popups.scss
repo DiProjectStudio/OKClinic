@@ -72,6 +72,7 @@
     letter-spacing: -0.87px;
     margin-bottom: 24px;
     color: $black;
+    max-width: 203px;
 
     @include breakpoint(md) {
       font-size: 33px;
@@ -197,6 +198,7 @@
     }
   }
 }
+
 
 .fancybox__backdrop {
   background: #00000099;
