@@ -1,0 +1,18 @@
+@use "../../base/mixins" as *;
+@use "../../base/variables" as *;
+
+.programs {
+  .section-top {
+    margin-bottom: 24px;
+
+    .section-title {
+      @include breakpoint(lg) {
+        @include columCountMaxWidth(5);
+      }
+
+      @include breakpoint(xl) {
+        @include columnCountMaxXlWidth(4);
+      }
+    }
+  }
+}

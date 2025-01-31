@@ -147,7 +147,7 @@ input[type="number"] {
     font-weight: 400;
   }
 
-  &:focus{
+  &:focus {
     border: 1px solid $blue-secondary;
   }
 }
@@ -291,6 +291,43 @@ input[type="number"] {
   }
 }
 
+.arrow-prev, .arrow-next {
+  border-radius: 8px;
+  background: $gray-subdied;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  @include flexCenterCenter;
+
+  &:after {
+    content: '';
+    width: 24px;
+    height: 24px;
+    display: block;
+    transition: $transition;
+  }
+
+}
+
+.arrow-prev {
+  &:after {
+    background: url('../icons/icon_arrow-prev.svg') no-repeat center center;
+  }
+
+  &:hover:after {
+    background: url('../icons/icon_arrow-prev--blue.svg') no-repeat center center;
+  }
+}
+
+.arrow-next {
+  &:after {
+    background: url('../icons/icon_arrow-next.svg') no-repeat center center;
+  }
+
+  &:hover:after {
+    background: url('../icons/icon_arrow-next--blue.svg') no-repeat center center;
+  }
+}
 
 
 /////////////////////
@@ -316,6 +353,7 @@ a {
 
   &.arrow-link--white {
     background: $white;
+
     &:after {
       background: url("../icons/icon_arrow-up-right--blue.svg") no-repeat center;
     }
@@ -340,6 +378,7 @@ a {
 
 .link-hover {
   transition: $transition;
+
   &:hover {
     color: $blue-dark;
   }
@@ -399,6 +438,38 @@ section + section {
   }
 }
 
+.tabs {
+  padding: 8px;
+  border-radius: 12px;
+  background: $gray-subdied;
+  @include flexAlignCenter;
+  gap: 8px;
+  width: fit-content;
+}
+
+button, div, a {
+  &.tab {
+    border-radius: 8px;
+    padding: 4px 12px;
+    transition: $transition;
+    font-size: 16px;
+    line-height: 150%; /* 24px */
+    cursor: pointer;
+    background: transparent;
+
+    &:hover {
+      background: $white;
+      color: $blue-dark;
+    }
+
+    &.active {
+      background: $blue-dark;
+      color: $white;
+    }
+  }
+}
+
+
 /////////////////////
 /// CARDS & CATALOG
 /////////////////////
@@ -438,10 +509,11 @@ h1 {
     display: flex;
     justify-content: space-between;
   }
+
   .section-title {
     margin-bottom: 16px;
 
-    @include breakpoint(md) {
+    @include breakpoint(lg) {
       margin-bottom: 0;
     }
   }

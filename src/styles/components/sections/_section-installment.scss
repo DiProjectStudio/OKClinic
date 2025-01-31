@@ -1,0 +1,155 @@
+@use "../../base/mixins" as *;
+@use "../../base/variables" as *;
+
+.installment {
+  &__inner {
+    border-radius: 24px;
+    background: $blue-dark;
+    position: relative;
+    overflow: hidden;
+    padding: 24px;
+    z-index: 1;
+    margin-top: 48px;
+
+    @include breakpoint(md) {
+      padding: 32px;
+      border-radius: 32px;
+    }
+
+    @include breakpoint(lg) {
+      @include flexAlignCenter;
+      justify-content: flex-end;
+    }
+
+    &-main {
+
+      @include breakpoint(md) {
+        margin-bottom: 24px;
+        display: grid;
+        justify-content: flex-end;
+      }
+
+      @include breakpoint(lg) {
+        display: block;
+        margin-bottom: 0;
+        @include flexAlignCenter;
+        gap: 40px;
+        justify-content: flex-end;
+        margin-right: 64px;
+      }
+
+      &-top {
+        max-width: 355px;
+        margin-bottom: 32px;
+
+        @include breakpoint(md) {
+          margin-bottom: 24px;
+        }
+
+        @include breakpoint(lg) {
+          margin-bottom: 32px;
+          max-width: 478px;
+        }
+
+        @include breakpoint(xl) {
+          max-width: 472px;
+        }
+      }
+    }
+  }
+
+  &__title {
+    color: $white;
+    font-size: 29px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 34.8px */
+    letter-spacing: -0.87px;
+    margin-bottom: 12px;
+
+    @include breakpoint(md) {
+      font-size: 33px;
+    }
+
+    @include breakpoint(lg) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__description {
+    color: $white-subdied;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 21px */
+
+    @include breakpoint(md) {
+      font-size: 16px;
+    }
+
+  }
+
+  &__image {
+    position: absolute;
+    right: -104px;
+    bottom: -4px;
+    width: 255px;
+    height: 170px;
+    z-index: -1;
+
+    @include breakpoint(md) {
+      width: 424px;
+      height: 280px;
+      left: -30px;
+      bottom: 0;
+    }
+
+    @include breakpoint(lg) {
+      width: 339px;
+      height: 224px;
+      left: 5px;
+    }
+
+    @include breakpoint(xl) {
+      left: 66px;
+    }
+  }
+
+  &__crossline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -2;
+
+
+    @include breakpoint(md) {
+      left: -84px;
+    }
+
+    @include breakpoint(lg) {
+      bottom: unset;
+      right: unset;
+    }
+
+    @include breakpoint(xl) {
+    }
+  }
+
+  .btn {
+    font-size: 13px;
+    padding: 14px 32px;
+    width: fit-content;
+    border-radius: 12px;
+
+    @include breakpoint(md) {
+      padding: 18px 32px;
+    }
+
+    @include breakpoint(lg) {
+      font-size: 16px;
+    }
+  }
+}
+

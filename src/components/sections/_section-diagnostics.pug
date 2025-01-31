@@ -1,0 +1,109 @@
+section.diagnostics
+    .container
+        .diagnostics__inner
+            .section-top
+                .section-title Диагностика и анализы
+                .section-description
+                    p.
+                        Предлагаем широкий спектр лабораторных и инструментальных исследований,
+                        используя современное оборудование и передовые методы.
+                        Диагностика с комфортом и вниманием к каждому пациенту
+            .diagnostics__wrapper
+                .diagnostics__wrapper-tabs.tabs(data-tabs-actions)
+                    button(data-tab='diagnostics').tab.active Диагностика
+                    button(data-tab='tests').tab Анализы
+                .diagnostics__wrapper-items.showed.tab-content(data-content='diagnostics')
+
+                    -
+                        var diagnosticsItems = [
+                            {
+                                title: "Компьютерная томография",
+                                details:
+                                        [
+                                            "Брюшная полость",
+                                            "Вверхняя конечность",
+                                            "Голова",
+                                            "Грудная клетка",
+                                            "Нижняя конечность",
+                                        ]
+                            },
+                            {
+                                title: "Ультразвуковая диагностика",
+                                details:
+                                        [
+                                            "Железы внутренней секреции",
+                                            "Женские половые органы",
+                                            "Иммунная система",
+                                            "Крупные кровеносные сосуды",
+                                            "Мужские половые органы",
+                                        ]
+                            },
+                            {
+                                title: "Рентгенография",
+                                details:
+                                        [
+                                            "Брюшная полость и таз",
+                                            "Верхняя конечность",
+                                            "Голова",
+                                            "Грудная клетка",
+                                            "Нижняя конечность",
+                                        ]
+                            },
+                            {
+                                title: "Рентгеноденситометрия",
+                                details:
+                                        [
+                                            "Рентгеноденситометрия одного отдела позвоночника",
+                                            "Рентгеноденситометрия проксимального отдела бедренной кости",
+                                            "Рентгеноденситометрия поясничной области и одного бедра",
+                                            "Рентгеноденситометрия поясничных позвонков, бедренной кости и предплечья",
+                                            "Рентгеноденситометрия поясничной области и предплечья",
+                                        ]
+                            },
+                            {
+                                title: "Маммография",
+                                details:
+                                        [
+                                            "Маммография одной молочной железы (после мастэктомии)",
+                                            "Маммография одной железы (прицельная) в двух проекциях",
+                                            "Маммография обеих молочных желез",
+                                            "Маммография обеих молочных желез с томосинтезом",
+                                            "Дуктография одной молочной железы",
+                                        ]
+                            },
+                            {
+                                title: "Функциональная диагностика",
+                                details:
+                                        [
+                                            "Крупные кровеносные сосуды",
+                                            "Мышечная система",
+                                            "Нижние дыхательные пути и легочная ткань",
+                                            "Прочие",
+                                            "Сердце и перикард",
+                                        ]
+                            },
+                        ]
+                    each diagnosticsItem in diagnosticsItems
+                        .diagnostics__item
+                            .diagnostics__item-title= diagnosticsItem.title
+                            ul
+                                each item in diagnosticsItem.details
+                                    li
+                                        a(href='javascript:void(0)')= item
+                            a(href='javascript:void(0)').btn.btn--transparent-blue-secondary Смотреть все
+                .diagnostics__wrapper-items.tab-content(data-content='tests')
+                    .diagnostics__item
+                        .diagnostics__item-title Анализы крови
+                        ul
+                            li
+                                a(href='javascript:void(0)') Общий анализ крови
+                            li
+                                a(href='javascript:void(0)') СРБ
+                            li
+                                a(href='javascript:void(0)') Общий анализ крови
+                            li
+                                a(href='javascript:void(0)') СРБ
+                            li
+                                a(href='javascript:void(0)') СРБ
+                        a(href='javascript:void(0)').btn.btn--transparent-blue-secondary Смотреть все
+

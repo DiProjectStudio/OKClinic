@@ -1,0 +1,15 @@
+section.installment
+    .container
+        .installment__inner
+            .installment__inner-main
+                .installment__inner-main-top
+                    .installment__title Лечись сейчас — плати потом
+                    .installment__description Мы предоставляем рассрочку 0% для наших пациентов на все виды услуг
+                a(data-src='#popupConsultation' data-fancybox).btn.btn--gray-subdied Получить консультацию
+            .installment__crossline
+                picture
+                    source(srcset="assets/images/services-crossline-lg.png", media="(min-width: 1200px)")
+                    source(srcset="assets/images/services-crossline-lg.png", media="(min-width: 744px)")
+                    +img('services-crossline-s.png')
+            .installment__image
+                +img('installment-doctor.png')

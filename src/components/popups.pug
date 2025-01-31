@@ -19,13 +19,22 @@
             .popup__form_inputs
                 input(type='text' placeholder='Имя' required).input
                 input(type='text' placeholder='E-mail' required).input
-                input(type='text' placeholder='Телефон' required data-phone-number ).input
+                input(type='text' placeholder='Телефон' required data-phone-number).input
                 textarea(placeholder='Район, Адрес, какого врача вызвать').input
             .popup__form_bottom
                 include _popup-agree
                 button.btn.btn--blue-dark Отправить запрос
 
-
+// ПОПАП ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ
+.popup.popup--small#popupConsultation
+    .popup__inner
+        .popup__title Получить консультацию
+        form
+            input(type='text' placeholder='Имя' required).input
+            input(type='text' placeholder='E-mail' required).input
+            input(type='text' placeholder='Телефон' required data-phone-number).input
+            include _popup-agree
+            button.btn.btn--blue-dark Отправить запрос
 
 
 
