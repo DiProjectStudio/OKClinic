@@ -6,7 +6,7 @@ import Inputmask from 'inputmask';
 import { getBrowserName } from './includes/checkbrowser.js';
 import { initializeMap } from './includes/map.js';
 import { initializePopup } from './includes/popup.js';
-// import { initializeSlider } from './includes/slider.js';
+import { initializeSlider } from './includes/slider.js';
 import Header from "./includes/header.js";
 import Footer from './includes/footer.js';
 import {actualYear} from "./includes/actual-year.js";
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     getBrowserName();
     initializeMap();
     initializePopup();
-    // initializeSlider();
+    initializeSlider();
     new Header();
     new Footer();
     actualYear();

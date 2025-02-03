@@ -1,0 +1,18 @@
+.specialists {
+    &__inner-slider {
+        .swiper {
+            overflow: hidden;
+            padding-bottom: 30px;
+        }
+        
+        .swiper-wrapper {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .swiper-slide {
+            height: calc((100% - 40px) / 3);
+            margin-top: 0 !important;
+        }
+    }
+} 

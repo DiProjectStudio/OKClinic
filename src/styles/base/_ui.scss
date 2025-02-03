@@ -224,17 +224,21 @@ input[type="number"] {
 /////////////////////
 
 .btn {
-  border-radius: 8px;
-  font-size: 11px;
-  padding: 8px 32px;
+  //border-radius: 8px;
+  //font-size: 11px;
+  //padding: 8px 32px;
+  font-size: 13px;
+  border-radius: 12px;
+  padding: 16px 32px;
   transition: $transition;
   cursor: pointer;
+  width: fit-content;
   @include flexCenterCenter;
 
   @include breakpoint(md) {
-    font-size: 13px;
-    border-radius: 12px;
-    padding: 16px 32px;
+    //font-size: 13px;
+    //border-radius: 12px;
+    //padding: 16px 32px;
   }
 
   @include breakpoint(lg) {
@@ -465,6 +469,20 @@ button, div, a {
     &.active {
       background: $blue-dark;
       color: $white;
+    }
+  }
+}
+
+.custom-list {
+  li {
+    @include flexAlignCenter;
+    gap: 10px;
+    &:before {
+      content: '';
+      width: 8px;
+      flex-shrink: 0;
+      height: 8px;
+      background: url("../icons/icon_list-circle.svg") no-repeat center;
     }
   }
 }

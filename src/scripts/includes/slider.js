@@ -1,7 +1,59 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination, Autoplay, FreeMode, Thumbs, Scrollbar } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay, FreeMode, Thumbs, Scrollbar, Grid } from 'swiper/modules';
+import { sliderClone } from './slider-clone.js';
 
-// export function initializeSlider() {
+export function initializeSlider() {
+
+    sliderClone('.programs__wrapper-items .swiper');
+    const programsSlider = new Swiper('.programs__wrapper-items .swiper', {
+        modules: [Navigation],
+        slidesPerView: 1.2,
+        spaceBetween: 12,
+        navigation: {
+            prevEl: '.programs__wrapper .arrow-prev',
+            nextEl: '.programs__wrapper .arrow-next'
+        },
+        loop: true,
+        breakpoints: {
+            744: {
+                slidesPerView: 2
+            },
+            1200: {
+                slidesPerView: 3
+            }
+        }
+    });
+    sliderClone('.specialists__inner-slider .swiper');
+
+    const specialistsSlider = new Swiper('.specialists__inner-slider .swiper', {
+        modules: [Navigation, Grid],
+        slidesPerView: 1,
+        grid: {
+            rows: 3
+        },
+        navigation: {
+            prevEl: '.specialists__inner-top-nav .arrow-prev',
+            nextEl: '.specialists__inner-top-nav .arrow-next'
+        },
+        spaceBetween: 4,
+        breakpoints: {
+            744: {
+                slidesPerView: 3,
+                spaceBetween: 12,
+                grid: {
+                    rows: 1
+                }
+            },
+            1200: {
+                slidesPerView: 4,
+                grid: {
+                    rows: 1
+                },
+                spaceBetween: 12,
+            }
+        }
+    });
+
 //     const heroMain = new Swiper('.hero-main .swiper', {
 //         modules: [Navigation, Autoplay],
 //         slidesPerView: 1,
@@ -504,4 +556,4 @@ import { Navigation, Pagination, Autoplay, FreeMode, Thumbs, Scrollbar } from 's
 //             }
 //         }
 //     });
-// }
+}

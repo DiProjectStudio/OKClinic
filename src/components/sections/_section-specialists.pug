@@ -1,0 +1,39 @@
+section.specialists
+    .container
+        .specialists__inner
+            .specialists__inner-top
+                .section-title Специалисты
+                .specialists__inner-top-nav
+                    a(href='javascript:void(0)').btn.btn--transparent-blue-secondary Все специалисты
+                    .swiper-nav
+                        button.arrow-prev
+                        button.arrow-next
+        .specialists__inner-slider
+            -
+                var specialists = [
+                    {
+                        name: "Филиппов Александр Олегович",
+                        specialization: "Врач - невролог, врач - остеопат"
+                    },
+                    {
+                        name: "Гиоева Лаура Валерьевна",
+                        specialization: "Невролог"
+                    },
+                    {
+                        name: "Егорова Екатерина Сергеевна",
+                        specialization: "Невролог, Кандидат медицинских наук"
+                    },
+                    {
+                        name: "Катенина Светлана Петровна",
+                        specialization: "Терапевт, гастроэнтеролог"
+                    },
+                ]
+            .swiper
+                .swiper-wrapper
+                    each specialist, index in specialists
+                        .swiper-slide
+                            a(href='javascript:void(0)').specialists__item
+                                .specialists__item-image
+                                    +img(`specialists-${index + 1}.png`)
+                                .specialists__item-name= specialist.name
+                                .specialists__item-specialization= specialist.specialization

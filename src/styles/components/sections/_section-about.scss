@@ -1,0 +1,142 @@
+@use "../../base/mixins" as *;
+@use "../../base/variables" as *;
+@use "../../base/container" as *;
+
+
+.about {
+  .section-title {
+    margin-bottom: 16px;
+
+    @include breakpoint(lg) {
+      margin-bottom: 24px;
+    }
+  }
+
+  .section-description {
+    margin-bottom: 20px;
+
+    @include breakpoint(lg) {
+      margin-bottom: 59px;
+    }
+  }
+
+  &__inner {
+    &-content {
+
+      @include breakpoint(lg) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 21px;
+      }
+
+      @include breakpoint(xl) {
+        justify-content: space-between;
+      }
+      &-main {
+        @include breakpoint(xl) {
+          @include columnCountMaxXlWidth(5);
+        }
+        &-head {
+          @include flexColumn;
+          gap: 4px;
+          p {
+            &:first-child {
+              color: $gray-dark;
+              font-size: 13px;
+              line-height: 150%; /* 19.5px */
+            }
+
+            &:last-child {
+              font-size: 19px;
+              font-weight: 600;
+              line-height: 120%; /* 22.8px */
+            }
+          }
+        }
+      }
+
+      &-image {
+        margin-top: 24px;
+        width: 100%;
+        height: 357px;
+        border-radius: 24px;
+        overflow: clip;
+        isolation: isolate;
+
+        @include breakpoint(md) {
+          border-radius: 32px;
+        }
+
+        @include breakpoint(lg) {
+          height: unset;
+          margin-top: 0;
+        }
+
+        @include breakpoint(xl) {
+          @include columnCountMaxXlWidth(6);
+        }
+      }
+    }
+
+    &-additional {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+
+      @include breakpoint(md) {
+        margin-top: 32px;
+      }
+
+      @include breakpoint(lg) {
+        margin-top: 48px;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .additional__item {
+        border-radius: 24px;
+        border: 1px solid $stroke;
+        background: $white;
+        padding: 24px;
+        display: grid;
+        gap: 12px;
+
+        @include breakpoint(md) {
+          border-radius: 32px;
+          padding: 32px;
+        }
+
+        &-top {
+          @include flexAlignCenter;
+          gap: 15px;
+
+          &-title {
+            color: $wf-wf-dark;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 120%; /* 24px */
+            letter-spacing: -0.2px;
+
+            @include breakpoint(md) {
+              font-size: 23px;
+            }
+          }
+
+          &-image {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: $blue-subdied;
+            @include flexCenterCenter;
+            flex-shrink: 0;
+          }
+        }
+
+        &-text {
+          color: $gray-dark;
+          font-size: 13px;
+          line-height: 150%; /* 19.5px */
+        }
+      }
+    }
+  }
+}

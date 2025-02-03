@@ -11,12 +11,29 @@ section.programs
                         тестирования и диагностики.
             .programs__wrapper
                 .programs__wrapper-top
-                    a(href='javascript:void(0)').btn.btn--transparent-blue-secondary Все специалисты
+                    a(href='javascript:void(0)').btn.btn--transparent-blue-secondary Все программы
                     .swiper-nav
                         button.arrow-prev
                         button.arrow-next
-                    .programs__wrapper-items
-                        .swiper
-                            .swiper-wrapper
+                .programs__wrapper-items
+                    -
+                        var programsTitles = [
+                            "Программа «Мама и ребенок»",
+                            "Программа «Мужское здоровье»",
+                            "Программа «Пожилым здоровье»"
+                        ]
+                    .swiper
+                        .swiper-wrapper
+                            each title, index in programsTitles
                                 .swiper-slide
-                                    .programs-item
+                                    a(href='javascript:void(0)').programs-item
+                                        .programs-item__title= title
+                                        ul.custom-list
+                                            li Персональное сопровождение
+                                            li Индивидуальный подход
+                                            li Обследование за 1 день
+                                        .programs-item__prices
+                                            span 14 200 ₽
+                                            span 21 800 ₽
+                                        .programs-item__image
+                                            +img(`programs-${index + 1}.png`)
