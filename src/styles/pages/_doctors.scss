@@ -1,0 +1,40 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.doctors {
+  &__inner {
+    &-filter {
+      &-title {
+        color: $gray-dark;
+        line-height: 150%; /* 24px */
+      }
+
+      &-items {
+        @include flexAlignCenter;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 24px;
+        margin-top: 16px;
+
+        @include breakpoint(md) {
+          margin-bottom: 32px;
+        }
+      }
+
+
+    }
+
+    &-results {
+      display: grid;
+      gap: 12px;
+
+      @include breakpoint(md) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @include breakpoint(lg) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+}

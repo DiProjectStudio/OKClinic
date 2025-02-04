@@ -1,0 +1,19 @@
+extends ../layout/layout
+
+block title
+    - title = 'Катенина Светлана Петровна'
+    - page = 'page-doctors'
+
+block main
+    include ../components/_breadcrumbs
+    section.doctor
+        +breadcrumbs('Врачи', 'Катенина Светлана Петровна')
+        .container
+            h1.not-main Катенина Светлана Петровна
+            .doctor__links
+                a(href='#').doctor__link О враче
+                a(href='#').doctor__link Образование и опыт
+                a(href='#').doctor__link Специализация
+                a(href='#').doctor__link Лечение
+                a(href='#').doctor__link Диагностика и анализы
+                a(href='#').doctor__link Отзывы (12)

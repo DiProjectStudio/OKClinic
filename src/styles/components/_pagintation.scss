@@ -1,0 +1,88 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.pagination {
+  @include flexColumn;
+  gap: 16px;
+  margin: 24px auto 0;
+
+  @include breakpoint(md) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__items {
+    @include flexCenterCenter;
+    gap: 16px;
+
+    @include breakpoint(md) {
+      gap: 12px;
+    }
+
+    @include breakpoint(lg) {
+      gap: 20px;
+    }
+
+    &-pages {
+      @include flexAlignCenter;
+      gap: 4px;
+
+      .pagination-item {
+        color: $gray-dark;
+        line-height: 150%; /* 24px */
+        width: 38px;
+        height: 38px;
+        @include flexCenterCenter;
+        border-radius: 12px;
+
+        @include breakpoint(md) {
+          width: 56px;
+          height: 56px;
+        }
+
+        &.active, &:hover {
+          background: $blue-dark;
+          color: $white;
+        }
+      }
+    }
+
+    .pagination-arrow {
+      width: 24px;
+      height: 24px;
+      @include flexCenterCenter;
+
+      &.disabled {
+        svg path {
+          stroke: $gray-dark;
+        }
+      }
+    }
+  }
+
+  &__additional {
+    @include flexCenterBetween;
+
+    @include breakpoint(md) {
+      justify-content: unset;
+      gap: 16px;
+    }
+
+    @include breakpoint(lg) {
+      gap: 25px;
+    }
+
+    &-count {
+      font-size: 14px;
+      line-height: 150%; /* 21px */
+
+      @include breakpoint(lg) {
+        font-size: 16px;
+      }
+    }
+
+    .btn {
+      font-size: 16px;
+    }
+  }
+}

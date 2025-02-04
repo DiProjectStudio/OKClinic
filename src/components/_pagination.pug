@@ -1,10 +1,15 @@
 .pagination
-    a(href="prev" title="Предыдущая страница").pagination-item.pagination-arrow.disabled
-        +svg('Chevron-left')
-    a(href="1" title="Страница 1").pagination-item.active 1
-    a(href="2" title="Страница 2").pagination-item 2
-    a(href="...").pagination-item.pagination-dots ...
-    a(href="7" title="Страница 10").pagination-item 20
-    a(href="next" title="Следующая страница").pagination-item.pagination-arrow
-        
-        +svg('Chevron-right')
+    .pagination__items
+        a(href="javascript:void(0)" title="Предыдущая страница").pagination-item.pagination-arrow.disabled
+            include ../icons/icon_chevron-left--dark-blue.svg
+        .pagination__items-pages
+            a(href="javascript:void(0)" title="Страница 1").pagination-item.active 1
+            a(href="javascript:void(0)" title="Страница 2").pagination-item 2
+            a(href="javascript:void(0)" title="Страница 3").pagination-item 3
+            a(href="...").pagination-item.pagination-dots ...
+            a(href="7" title="Страница 10").pagination-item 10
+        a(href="next" title="Следующая страница").pagination-item.pagination-arrow
+            include ../icons/icon_chevron-right--dark-blue.svg
+    .pagination__additional
+        .pagination__additional-count Показано 16 из 36
+        a(href='javascript:void(0)').btn.btn--blue-dark Показать еще

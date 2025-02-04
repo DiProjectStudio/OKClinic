@@ -16,8 +16,15 @@
 @use 'components/popups';
 @use "components/header-burger";
 @use "components/popup-agree";
+@use "components/doctor-card";
+@use "components/pagintation";
+@use "components/seo-content";
 
 @use 'pages/index';
+@use 'pages/error404';
+@use 'pages/search';
+@use 'pages/doctors';
+@use 'pages/doctor';
 
 
 

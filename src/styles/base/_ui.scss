@@ -76,17 +76,21 @@ li {
 /// SCROLLBAR
 /////////////////////
 
-//::-webkit-scrollbar {
-//  width: 0;
-//  height: 0;
-//}
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
 
 ::-webkit-scrollbar-track {
-
 }
 
 ::-webkit-scrollbar-thumb {
 
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $blue-dark transparent;
 }
 
 
@@ -188,6 +192,28 @@ input[type="number"] {
   & ~ .checkbox {
 
   }
+}
+
+.has--close-btn {
+  position: relative;
+
+  span {
+    display: none;
+  }
+
+  span::before {
+    content: '';
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background: url("../icons/icon_x-mark.svg") no-repeat center;
+    display: block;
+    cursor: pointer;
+  }
+
 }
 
 // Radiobutton
@@ -397,6 +423,7 @@ a {
   transition: $transition;
   font-size: 14px;
   line-height: 150%;
+  width: fit-content;
 
   @include breakpoint(md) {
     font-size: 16px;
@@ -412,6 +439,47 @@ a {
     color: $blue-dark;
   }
 
+  &.tag-link--with-uncheck {
+    @include flexAlignCenter;
+
+    button {
+      width: 16px;
+      height: 16px;
+      background: transparent;
+      cursor: pointer;
+      display: none;
+
+      @include breakpoint(md) {
+        width: 20px;
+        height: 20px;
+
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &.active {
+      cursor: default;
+      button {
+        @include flexCenterCenter;
+      }
+    }
+  }
+}
+
+.tag {
+  border-radius: 999px;
+  background: $blue-subdied;
+  color: $blue-dark;
+  cursor: pointer;
+  padding: 4px 12px;
+  transition: $transition;
+  font-size: 14px;
+  line-height: 150%;
+  width: fit-content;
 }
 
 /////////////////////
@@ -442,17 +510,18 @@ section + section {
   }
 }
 
-.tabs {
+.tabs, .filter-tabs, .doctor__links {
   padding: 8px;
   border-radius: 12px;
   background: $gray-subdied;
   @include flexAlignCenter;
   gap: 8px;
+  overflow-x: auto;
   width: fit-content;
 }
 
 button, div, a {
-  &.tab {
+  &.tab, &.filter-tab, .doctor__link {
     border-radius: 8px;
     padding: 4px 12px;
     transition: $transition;
@@ -477,6 +546,7 @@ button, div, a {
   li {
     @include flexAlignCenter;
     gap: 10px;
+
     &:before {
       content: '';
       width: 8px;
@@ -506,6 +576,14 @@ h1 {
   @include breakpoint(md) {
     font-size: 40px;
     letter-spacing: -1.2px;
+  }
+
+  &.not-main {
+    margin-bottom: 24px;
+
+    @include breakpoint(md) {
+      margin-bottom: 32px;
+    }
   }
 }
 

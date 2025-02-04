@@ -1,18 +1,16 @@
-extends /layout/layout
+extends ../layout/layout
 
 block title
     - var title = 'Страница 404'
     - var page = 'page-404'
 
 block main
-    include ../components/_breadcrumbs
-    +breadcrumbs('', '404')
     section.error-page
         .container
             .error-page__inner
-                p 404
-                p Страница не найдена
-                p Неправильно набран адрес или такой страницы не существует
-                .error-page__inner-buttons
-                    a(href='javascript:void(0)').btn.btn--primary Перейти на главную
-                    a(href='javascript:void(0)').btn.btn--secondary-orange Вернуться в каталог
+                .error-page__inner-image
+                    include ../../public/assets/images/404.svg
+                p Ошибка 404. Страница не найдена.
+                p Вы находитесь здесь, потому что ввели адрес страницы, которая уже не существует или была перемещена по другому адресу
+                .error-page__inner-button
+                    a(href='/').btn.btn--blue-dark Вернуться на главную

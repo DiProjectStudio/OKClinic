@@ -18,13 +18,13 @@
 }
 
 $container: var(--container);
-$max-width: var(--container-max-width);
+$max-container-width: var(--container-max-width);
 
 .container {
     margin: 0 auto;
     padding: 0 $container;
     position: relative;
     width: 100%;
-    max-width: $max-width;
+    max-width: $max-container-width;
     box-sizing: border-box;
 }

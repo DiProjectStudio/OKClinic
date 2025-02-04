@@ -11,6 +11,8 @@ import Header from "./includes/header.js";
 import Footer from './includes/footer.js';
 import {actualYear} from "./includes/actual-year.js";
 import Tabs from "./includes/tabs.js";
+import {inputClear} from "./includes/input-clear.js";
+import * as filters from "./includes/./filters.js";
 
 document.addEventListener('DOMContentLoaded', (event) => {
     getBrowserName();
@@ -21,7 +23,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     new Footer();
     actualYear();
     new Tabs();
-
+    inputClear();
+    filters.searchFilter();
+    filters.doctorsFilter();
 });
 
 // Если браузер определен, добавляем соответствующий класс к тегу html

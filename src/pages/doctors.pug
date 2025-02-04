@@ -1,0 +1,56 @@
+extends ../layout/layout
+
+block title
+    - title = 'Врачи'
+    - page = 'page-doctors'
+
+block main
+    include ../components/_breadcrumbs
+    section.doctors
+        +breadcrumbs('Врачи')
+        .container
+            h1.not-main Врачи
+            .doctors__inner
+                .doctors__inner-filter
+                    .doctors__inner-filter-title Выберите специализацию врача
+                    .doctors__inner-filter-items
+                        -
+                            var items = [
+                                "Терапевт", "Педиатр", "Гастроэнтеролог", "Невролог", "Кардиолог", "Гинеколог",
+                                "Проктолог", "Хирург", "Онколог", "Флеболог", "Гематолог", "Эндокринолог",
+                                "Травматолог", "Уролог", "Психолог", "Гематолог",
+                            ]
+                        each item in items
+                            .filter-item.tag-link.tag-link--with-uncheck
+                                span= item
+                                button.close-btn
+                                    include ../icons/icon_x-mark--blue.svg
+                .doctors__inner-results
+                    include ../components/_doctor-card
+                    -
+                        var specialists = [
+                            {
+                                name: "Филиппов Александр Олегович",
+                                specialization: "Врач - невролог, врач - остеопат"
+                            },
+                            {
+                                name: "Гиоева Лаура Валерьевна",
+                                specialization: "Невролог"
+                            },
+                            {
+                                name: "Егорова Екатерина Сергеевна",
+                                specialization: "Невролог, Кандидат медицинских наук"
+                            },
+                            {
+                                name: "Катенина Светлана Петровна",
+                                specialization: "Терапевт, гастроэнтеролог"
+                            }
+                        ]
+                    - var n = 16;
+
+                    while n > 0
+                        - var index = Math.floor(Math.random() * 4);
+                        +doctor-card(index, specialists[index].name, specialists[index].specialization)
+                        - n--;
+                include ../components/_pagination
+                include ../components/_seo-content

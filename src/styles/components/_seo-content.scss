@@ -1,0 +1,96 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+@use "../base/container" as *;
+
+.seo {
+  margin-top: 48px;
+
+  &__inner {
+
+    @include breakpoint(lg) {
+      display: grid;
+      grid-template-columns: 533px calc((100vw - $container * 2) / 12 * 6);
+      justify-content: space-between;
+    }
+
+    @include breakpoint(xl) {
+      grid-template-columns: 560px calc($max-container-width / 12 * 6);
+    }
+
+    &-main {
+      @include flexColumn;
+      gap: 32px;
+      margin-bottom: 24px;
+    }
+
+    &-content {
+
+    }
+  }
+
+  .h2-title {
+    font-size: 29px;
+    font-weight: 600;
+    line-height: 120%; /* 34.8px */
+    letter-spacing: -0.87px;
+
+    @include breakpoint(md) {
+      font-size: 33px;
+      letter-spacing: -0.99px;
+    }
+  }
+
+  &-image {
+    border-radius: 24px;
+    overflow: clip;
+    isolation: isolate;
+
+    @include breakpoint(md) {
+      border-radius: 32px;
+    }
+  }
+
+  p {
+    color: $gray-dark;
+    font-size: 14px;
+    line-height: 150%; /* 21px */
+
+    @include breakpoint(md) {
+      font-size: 16px;
+    }
+
+    & + div {
+      margin-top: 24px;
+    }
+
+    & + ul {
+      margin-top: 16px;
+    }
+  }
+
+  .h3-title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 120%; /* 28.8px */
+    letter-spacing: -0.48px;
+    margin-bottom: 16px;
+
+    @include breakpoint(md) {
+      font-size: 28px;
+      letter-spacing: -0.56px;
+    }
+  }
+
+  .h4-title {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 120%; /* 24px */
+    letter-spacing: -0.2px;
+    margin-bottom: 16px;
+
+    @include breakpoint(md) {
+      font-size: 23px;
+      letter-spacing: -0.23px;
+    }
+  }
+}

@@ -1,24 +1,41 @@
-.page-header {
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
 
-}
 
 .breadcrumbs {
+  @include breakpoint(md) {
+    margin-bottom: 8px;
+  }
 
+  @include breakpoint(lg) {
+    margin-top: 10px;
+  }
+
+  @include breakpoint(xl) {
+    margin-top: 24px;
+  }
 }
 
 .breadcrumbs-wrapper {
-
+  @include flexAlignCenter;
+  gap: 12px;
+  overflow-y: auto;
 }
 
 .breadcrumbs-item {
-
+  color: $blue-dark;
+  font-size: 13px;
+  line-height: 150%; /* 19.5px */
 }
 
 .breadcrumbs-item span {
-    user-select: none;
+  user-select: none;
+  color: $gray-dark;
 }
 
 .breadcrumbs-separator {
-
+  color: $gray-dark;
+  font-size: 13px;
+  line-height: 150%; /* 19.5px */
 }
 

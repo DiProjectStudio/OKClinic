@@ -1,0 +1,6 @@
+mixin doctor-card(index, name, specialization)
+    a(href='doctor.html').doctor-card__item
+        .doctor-card__item-image
+            +img(`specialists-${index + 1}.png`)
+        .doctor-card__item-name= name
+        .doctor-card__item-specialization= specialization

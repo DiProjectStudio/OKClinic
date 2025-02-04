@@ -1,27 +1,18 @@
-mixin breadcrumbs(title, ...items)
+mixin breadcrumbs(...items)
+    .breadcrumbs
+        .container
+            .breadcrumbs-wrapper
+                .breadcrumbs-item
+                    a(href='/') Главная
 
-    if page !== 'page-demo'
+                each item in items
 
-        .page-header
-
-            .breadcrumbs.swiper
-
-                .breadcrumbs-wrapper.swiper-wrapper
-
-                    .swiper-slide
+                    if item === items[items.length - 1]
+                        span.breadcrumbs-separator —
                         .breadcrumbs-item
-                            a(href='/') Главная
+                            span= item
 
-                    each item in items
-
-                        .swiper-slide
-
-                            if item === items[items.length - 1]
-                                span.breadcrumbs-separator /
-                                .breadcrumbs-item
-                                    span= item
-
-                            else
-                                span.breadcrumbs-separator /
-                                .breadcrumbs-item
-                                    a(href="#")= item
+                    else
+                        span.breadcrumbs-separator —
+                        .breadcrumbs-item
+                            a(href="#")= item

@@ -1,0 +1,52 @@
+@use "../base/mixins" as *;
+
+.error-page {
+  &__inner {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+
+    &-image {
+      width: 100%;
+      height: auto;
+      margin-bottom: 81px;
+
+      @include breakpoint(md) {
+        max-width: 384px;
+      }
+    }
+
+    p {
+      max-width: 675px;
+      &:first-of-type {
+        font-size: 33px;
+        font-weight: 600;
+        line-height: 120%; /* 39.6px */
+        letter-spacing: -0.99px;
+        margin-bottom: 16px;
+
+        @include breakpoint(md) {
+          font-size: 40px;
+          letter-spacing: -1.2px;
+          margin-bottom: 32px;
+        }
+      }
+
+      &:last-of-type {
+        font-size: 14px;
+        line-height: 150%; /* 21px */
+        margin-bottom: 24px;
+
+        @include breakpoint(md) {
+          font-size: 16px;
+          margin-bottom: 48px;
+        }
+      }
+    }
+
+    &-button .btn {
+      padding: 16px 32px;
+      font-size: 16px;
+    }
+  }
+}
