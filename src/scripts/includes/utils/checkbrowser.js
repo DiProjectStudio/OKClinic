@@ -1,3 +1,5 @@
+
+/** Проверяет браузер пользователя */
 export function getBrowserName() {
     const userAgent = navigator.userAgent;
 

@@ -1,0 +1,17 @@
+mixin tag-block(title, description, tags)
+
+    .tag-block.section-block
+        .tag-block__inner
+            .tag-block__inner-main
+                .tag-block__inner-main-top
+                    .tag-block__title.h2-title= title
+                    .tag-block__description= description
+                a(data-src='javascript:void(0)' data-fancybox).btn.btn--gray-subdied Запись на прием
+            .tag-block__inner-tags
+                each tag in tags
+                    a(data-src='javascript:void(0)').tag-link= tag
+        .tag-block__crossline
+            picture
+                source(srcset="assets/images/services-crossline-lg.png", media="(min-width: 1200px)")
+                source(srcset="assets/images/services-crossline-md.png", media="(min-width: 744px)")
+                +img('services-crossline-s.png')

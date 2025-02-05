@@ -1,0 +1,223 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.doctor {
+  &__inner {
+
+  }
+
+  &__links {
+    max-width: 100vw;
+    overflow-y: auto;
+  }
+
+
+  &__main {
+
+  }
+
+  .section-block + .section-block {
+    margin-top: 48px;
+
+    @include breakpoint(lg) {
+      margin-top: 64px;
+    }
+  }
+}
+
+.doctor__about {
+  &-content {
+    display: grid;
+    gap: 12px;
+    margin-top: 32px;
+
+    @include breakpoint(md) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: auto;
+    }
+
+    @include breakpoint(lg) {
+      grid-template-columns: 3fr 6fr 3fr;
+      grid-template-rows: 1fr;
+    }
+
+    &-image {
+      border-radius: 32px;
+      border: 1px solid $blue-secondary;
+      overflow: clip;
+    }
+
+    &-worker {
+      border-radius: 32px;
+      background: $gray-subdied;
+      padding: 22px 30px 82px;
+      position: relative;
+      @include flexColumn;
+      gap: 20px;
+
+      @include breakpoint(md) {
+        grid-row: 2 / 3;
+        grid-column: span 2;
+        padding: 32px 32px 92px;
+      }
+
+      @include breakpoint(lg) {
+        grid-row: unset;
+        grid-column: unset;
+        padding: 32px 32px 74px;
+      }
+
+      .worker__item {
+        gap: 8px;
+        display: none;
+
+        &-title {
+          line-height: 150%; /* 24px */
+        }
+
+        &-details {
+          color: $gray-dark;
+          font-size: 14px;
+          line-height: 150%; /* 21px */
+          @include textLimit(3);
+
+          @include breakpoint(md) {
+            font-size: 16px;
+          }
+        }
+
+        &:nth-child(2), &:nth-child(3) {
+          @include flexColumn;
+        }
+      }
+
+      .btn-zoom {
+        position: absolute;
+        left: 30px;
+        bottom: 22px;
+
+        @include breakpoint(md) {
+          left: 32px;
+          bottom: 32px;
+        }
+
+        @include breakpoint(lg) {
+          bottom: 14px;
+        }
+      }
+    }
+
+    &-details {
+      border-radius: 32px;
+      border: 1px solid $blue-secondary;
+      padding: 24px;
+      display: grid;
+      grid-template-rows: fit-content(100%) fit-content(100%) 1fr;
+      gap: 20px;
+      height: 100%;
+
+      .details__experience, .details__treating {
+        @include flexColumn;
+        gap: 8px;
+
+        p {
+          line-height: 150%; /* 24px */
+        }
+
+        ul {
+          @include flexColumn;
+          gap: 4px;
+
+          li {
+            color: $gray-dark;
+            line-height: 150%; /* 24px */
+          }
+        }
+      }
+
+      .details__buttons {
+        @include flexColumn;
+        gap: 8px;
+        align-self: flex-end;
+
+        .btn {
+          width: 100%;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+.doctor__education {
+  .h2-title {
+    margin-bottom: 24px;
+
+    @include breakpoint(md) {
+      margin-bottom: 32px;
+    }
+  }
+
+  .h4-title {
+    margin-bottom: 16px;
+
+    @include breakpoint(md) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &-block {
+    display: grid;
+    gap: 8px;
+
+    & + .doctor__education-block {
+      margin-top: 20px;
+    }
+
+    &-item {
+      display: grid;
+      gap: 4px;
+
+      @include breakpoint(md) {
+        grid-template-columns: 333px 1fr;
+      }
+
+      @include breakpoint(lg) {
+        grid-template-columns: 333px 674px;
+      }
+
+      p {
+        line-height: 150%; /* 21px */
+        &:first-child {
+
+        }
+
+        &:last-child {
+          color: $gray-dark;
+          font-size: 14px;
+
+          @include breakpoint(md) {
+            font-size: 16px;
+          }
+
+        }
+      }
+    }
+  }
+}
+
+.doctor__treatment {
+  .h2-title {
+    margin-bottom: 24px;
+
+    @include breakpoint(md) {
+      margin-bottom: 32px;
+    }
+  }
+
+  &-prices {
+    display: grid;
+    gap: 4px;
+  }
+}

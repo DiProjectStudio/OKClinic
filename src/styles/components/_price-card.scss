@@ -1,0 +1,16 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+
+.price-card {
+  border-radius: 16px;
+  background: $gray-subdied;
+  padding: 12px;
+
+  &__name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    line-height: 150%; /* 21px */
+  }
+}

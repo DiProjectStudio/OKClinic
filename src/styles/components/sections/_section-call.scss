@@ -17,7 +17,8 @@
     }
 
     @include breakpoint(lg) {
-      @include flexCenterBetween;
+      display: flex;
+      justify-content: space-between;
     }
 
     &-main {
@@ -28,7 +29,8 @@
       }
 
       @include breakpoint(lg) {
-        display: block;
+        display: grid;
+        justify-content: space-between;
         margin-bottom: 0;
       }
 
@@ -43,10 +45,17 @@
         @include breakpoint(lg) {
           margin-bottom: 32px;
           max-width: 337px;
+          align-self: flex-start;
         }
 
         @include breakpoint(xl) {
           max-width: 427px;
+        }
+      }
+
+      .btn {
+        @include breakpoint(lg) {
+          align-self: flex-end;
         }
       }
     }
@@ -58,16 +67,13 @@
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
-        max-width: 90%;
+        max-width: 585px;
       }
 
       @include breakpoint(lg) {
-        max-width: 60%;
+        max-width: 641px;
       }
 
-      @include breakpoint(xl) {
-        max-width: 50%;
-      }
     }
   }
 

@@ -1,6 +1,9 @@
+
+/** Функционал переключения табов со сменой контента */
 export default class Tabs {
-    constructor() {
-        this.tabsBlocks = document.querySelectorAll('[data-tabs-actions]');
+    constructor(selector) {
+        this.selector = selector;
+        this.tabsBlocks = document.querySelectorAll(this.selector);
         this.onInit();
     }
 

@@ -1,3 +1,5 @@
+
+/** Добавляет в футере актуальный год */
 export function actualYear() {
     const actualDate = new Date();
     const year = actualDate.getFullYear();

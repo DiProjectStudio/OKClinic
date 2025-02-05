@@ -1,3 +1,5 @@
+
+/** Функция клонирует слайды для выбранного слайдера для корректной работы */
 export function sliderClone(parent) {
     const allSlides = document.querySelectorAll(`${parent} .swiper-slide`);
     const slidesCount = allSlides.length;

@@ -1,6 +1,6 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination, Autoplay, FreeMode, Thumbs, Scrollbar, Grid } from 'swiper/modules';
-import { sliderClone } from './slider-clone.js';
+import { sliderClone } from './utils/slider-clone.js';
 
 export function initializeSlider() {
 

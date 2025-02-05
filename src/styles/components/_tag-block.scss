@@ -1,0 +1,140 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.tag-block {
+  border-radius: 24px;
+  background: $blue-dark;
+  padding: 24px;
+  position: relative;
+  z-index: 1;
+
+  @include breakpoint(md) {
+    padding: 32px;
+    border-radius: 32px;
+  }
+
+  &__title {
+    color: $white;
+    margin-bottom: 16px;
+  }
+
+  &__description {
+    color: $white-subdied;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 21px */
+  }
+
+  &__inner {
+
+    @include breakpoint(lg) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-main {
+      @include breakpoint(md) {
+        @include flexCenterBetween;
+        margin-bottom: 24px;
+      }
+
+      @include breakpoint(lg) {
+        display: grid;
+        justify-content: space-between;
+        margin-bottom: 0;
+      }
+
+      &-top {
+        max-width: 427px;
+        margin-bottom: 32px;
+
+        @include breakpoint(md) {
+          margin-bottom: 0;
+        }
+
+        @include breakpoint(lg) {
+          margin-bottom: 32px;
+          max-width: 337px;
+          align-self: flex-start;
+        }
+
+        @include breakpoint(xl) {
+          max-width: 427px;
+        }
+      }
+    }
+
+    &-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      height: fit-content;
+
+      @include breakpoint(lg) {
+        max-width: 542px;
+      }
+
+      @include breakpoint(xl) {
+        max-width: 641px;
+      }
+
+      .tag-link {
+        text-wrap: nowrap;
+        text-overflow: ellipsis;
+        max-width: 100%;
+        overflow: hidden;
+      }
+    }
+    .btn {
+      font-size: 13px;
+      padding: 14px 32px;
+      border-radius: 12px;
+      display: none;
+      width: 100%;
+
+      @include breakpoint(md) {
+        padding: 18px 32px;
+        display: flex;
+        width: fit-content;
+        font-size: 16px;
+      }
+
+      @include breakpoint(lg) {
+        font-size: 16px;
+        align-self: flex-end;
+      }
+
+      &.clone {
+        display: flex;
+        margin-top: 24px;
+
+        @include breakpoint(md) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__crossline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -2;
+
+    @include breakpoint(md) {
+      left: unset;
+      right: 0;
+    }
+
+    @include breakpoint(lg) {
+      right: 180px;
+    }
+
+    @include breakpoint(xl) {
+      right: 385px;
+    }
+  }
+}

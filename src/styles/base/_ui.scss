@@ -321,6 +321,37 @@ input[type="number"] {
   }
 }
 
+.btn-zoom {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: $white;
+  @include flexCenterCenter;
+  cursor: pointer;
+
+
+  &--in, &--out {
+    &:before {
+      content: '';
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
+  }
+
+  &--in {
+    &:before {
+      background: url("../icons/icon_zoom-in.svg") no-repeat center;
+    }
+  }
+
+  &--out {
+    &:before {
+      background: url("../icons/icon_zoom-out.svg") no-repeat center;
+    }
+  }
+}
+
 .arrow-prev, .arrow-next {
   border-radius: 8px;
   background: $gray-subdied;
@@ -367,7 +398,7 @@ a {
   display: inline-block;
 }
 
-.arrow-link {
+.arrow-up-link {
   width: 48px;
   height: 48px;
   @include flexCenterCenter;
@@ -381,7 +412,7 @@ a {
     height: 24px;
   }
 
-  &.arrow-link--white {
+  &.arrow-up-link--white {
     background: $white;
 
     &:after {
@@ -393,7 +424,7 @@ a {
     }
   }
 
-  &.arrow-link--blue {
+  &.arrow-up-link--blue {
     background: $blue-dark;
 
     &:after {
@@ -403,6 +434,22 @@ a {
     &:hover {
       background: $blue-lite;
     }
+  }
+
+  &.arrow-up-link--black {
+    background: $white;
+
+    &:after {
+      background: url("../icons/icon_arrow-up-right--black.svg") no-repeat center;
+
+    }
+
+    //&:hover {
+    //  background: $blue-dark;
+    //  &:after {
+    //    background: url("../icons/icon_arrow-up-right--white.svg") no-repeat center;
+    //  }
+    //}
   }
 }
 
@@ -424,6 +471,7 @@ a {
   font-size: 14px;
   line-height: 150%;
   width: fit-content;
+  height: fit-content;
 
   @include breakpoint(md) {
     font-size: 16px;
@@ -480,6 +528,7 @@ a {
   font-size: 14px;
   line-height: 150%;
   width: fit-content;
+  height: fit-content;
 }
 
 /////////////////////
@@ -529,6 +578,7 @@ button, div, a {
     line-height: 150%; /* 24px */
     cursor: pointer;
     background: transparent;
+    text-wrap: nowrap;
 
     &:hover {
       background: $white;
@@ -632,6 +682,43 @@ h1 {
 
   @include breakpoint(md) {
     font-size: 16px;
+  }
+}
+
+.h2-title {
+  font-size: 29px;
+  font-weight: 600;
+  line-height: 120%; /* 34.8px */
+  letter-spacing: -0.87px;
+
+  @include breakpoint(md) {
+    font-size: 33px;
+    letter-spacing: -0.99px;
+  }
+}
+
+.h3-title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 120%; /* 28.8px */
+  letter-spacing: -0.48px;
+
+  @include breakpoint(md) {
+    font-size: 28px;
+    letter-spacing: -0.56px;
+  }
+}
+
+.h4-title {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 24px */
+  letter-spacing: -0.2px;
+
+  @include breakpoint(md) {
+    font-size: 23px;
+    letter-spacing: -0.23px;
   }
 }
 

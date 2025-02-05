@@ -1,6 +1,6 @@
-import Overlay from "./overlay.js";
+import Overlay from "../../utils/overlay.js";
 
-export default class Header {
+export default class HeaderModule {
     constructor() {
         this.clickWrapper = document.getElementById("clickWrapper");
         this.headerElement = document.getElementById("header");

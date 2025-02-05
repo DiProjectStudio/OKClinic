@@ -3,29 +3,24 @@ import Inputmask from 'inputmask';
 // import './includes/jquery-pincode-autotab.js';
 
 // Import Scripts
-import { getBrowserName } from './includes/checkbrowser.js';
-import { initializeMap } from './includes/map.js';
-import { initializePopup } from './includes/popup.js';
-import { initializeSlider } from './includes/slider.js';
-import Header from "./includes/header.js";
-import Footer from './includes/footer.js';
-import {actualYear} from "./includes/actual-year.js";
-import Tabs from "./includes/tabs.js";
-import {inputClear} from "./includes/input-clear.js";
-import * as filters from "./includes/./filters.js";
+import {getBrowserName} from './includes/utils/checkbrowser.js';
+import {initializeMap} from './includes/map.js';
+import {initializePopup} from './includes/popup.js';
+import {initializeSlider} from './includes/slider.js';
+import {actualYear} from "./includes/utils/actual-year.js";
+import App from "./includes/modules/app.js";
+import Tabs from "./includes/utils/tabs.js";
+import {buttonTagBlockClone} from "./includes/utils/tag-block.js";
 
 document.addEventListener('DOMContentLoaded', (event) => {
     getBrowserName();
     initializeMap();
     initializePopup();
     initializeSlider();
-    new Header();
-    new Footer();
     actualYear();
-    new Tabs();
-    inputClear();
-    filters.searchFilter();
-    filters.doctorsFilter();
+    new Tabs('[data-tabs-actions]');
+    buttonTagBlockClone()
+    new App();
 });
 
 // Если браузер определен, добавляем соответствующий класс к тегу html

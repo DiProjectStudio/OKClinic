@@ -1,0 +1,71 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.doctor-info {
+  display: none;
+  border-radius: 32px;
+  background: $gray-subdied;
+  padding: 24px 24px 84px;
+  position: relative;
+  color: $black;
+
+  @include breakpoint(md) {
+    padding: 32px 32px 92px;
+  }
+
+  @include breakpoint(lg) {
+    max-width: 574px;
+  }
+
+  @include breakpoint(xl) {
+    max-width: 674px;
+  }
+
+
+  &__inner {
+    @include flexColumn;
+    gap: 20px;
+  }
+
+  .worker__item {
+    gap: 8px;
+    @include flexColumn;
+
+    &-title {
+      line-height: 150%; /* 24px */
+      font-size: 14px;
+      font-weight: 400;
+
+      @include breakpoint(md) {
+        font-size: 16px;
+      }
+    }
+
+    &-details {
+      color: $gray-dark;
+      font-size: 14px;
+      line-height: 150%; /* 21px */
+      font-weight: 400;
+
+      @include breakpoint(md) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .f-button.is-close-btn {
+    display: none;
+  }
+
+  .btn-zoom {
+    position: absolute;
+    left: 24px;
+    bottom: 24px;
+
+    @include breakpoint(md) {
+      left: 32px;
+      bottom: 32px;
+    }
+  }
+}
+
