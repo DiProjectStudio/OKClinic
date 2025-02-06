@@ -5,11 +5,24 @@
 .review {
   border-radius: 24px;
   background: $gray-subdied;
-  max-width: 328px;
   width: 100%;
   padding: 20px;
+  min-height: 100%;
+  display: grid;
+
+
+  @include breakpoint(md) {
+    padding: 32px;
+    border-radius: 32px;
+  }
+
+  &.hide-zoom-in {
+
+  }
 
   &__inner {
+    display: grid;
+    grid-template-rows: fit-content(100%) fit-content(100%) 1fr;
     &-top {
       @include flexCenterBetween;
       margin-bottom: 12px;
@@ -44,20 +57,39 @@
         }
       }
     }
+
+    .btn-zoom {
+      margin-top: 16px;
+      display: none;
+      align-self: flex-end;
+    }
+
   }
 
   .tab-content {
     display: none;
+    align-self: flex-end;
 
     p {
       color: $gray-dark;
       line-height: 150%; /* 24px */
-      @include textLimit(6);
+      @include textLimit(5);
+
+      @include breakpoint(md) {
+        @include textLimit(4);
+      }
+
+      @include breakpoint(lg) {
+        @include textLimit(5);
+      }
+      @include breakpoint(xl) {
+        @include textLimit(6);
+      }
     }
 
-    &[data-content='video'] {
+
+    video, iframe {
       border-radius: 12px;
-      overflow: clip;
     }
 
 
@@ -66,8 +98,5 @@
     }
   }
 
-  .btn-zoom {
-    margin-top: 16px;
-    display: none;
-  }
+
 }

@@ -7,11 +7,11 @@ export default class ReviewComponent {
     }
 
     onInit() {
-        const that = this;
         if (this.reviewItems) {
             this.reviewItems.forEach((reviewItem) => {
-                reviewItem.addEventListener("click", function () {
-                    that.hideZoomButton(this);
+                this.hideZoomButton(reviewItem);
+                reviewItem.addEventListener("click", () => {
+                    this.hideZoomButton(reviewItem);
                 });
 
                 this.makeActiveSingleTab(reviewItem);
@@ -19,12 +19,13 @@ export default class ReviewComponent {
         }
 
     }
+
     /** Скрывает кнопку открытия полного текста
      * комментария при выборе таба видео */
     hideZoomButton(reviewItem) {
         const videoTab = reviewItem.querySelector("[data-tab='video']");
         const zoomButton = reviewItem.querySelector(".btn-zoom.btn-zoom--in");
-        if (videoTab.classList.contains("active")) {
+        if (videoTab && videoTab.classList.contains("active")) {
             zoomButton.style.display = "none";
         } else {
             zoomButton.style.display = "flex";
@@ -38,4 +39,6 @@ export default class ReviewComponent {
             reviewTabs[0].classList.add("active");
         }
     }
+
+
 }

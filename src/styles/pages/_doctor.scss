@@ -252,4 +252,19 @@
       }
     }
   }
+
+  &-wrapper {
+    margin-right: -16px;
+
+    @include breakpoint(md) {
+      margin-right: unset;
+    }
+
+    .swiper-slide {
+      height: unset;
+    }
+
+  }
+
+
 }

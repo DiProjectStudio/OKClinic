@@ -14,11 +14,11 @@ mixin review(type)
                         button(data-tab='video').tab.active
                             include ../icons/icon_review-video.svg
                     if type === "text"
-                        button(data-tab='text').tab
+                        button(data-tab='text').tab.active
                             include ../icons/icon_review-text.svg
 
             .review__inner-content
-                .tab-content.showed(data-content='video')
+                .tab-content(data-content='video')
                     video(muted='true' controls src='assets/images/demo.mp4')
                 .tab-content(data-content='text')
                     p.
@@ -28,4 +28,21 @@ mixin review(type)
                         состояния. Работа разных специалистов в команде дала
                         отличный результат. Спасибо вам за ваш профессионализм и
                         индивидуальный подход!
-            button.btn-zoom.btn-zoom--in
+                        <br>
+                        <br>
+                        Lörem ipsum dekadade spessa dol nyrat. Supras
+                        pronäliga eller miledes, pånera semiss bende.
+                        Prens vik ett matyk punade så krora. Diasamma
+                        epiplande, iliga nälig pred. Mitässade val,
+                        rynde. Benera kabibel völig migon mol. Olålassade
+                        ryktig kyssa filostik. Tärynänisk vören i odenat med
+                        segasm vint. Krovaktigt. Mibel tölig. Epilysa oska då
+                        transism mityning tills astrora kvasisade. Nissa antis.
+                        Du kan vara drabbad.
+            button(data-src='#reviewPopup' data-fancybox).btn-zoom.btn-zoom--in
+        .review-popup#reviewPopup
+            .review-popup-name Марина Васильевна
+            .review-popup-text
+            button.btn-zoom.btn-zoom--out
+
+

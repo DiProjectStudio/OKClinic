@@ -174,10 +174,14 @@ block main
                             .swiper-nav
                                 button.arrow-prev
                                 button.arrow-next
-                    .doctor__reviews-wrapper
-                        include ../components/_review
-                        - var reviewTypes = ["default", "text", "video"];
-                        each type in reviewTypes
-                            +review(type)
+                    .doctor__reviews-wrapper.reviews-slider.swiper
+                        .swiper-wrapper
+
+                            include ../components/_review
+                            - var reviewTypes = ["default", "text", "video"];
+
+                            each type in reviewTypes
+                                .swiper-slide
+                                    +review(type)
 
 

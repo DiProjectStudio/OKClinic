@@ -1,6 +1,6 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination, Autoplay, FreeMode, Thumbs, Scrollbar, Grid } from 'swiper/modules';
-import { sliderClone } from './utils/slider-clone.js';
+import {Navigation, Pagination, Autoplay, FreeMode, Thumbs, Scrollbar, Grid} from 'swiper/modules';
+import {sliderClone} from './utils/slider-clone.js';
 
 export function initializeSlider() {
 
@@ -23,8 +23,8 @@ export function initializeSlider() {
             }
         }
     });
-    sliderClone('.specialists__inner-slider .swiper');
 
+    sliderClone('.specialists__inner-slider .swiper');
     const specialistsSlider = new Swiper('.specialists__inner-slider .swiper', {
         modules: [Navigation, Grid],
         slidesPerView: 1,
@@ -49,6 +49,26 @@ export function initializeSlider() {
                 grid: {
                     rows: 1
                 },
+                spaceBetween: 12,
+            }
+        }
+    });
+    sliderClone('.doctor__reviews .swiper');
+    const reviewsSlider = new Swiper('.doctor__reviews .swiper', {
+        modules: [Navigation],
+        slidesPerView: 1.05,
+        spaceBetween: 4,
+        navigation: {
+            prevEl: '.doctor__reviews .arrow-prev',
+            nextEl: '.doctor__reviews .arrow-next'
+        },
+        breakpoints: {
+            744: {
+                slidesPerView: 2,
+                spaceBetween: 12,
+            },
+            1200: {
+                slidesPerView: 3,
                 spaceBetween: 12,
             }
         }
