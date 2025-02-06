@@ -1,0 +1,31 @@
+mixin review(type)
+
+    .review
+        .review__inner(data-tabs-actions)
+            .review__inner-top
+                .review__inner-top-name Марина Васильевна
+                .review__inner-top-tabs.tabs
+                    if type === "default"
+                        button(data-tab='video').tab.active
+                            include ../icons/icon_review-video.svg
+                        button(data-tab='text').tab
+                            include ../icons/icon_review-text.svg
+                    if type === "video"
+                        button(data-tab='video').tab.active
+                            include ../icons/icon_review-video.svg
+                    if type === "text"
+                        button(data-tab='text').tab
+                            include ../icons/icon_review-text.svg
+
+            .review__inner-content
+                .tab-content.showed(data-content='video')
+                    video(muted='true' controls src='assets/images/demo.mp4')
+                .tab-content(data-content='text')
+                    p.
+                        Клиника Ок.Клиник - это место, где действительно
+                        заботятся о здоровье. Мне была предложена комплексная
+                        программа лечения, учитывающая все особенности моего
+                        состояния. Работа разных специалистов в команде дала
+                        отличный результат. Спасибо вам за ваш профессионализм и
+                        индивидуальный подход!
+            button.btn-zoom.btn-zoom--in

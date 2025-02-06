@@ -166,3 +166,18 @@ block main
                         each priceName in priceNames
                             +priceCard(priceName)
 
+                .doctor__reviews.section-block
+                    .doctor__reviews-top
+                        .h2-title Отзывы
+                        .doctor__reviews-top-nav
+                            a(href='doctors.html').btn.btn--transparent-blue-secondary Все отзывы
+                            .swiper-nav
+                                button.arrow-prev
+                                button.arrow-next
+                    .doctor__reviews-wrapper
+                        include ../components/_review
+                        - var reviewTypes = ["default", "text", "video"];
+                        each type in reviewTypes
+                            +review(type)
+
+

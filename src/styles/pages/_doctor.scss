@@ -219,5 +219,37 @@
   &-prices {
     display: grid;
     gap: 4px;
+
+    @include breakpoint(md) {
+      gap: 12px;
+    }
+  }
+}
+
+.doctor__reviews {
+  &-top {
+    @include flexColumn;
+    gap: 24px;
+    margin-bottom: 16px;
+
+    @include breakpoint(md) {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: unset;
+      margin-bottom: 32px;
+    }
+
+    &-nav {
+      @include flexCenterBetween;
+
+      @include breakpoint(md) {
+        gap: 16px;
+      }
+
+      .swiper-nav {
+        @include flexAlignCenter;
+        gap: 8px;
+      }
+    }
   }
 }

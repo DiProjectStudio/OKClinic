@@ -11,16 +11,19 @@ import {actualYear} from "./includes/utils/actual-year.js";
 import App from "./includes/modules/app.js";
 import Tabs from "./includes/utils/tabs.js";
 import {buttonTagBlockClone} from "./includes/utils/tag-block.js";
+import ReviewComponent from "./includes/components/review.component.js";
 
 document.addEventListener('DOMContentLoaded', (event) => {
+    new App();
     getBrowserName();
     initializeMap();
     initializePopup();
     initializeSlider();
     actualYear();
     new Tabs('[data-tabs-actions]');
+    new ReviewComponent();
     buttonTagBlockClone()
-    new App();
+
 });
 
 // Если браузер определен, добавляем соответствующий класс к тегу html
