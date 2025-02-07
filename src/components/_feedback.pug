@@ -1,0 +1,27 @@
+section.feedback
+    .container
+        .feedback-wrap
+            .feedback-form
+                .feedback-form-wrap
+                    .feedback-form-wrap__top
+                        .h3-title Свяжитесь с нами по телефону
+                        a(href='tel:78129892424').h4-title.feedback-form__top-tel + 7 812 989-24-24
+                    .feedback-form-wrap-text Или закажите  обратный звонок, введите номер и дождитесь ответа оператора.
+                    form.form-feedback
+                        input(type="tel" placeholder='Введите номер телефона' data-phone-number).input
+                        button.btn.btn--blue-dark Заказать обратный звонок
+                    .feedback-form__bottom
+                        p Нажимая кнопку «Заказать обратный звонок», вы соглашаетесь с <a href='policy.html'>политикой обработкой персональных данных</a>
+
+            .feedback-booking
+                .feedback-booking-wrap
+                    .feedback-booking__top
+                        .h3-title Запишитесь на прием онлайн
+                        .feedback-booking__top-text Вы будете перенаправлены на систему автоматической записи
+                    button.btn.btn--white Войти и выбрать время
+                    p В системы вы можете записаться в клинику, вызвать врача на дом, посмотреть свою анализы
+                picture
+                    source(srcset="assets/images/feedback-cross-line-xl.png", media="(min-width: 1600px)")
+                    source(srcset="assets/images/feedback-cross-line-lg.png", media="(min-width: 1200px)")
+                    source(srcset="assets/images/feedback-cross-line-md.png", media="(min-width: 744px)")
+                    +img('feedback-cross-line-s.png')

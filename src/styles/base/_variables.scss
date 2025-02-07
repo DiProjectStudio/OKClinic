@@ -10,6 +10,7 @@
   --color-blue-secondary: #C2E8FF;
   --color-blue-subdied: #E4EEF4;
   --color-wf-fw-dark: #404751;
+  --color-wf-fw-subdied: #F4F5F6;
   --transition-style: all 0.3s ease-in-out;
 }
 
@@ -24,4 +25,5 @@ $blue-lite: var(--color-blue-lite);
 $blue-secondary: var(--color-blue-secondary);
 $blue-subdied: var(--color-blue-subdied);
 $wf-wf-dark: var(--color-wf-fw-dark);
+$wf-fw-subdied: var(--color-wf-fw-subdied);
 $transition: var(--transition-style);

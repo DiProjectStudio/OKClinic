@@ -12,17 +12,7 @@
   }
 
 
-  &__main {
 
-  }
-
-  .section-block + .section-block {
-    margin-top: 48px;
-
-    @include breakpoint(lg) {
-      margin-top: 64px;
-    }
-  }
 }
 
 .doctor__about {

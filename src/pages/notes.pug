@@ -1,0 +1,25 @@
+extends ../layout/layout
+
+block title
+    - title = 'Справки'
+    - page = 'page-notes'
+
+block main
+    include ../components/_breadcrumbs
+    section.notes-main
+        +breadcrumbs('Услуги', 'Справки')
+        .container
+            .notes-main__inner
+                .notes-main__inner-top
+                    h1.not-main Справки
+                    p.
+                        У нас в кратчайшие сроки можно пройти медицинское
+                        обследование (консультации нужных специалистов,
+                        анализы, флюорографию и т.д.) для получения
+                        медицинских справок и других официальных
+                        медицинских документов.
+
+                    .notes-main__inner-top-image
+                        +img('notes-doctor.png')
+                    .notes-main__inner-top-crosses
+                        +img('crosses-1.png')

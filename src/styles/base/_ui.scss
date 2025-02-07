@@ -3,6 +3,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding: 100px;
 }
 
 body {
@@ -511,6 +512,7 @@ a {
 
     &.active {
       cursor: default;
+
       button {
         @include flexCenterCenter;
       }
@@ -551,13 +553,16 @@ img {
   object-fit: cover;
 }
 
-section + section {
-  margin-top: 48px;
+section {
+  & + .section-block, & + section {
+    margin-top: 48px;
 
-  @include breakpoint(md) {
-    margin-top: 64px;
+    @include breakpoint(md) {
+      margin-top: 64px;
+    }
   }
 }
+
 
 .tabs, .filter-tabs, .doctor__links {
   padding: 8px;
@@ -672,6 +677,27 @@ h1 {
     @include breakpoint(xl) {
       @include columnCountMaxXlWidth(6);
     }
+  }
+
+  &.section-top--with-btn {
+    margin-bottom: 16px;
+
+    @include breakpoint(md) {
+      @include flexCenterBetween;
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      margin-bottom: 16px;
+
+      @include breakpoint(md) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .btn {
+    font-size: 13px;
   }
 }
 

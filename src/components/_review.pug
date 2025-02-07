@@ -1,9 +1,9 @@
-mixin review(type)
+mixin review(type, name, text, index)
 
     .review
         .review__inner(data-tabs-actions)
             .review__inner-top
-                .review__inner-top-name Марина Васильевна
+                .review__inner-top-name= name
                 .review__inner-top-tabs.tabs
                     if type === "default"
                         button(data-tab='video').tab.active
@@ -21,28 +21,14 @@ mixin review(type)
                 .tab-content(data-content='video')
                     video(muted='true' controls src='assets/images/demo.mp4')
                 .tab-content(data-content='text')
-                    p.
-                        Клиника Ок.Клиник - это место, где действительно
-                        заботятся о здоровье. Мне была предложена комплексная
-                        программа лечения, учитывающая все особенности моего
-                        состояния. Работа разных специалистов в команде дала
-                        отличный результат. Спасибо вам за ваш профессионализм и
-                        индивидуальный подход!
-                        <br>
-                        <br>
-                        Lörem ipsum dekadade spessa dol nyrat. Supras
-                        pronäliga eller miledes, pånera semiss bende.
-                        Prens vik ett matyk punade så krora. Diasamma
-                        epiplande, iliga nälig pred. Mitässade val,
-                        rynde. Benera kabibel völig migon mol. Olålassade
-                        ryktig kyssa filostik. Tärynänisk vören i odenat med
-                        segasm vint. Krovaktigt. Mibel tölig. Epilysa oska då
-                        transism mityning tills astrora kvasisade. Nissa antis.
-                        Du kan vara drabbad.
-            button(data-src='#reviewPopup' data-fancybox).btn-zoom.btn-zoom--in
-        .review-popup#reviewPopup
-            .review-popup-name Марина Васильевна
-            .review-popup-text
-            button.btn-zoom.btn-zoom--out
+                    p= text
+
+            button(data-src=`#reviewPopup-${index + 1}` data-fancybox).btn-zoom.btn-zoom--in
+        .review-popup(id=`reviewPopup-${index + 1}`)
+            .review-popup__inner
+                .review-popup-name= name
+                .review-popup-text
+                    p= text
+                button(data-fancybox-close).btn-zoom.btn-zoom--out
 
 

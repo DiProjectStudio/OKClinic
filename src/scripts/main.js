@@ -14,7 +14,7 @@ import {buttonTagBlockClone} from "./includes/utils/tag-block.js";
 import ReviewComponent from "./includes/components/review.component.js";
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    new App();
+
     getBrowserName();
     initializeMap();
     initializePopup();
@@ -22,7 +22,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     actualYear();
     new Tabs('[data-tabs-actions]');
     new ReviewComponent();
-    buttonTagBlockClone()
+    buttonTagBlockClone();
+    new App();
 
 });
 
@@ -37,7 +38,7 @@ if (browser) {
 Inputmask({
     mask: '+7 (999) 999-99-99',
     showMaskOnHover: false,
-    showMaskOnFocus: false,
+    showMaskOnFocus: true,
 
     onBeforePaste: (pastedValue, opts) => {
         return pastedValue.replace(/^8/, '');

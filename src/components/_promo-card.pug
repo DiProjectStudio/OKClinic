@@ -1,0 +1,13 @@
+mixin promo-card(name, descr, index)
+    a(href='javascript:void(0)').promo-card__item
+        .promo-card__item-crosses
+            +img('crosses.png')
+        .promo-card-wrap
+            .h4-title.promo-card__item-name= name
+            .promo-card__item-descr= descr
+            .promo-card__item__prices
+                span 14 200 ₽
+                span 21 800 ₽
+            .promo-card-btn.arrow-up-link.arrow-up-link--white
+        .promo-card__item-image
+            +img(`promo-${index + 1}.png`)

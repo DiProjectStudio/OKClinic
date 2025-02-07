@@ -13,7 +13,6 @@ export default class ReviewComponent {
                 reviewItem.addEventListener("click", () => {
                     this.hideZoomButton(reviewItem);
                 });
-
                 this.makeActiveSingleTab(reviewItem);
             })
         }
@@ -39,6 +38,5 @@ export default class ReviewComponent {
             reviewTabs[0].classList.add("active");
         }
     }
-
 
 }

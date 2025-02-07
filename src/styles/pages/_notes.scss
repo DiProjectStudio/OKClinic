@@ -1,0 +1,77 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.notes-main {
+  &__inner {
+    display: grid;
+    gap: 12px;
+
+    @include breakpoint(lg) {
+      grid-template-columns: 9fr 3fr;
+    }
+    &-top {
+      border-radius: 24px;
+      background: $wf-fw-subdied;
+      padding: 24px;
+      display: grid;
+      position: relative;
+      z-index: 1;
+
+      @include breakpoint(md) {
+        padding: 32px;
+        border-radius: 32px;
+      }
+
+      .not-main {
+        margin-bottom: 16px;
+
+        @include breakpoint(md) {
+          margin-bottom: 24px;
+        }
+      }
+
+      p {
+        color: $wf-wf-dark;
+        line-height: 150%; /* 24px */
+        margin-bottom: 193px;
+
+        @include breakpoint(md) {
+          margin-bottom: 0;
+          max-width: 376px;
+        }
+      }
+
+      &-image {
+        width: 200px;
+        height: 185px;
+        margin-top: 8px;
+        position: absolute;
+        z-index: 0;
+        bottom: 0;
+        right: 0;
+
+        @include breakpoint(md) {
+          width: 260px;
+          height: 240px;
+        }
+      }
+
+      &-crosses {
+        position: absolute;
+        z-index: -1;
+        width: 163px;
+        height: 152px;
+        left: 24px;
+        bottom: 33px;
+
+        @include breakpoint(md) {
+          width: 245px;
+          height: 228px;
+          right: 43px;
+          bottom: 18px;
+          left: unset;
+        }
+      }
+    }
+  }
+}

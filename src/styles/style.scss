@@ -24,12 +24,15 @@
 @use "components/price-card";
 @use "components/review";
 @use "components/feedback";
+@use "components/note-card";
 
 @use 'pages/index';
 @use 'pages/error404';
 @use 'pages/search';
 @use 'pages/doctors';
 @use 'pages/doctor';
+@use 'pages/services';
+@use 'pages/notes';
 
 
 
