@@ -9,9 +9,8 @@ import {initializePopup} from './includes/popup.js';
 import {initializeSlider} from './includes/slider.js';
 import {actualYear} from "./includes/utils/actual-year.js";
 import App from "./includes/modules/app.js";
-import Tabs from "./includes/utils/tabs.js";
 import {buttonTagBlockClone} from "./includes/utils/tag-block.js";
-import ReviewComponent from "./includes/components/review.component.js";
+import tabActions from './includes/utils/tabs.js';
 
 document.addEventListener('DOMContentLoaded', (event) => {
 
@@ -20,8 +19,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     initializePopup();
     initializeSlider();
     actualYear();
-    new Tabs('[data-tabs-actions]');
-    new ReviewComponent();
+    tabActions();
     buttonTagBlockClone();
     new App();
 
