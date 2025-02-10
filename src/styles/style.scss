@@ -25,6 +25,7 @@
 @use "components/review";
 @use "components/feedback";
 @use "components/note-card";
+@use "components/advantages-block";
 
 @use 'pages/index';
 @use 'pages/error404';
@@ -33,6 +34,8 @@
 @use 'pages/doctor';
 @use 'pages/services';
 @use 'pages/notes';
+@use 'pages/note';
+
 
 
 

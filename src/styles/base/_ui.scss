@@ -31,6 +31,10 @@ body.compensate-for-scrollbar {
 main {
   min-height: calc(max(calc(100vh - 614px), 350px));
   overflow: hidden;
+
+  @include breakpoint(lg) {
+    overflow: visible;
+  }
 }
 
 .hide {
@@ -564,7 +568,7 @@ section {
 }
 
 
-.tabs, .filter-tabs, .doctor__links {
+.tabs, .filter-tabs, .anchor-links {
   padding: 8px;
   border-radius: 12px;
   background: $gray-subdied;
@@ -572,10 +576,11 @@ section {
   gap: 8px;
   overflow-x: auto;
   width: fit-content;
+  max-width: 100vw;
 }
 
 button, div, a {
-  &.tab, &.filter-tab, .doctor__link {
+  &.tab, &.filter-tab, .anchor-link {
     border-radius: 8px;
     padding: 4px 12px;
     transition: $transition;

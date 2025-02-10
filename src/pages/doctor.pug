@@ -6,17 +6,17 @@ block title
 
 block main
     include ../components/_breadcrumbs
+    +breadcrumbs('Врачи', 'Катенина Светлана Петровна')
     section.doctor
-        +breadcrumbs('Врачи', 'Катенина Светлана Петровна')
         .container
             .doctor__inner
                 h1.not-main Катенина Светлана Петровна
-                .doctor__links
-                    a(href='#about').doctor__link.active О враче
-                    a(href='#education').doctor__link Образование и опыт
-                    a(href='#specialization').doctor__link Специализация
-                    a(href='#treatment').doctor__link Лечение
-                    a(href='#reviews').doctor__link Отзывы ()
+                .doctor__links.anchor-links
+                    a(href='#about').anchor-link.active О враче
+                    a(href='#education').anchor-link Образование и опыт
+                    a(href='#specialization').anchor-link Специализация
+                    a(href='#treatment').anchor-link Лечение
+                    a(href='#reviews').anchor-link Отзывы ()
     section.doctor__about#about
         .container
             .h2-title О враче

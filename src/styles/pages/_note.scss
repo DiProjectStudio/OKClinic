@@ -1,0 +1,353 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.note-wrapper {
+  margin-bottom: 48px;
+
+  @include breakpoint(md) {
+    margin-bottom: 64px;
+  }
+
+  &__inner {
+    @include breakpoint(lg) {
+      display: grid;
+      grid-template-columns: 9fr 3fr;
+      gap: 12px;
+    }
+  }
+
+  &__main {
+    .note-main__price {
+      display: grid;
+
+      @include breakpoint(lg) {
+        display: none;
+      }
+    }
+  }
+
+  &__rightside {
+
+    .note-main__price {
+      display: none;
+
+      @include breakpoint(lg) {
+        display: grid;
+        position: sticky;
+        top: 125px;
+        overflow: unset;
+      }
+
+      @include breakpoint(xl) {
+        top: 151px;
+      }
+    }
+  }
+}
+
+.note-main {
+  &__inner {
+
+
+    .anchor-links {
+      margin-top: 32px;
+    }
+  }
+}
+
+
+.note-main__price {
+  gap: 24px;
+  border-radius: 24px;
+  border: 1px solid $blue-secondary;
+  padding: 24px;
+
+  @include breakpoint(md) {
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 32px;
+    padding: 32px;
+  }
+
+  @include breakpoint(lg) {
+    grid-template-columns: 1fr;
+  }
+
+  &-top {
+    display: grid;
+    gap: 16px;
+    grid-auto-rows: fit-content(100%);
+
+    @include breakpoint(md) {
+      gap: 24px;
+    }
+
+    @include breakpoint(lg) {
+      gap: 20px;
+    }
+
+    p {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 120%; /* 24px */
+      letter-spacing: -0.2px;
+    }
+
+    ul {
+      display: grid;
+      gap: 8px;
+
+      li {
+        color: $gray-dark;
+        line-height: 150%; /* 24px */
+      }
+    }
+  }
+
+  &-bottom {
+    display: grid;
+    gap: 12px;
+
+    @include breakpoint(md) {
+      justify-self: flex-end;
+    }
+
+    @include breakpoint(lg) {
+      justify-self: unset;
+      gap: 24px;
+    }
+
+    p {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 120%; /* 24px */
+      letter-spacing: -0.2px;
+    }
+
+    &-buttons {
+      display: grid;
+      gap: 8px;
+
+      .btn {
+        width: 100%;
+        padding: 14px 58px;
+
+        @include breakpoint(md) {
+          width: fit-content;
+        }
+
+        @include breakpoint(lg) {
+          padding: 14px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.note-about {
+  &__inner {
+    p {
+      color: $gray-dark;
+      font-size: 14px;
+      line-height: 150%; /* 21px */
+      margin-top: 24px;
+
+      @include breakpoint(md) {
+        margin-top: 32px;
+      }
+    }
+
+    &-image {
+      border-radius: 24px;
+      border: 1px solid $blue-subdied;
+      padding: 24px;
+      margin-top: 48px;
+
+      @include breakpoint(md) {
+        margin-top: 64px;
+        padding: 32px;
+        border-radius: 32px;
+        max-width: 788px;
+      }
+    }
+  }
+}
+
+.note-why {
+  &__inner {
+    p {
+      color: $gray-dark;
+      line-height: 150%; /* 24px */
+      margin-top: 32px;
+    }
+  }
+}
+
+.note-how {
+  &__inner {
+    .note-how__inner-items {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      @include breakpoint(md) {
+        margin-top: 32px;
+        grid-template-columns: 1fr;
+      }
+
+      @include breakpoint(lg) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .note-how__inner-item {
+        padding: 20px;
+        display: grid;
+        gap: 15px;
+
+        @include breakpoint(md) {
+          padding: 20px 32px;
+        }
+
+        @include breakpoint(lg) {
+          border-left: 1px solid $blue-secondary;
+        }
+
+
+        &:first-child {
+          border-bottom: 1px solid $blue-secondary;
+          border-right: 1px solid $blue-secondary;
+
+          @include breakpoint(md) {
+            border-right: none;
+            border-top: 1px solid $blue-secondary;
+          }
+
+          @include breakpoint(lg) {
+            border-top: none;
+            border-bottom: none;
+          }
+        }
+
+        &:nth-child(2) {
+          border-bottom: 1px solid $blue-secondary;
+
+          @include breakpoint(lg) {
+            border-bottom: none;
+          }
+        }
+
+        &:nth-child(3) {
+          border-right: 1px solid $blue-secondary;
+
+          @include breakpoint(md) {
+            border-bottom: 1px solid $blue-secondary;
+            border-right: none;
+          }
+
+          @include breakpoint(lg) {
+            border-bottom: none;
+          }
+        }
+
+        &:nth-child(4) {
+          @include breakpoint(md) {
+            border-bottom: 1px solid $blue-secondary;
+          }
+
+          @include breakpoint(lg) {
+            border-bottom: none;
+          }
+        }
+
+        &-number {
+        }
+
+        &-title {
+          font-size: 19px;
+          font-weight: 600;
+          line-height: 120%; /* 22.8px */
+        }
+
+        &-text {
+          color: $gray-dark;
+          font-weight: 400;
+          line-height: 140%; /* 22.4px */
+        }
+      }
+    }
+  }
+}
+
+.note-deadlines {
+  &__inner {
+    p {
+      color: $gray-dark;
+      line-height: 150%; /* 24px */
+      margin-top: 24px;
+
+      @include breakpoint(md) {
+        margin-top: 32px;
+      }
+    }
+  }
+}
+
+.note-advantages {
+  .advantages-block {
+    margin-top: 24px;
+
+    @include breakpoint(md) {
+      margin-top: 32px;
+    }
+  }
+}
+
+.note-additional {
+  &__inner {
+    &-top {
+      display: grid;
+      gap: 24px;
+
+      @include breakpoint(md) {
+        grid-template-columns: max-content 1fr;
+        justify-content: space-between;
+      }
+
+      .swiper-nav {
+        @include flexAlignCenter;
+        gap: 8px;
+
+        @include breakpoint(md) {
+          justify-self: flex-end;
+        }
+      }
+    }
+
+    &-swiper {
+      margin-top: 24px;
+      margin-right: -16px;
+
+      @include breakpoint(md) {
+        margin-right: unset;
+      }
+
+      .swiper-wrapper {
+        align-items: stretch;
+
+        .swiper-slide {
+          height: unset;
+
+          .note-card {
+            height: 100%;
+            grid-auto-rows: fit-content(100%) 1fr;
+
+            &__price {
+              align-self: flex-end;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

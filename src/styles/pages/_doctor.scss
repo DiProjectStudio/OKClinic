@@ -1,20 +1,6 @@
 @use "../base/mixins" as *;
 @use "../base/variables" as *;
 
-.doctor {
-  &__inner {
-
-  }
-
-  &__links {
-    max-width: 100vw;
-    overflow-y: auto;
-  }
-
-
-
-}
-
 .doctor__about {
   &-content {
     display: grid;
@@ -255,6 +241,4 @@
     }
 
   }
-
-
 }

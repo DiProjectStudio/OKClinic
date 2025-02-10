@@ -11,9 +11,9 @@ import {actualYear} from "./includes/utils/actual-year.js";
 import App from "./includes/modules/app.js";
 import {buttonTagBlockClone} from "./includes/utils/tag-block.js";
 import tabActions from './includes/utils/tabs.js';
+import anchorLinksAction from './includes/utils/anchor-links.js';
 
 document.addEventListener('DOMContentLoaded', (event) => {
-
     getBrowserName();
     initializeMap();
     initializePopup();
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     tabActions();
     buttonTagBlockClone();
     new App();
-
+    anchorLinksAction();
 });
 
 // Если браузер определен, добавляем соответствующий класс к тегу html

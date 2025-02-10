@@ -7,7 +7,6 @@ export default class DoctorsModule {
 
     onInit() {
         this.doctorsFilter();
-        this.aboutDoctorLinks();
         this.reviewsCountSetup();
     }
 
@@ -29,20 +28,13 @@ export default class DoctorsModule {
             })
         }
     }
-    /** Функционал табов с анкерными ссылками на контент на странице врача */
-    aboutDoctorLinks() {
-        const aboutLinks = document.querySelectorAll(".doctor .doctor__link");
-        aboutLinks.forEach((aboutLink) => {
-            aboutLink.addEventListener("click", function () {
-                aboutLinks.forEach(el => el.classList.remove("active"));
-                aboutLink.classList.add("active");
-            })
-        })
-    }
+
     /** Подставляет значение количества отзывов на странице врача */
     reviewsCountSetup() {
         const reviewsCount = document.querySelectorAll(".doctor__reviews .review").length;
-        const doctorReviewsCountElement = document.querySelector(".doctor .doctor__link[href='#reviews']");
-        doctorReviewsCountElement.textContent = `Отзывы (${reviewsCount})`;
+        const doctorReviewsCountElement = document.querySelector(".doctor .anchor-link[href='#reviews']");
+        if (reviewsCount && doctorReviewsCountElement) {
+            doctorReviewsCountElement.textContent = `Отзывы (${reviewsCount})`;
+        }
     }
 }
