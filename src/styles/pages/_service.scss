@@ -1,0 +1,304 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.service-wrapper {
+  margin-bottom: 48px;
+
+  @include breakpoint(md) {
+    margin-bottom: 64px;
+  }
+
+  &__inner {
+    @include breakpoint(lg) {
+      display: grid;
+      grid-template-columns: minmax(0, 9fr) 3fr;
+      gap: 12px;
+    }
+  }
+
+  &__main {
+    .service-page-rightside-content {
+      display: grid;
+      gap: 12px;
+
+      @include breakpoint(lg) {
+        display: none;
+      }
+    }
+  }
+
+  &__rightside {
+    .service-page-rightside-content {
+      display: none;
+
+      @include breakpoint(lg) {
+        display: grid;
+        gap: 12px;
+        position: sticky;
+        top: 125px;
+      }
+
+      @include breakpoint(xl) {
+        top: 151px;
+      }
+    }
+  }
+}
+
+.service-page-main {
+  &__inner {
+    .anchor-links {
+      margin-top: 32px;
+    }
+  }
+}
+
+
+.service-page__price {
+  gap: 24px;
+  border-radius: 24px;
+  border: 1px solid $blue-secondary;
+  padding: 24px;
+  display: grid;
+
+  @include breakpoint(md) {
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 32px;
+    padding: 32px;
+  }
+
+  @include breakpoint(lg) {
+    grid-template-columns: 1fr;
+  }
+
+  &-top {
+    display: grid;
+    gap: 16px;
+    grid-auto-rows: fit-content(100%);
+
+    @include breakpoint(md) {
+      gap: 24px;
+    }
+
+    @include breakpoint(lg) {
+      gap: 20px;
+    }
+
+    p {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 120%; /* 24px */
+      letter-spacing: -0.2px;
+    }
+
+    ul {
+      display: grid;
+      gap: 8px;
+
+      li {
+        color: $gray-dark;
+        line-height: 150%; /* 24px */
+      }
+    }
+  }
+
+  &-bottom {
+    display: grid;
+    gap: 12px;
+
+    @include breakpoint(md) {
+      justify-self: flex-end;
+    }
+
+    @include breakpoint(lg) {
+      justify-self: unset;
+      gap: 24px;
+    }
+
+    p {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 120%; /* 24px */
+      letter-spacing: -0.2px;
+    }
+
+    &-buttons {
+      display: grid;
+      gap: 8px;
+
+      .btn {
+        width: 100%;
+        padding: 14px 58px;
+
+        @include breakpoint(md) {
+          width: fit-content;
+        }
+
+        @include breakpoint(lg) {
+          padding: 14px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.service-page__license {
+  border-radius: 24px;
+  background: $gray-subdied;
+  display: grid;
+  gap: 16px;
+  padding: 24px;
+
+  &-title {
+    color: $wf-wf-dark;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 120%; /* 24px */
+    letter-spacing: -0.2px;
+
+    @include breakpoint(md) {
+      font-size: 23px;
+      letter-spacing: -0.23px;
+    }
+  }
+
+  a {
+    color: $blue-dark;
+    font-size: 13px;
+    line-height: 150%; /* 19.5px */
+
+    span {
+      text-decoration: underline;
+    }
+  }
+}
+
+.service-page-about {
+  &__inner {
+    display: grid;
+    gap: 24px;
+
+    @include breakpoint(md) {
+      gap: 32px;
+    }
+
+    p {
+      color: $gray-dark;
+      font-size: 14px;
+      line-height: 150%; /* 21px */
+
+      @include breakpoint(md) {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.service-page-reasons {
+  &__subtitle {
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 120%; /* 22.8px */
+    margin-top: 24px;
+    margin-bottom: 16px;
+
+    @include breakpoint(md) {
+      margin-top: 32px;
+      margin-bottom: 24px;
+    }
+  }
+
+  ul {
+    display: grid;
+    gap: 8px;
+
+    li {
+      align-items: baseline;
+      color: $gray-dark;
+      font-size: 14px;
+      line-height: 150%; /* 21px */
+
+      @include breakpoint(md) {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.service-page-types {
+  border-radius: 24px;
+  background: $gray-subdied;
+  padding: 24px 16px;
+  margin-left: -16px;
+  margin-right: -16px;
+
+  @include breakpoint(md) {
+    margin-left: unset;
+    margin-right: unset;
+    border-radius: 32px;
+    padding: 32px;
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 32px;
+
+    .tag-link {
+      max-width: 100%;
+      @include textLimit(1);
+    }
+  }
+}
+
+.service-page-treatment {
+  &__items {
+    display: grid;
+    gap: 12px;
+    margin-top: 24px;
+
+    @include breakpoint(md) {
+      margin-top: 32px;
+    }
+  }
+}
+
+.service-page-diagnostics {
+  .diagnostics__wrapper-items {
+    @include breakpoint(lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+.service-page__specialization {
+  &-top {
+
+
+    &-title {
+      display: grid;
+      gap: 12px;
+
+      @include breakpoint(md) {
+        gap: 24px;
+      }
+    }
+
+    p {
+      color: $gray-dark;
+      font-size: 14px;
+      line-height: 150%; /* 21px */
+
+    }
+
+    .specialists__inner-top-nav {
+      align-self: flex-end;
+
+      @include breakpoint(md) {
+        align-self: flex-start;
+      }
+    }
+  }
+}

@@ -4,6 +4,7 @@ import SearchModule from "./search-module/search.module.js";
 import DoctorsModule from "./doctors-module/doctors.module.js";
 import ReviewComponent from '../components/review.component.js';
 import { NotesModule } from './notes-module/notes.module.js';
+import ServicesModule from "./services-module/services.module.js";
 
 /** Общий класс для запуска остальных модулей */
 export default class App {
@@ -18,5 +19,6 @@ export default class App {
         new DoctorsModule();
         new ReviewComponent();
         new NotesModule();
+        new ServicesModule();
     }
 }

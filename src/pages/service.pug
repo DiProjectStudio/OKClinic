@@ -1,0 +1,229 @@
+extends ../layout/layout
+
+block title
+    - var title = 'Лечение головной боли'
+    - var page = 'page-service'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Услуги', 'Лечение головной боли')
+    .service-wrapper
+        .container
+            .service-wrapper__inner
+                .service-wrapper__main
+                    section.service-page-main
+                        .service-page-main__inner
+                            h1.not-main Лечение головной боли
+                            .service-page-rightside-content
+                                .service-page__price
+                                    .service-page__price-top
+                                        p Лечение головной боли
+                                        ul.custom-list
+                                            li Персональное сопровождение
+                                            li Индивидуальный подход
+                                            li Обследования
+                                    .service-page__price-bottom
+                                        p от 1500 ₽
+                                        .note-main__price-bottom-buttons
+                                            a(href='javascript:void(0)').btn.btn--blue-dark Запись на прием
+                                            a(href='javascript:void(0)').btn.btn--gray-subdied Заказать звонок
+                                .service-page__license
+                                    .service-page__license-title Лицензия
+                                    a(href='javascript:void(0)')
+                                        p.
+                                            Выписка из реестра лицензий от 23.10.2024 г.
+                                            (Лицензия № Л111-1111-11/1111111111 от 11.11.2019г.)
+                                            <br>
+                                            <br>
+                                            <span>PDF 706.42 КБ</span>
+
+                            .anchor-links
+                                a(href='#about').anchor-link.active Об услуге
+                                a(href='#reasons').anchor-link Причины
+                                a(href='#treatment').anchor-link Лечение
+                                a(href='#diagnostics').anchor-link Диагностика и анализы
+                                a(href='#specialization').anchor-link Специализация
+                                a(href='#reviews').anchor-link Отзывы ()
+                    section.service-page-about#about
+                        .service-page-about__inner
+                            .h2-title Об услуге
+                            p.
+                                Головная боль может быть индикатором целого ряда
+                                различных проблем, от таких незначительных, как
+                                неправильно подобранные очки, до серьезных
+                                (например, опухоль головного мозга). Ежегодно
+                                головная боль становится причиной временной утраты
+                                трудоспособности примерно у 40% взрослого населения.
+                                В настоящее время специалисты насчитывают свыше 300
+                                причин ее появления.
+
+                    section.service-page-reasons#reasons
+                        .service-page-reasons__inner
+                            .h2-title Причины возникновения головной боли
+                            .service-page-reasons__subtitle Все разнообразие головных болей укладывается в несколько основных типов в зависимости от причин возникновения:
+                            ul.custom-list
+                                li.
+                                    Сосудистые боли. Возникают в результате чрезмерного
+                                    сужения или расширения мозговых артерий
+                                li.
+                                    Боли, связанные с повышением внутричерепного давления.
+                                    Обусловлены такими заболеваниями, как опухоли, абсцессы
+                                    и гематомы головного мозга, гидроцефалия
+                                li.
+                                    Боли мышечного напряжения. Их развитие связано с
+                                    перенапряжением задних групп мышц шеи, прикрепленных
+                                    к затылочной кости. Боль часто возникает на фоне
+                                    остеохондроза шейного отдела позвоночника, из-за
+                                    особенностей труда пациента (приходится долго стоять
+                                    с наклоненной головой) или под влиянием сильного стресса.
+                                    Выраженный спазм задних групп мышц шеи вызывает
+                                    значительное натяжение скальпа, что и приводит к
+                                    возникновению болевых ощущений
+                                li.
+                                    Невралгии, невриты. Боли по ходу нервов, в большинстве
+                                    случаев возникающие из-за местных воспалительных
+                                    процессов или травы
+
+                    section.service-page-types
+                        .h2-title Виды головной боли
+                        .service-page-types__items
+                            -
+                                var items = [
+                                    "Мигрень", "Головная боль напряжения",
+                                    "Кластерная головная боль",
+                                    "Головная боль, связанная с травмой головы",
+                                    "Расстройства сна", "Снижение памяти и концентрации внимания",
+                                    "Общая рассеянность", "Раздражительность",
+                                    "Частые изменения настроения", "Онемение",
+                                    "Слабость Covid-19", "Несимметричность лица",
+                                    "Частые головные боли", "Вегетативную дистонию",
+                                    "Рассеянный склероз", "Синдром хронической усталости",
+                                    "Боковой амиотрофический склероз", "Нейросифилис"
+                                ]
+
+                            each item in items
+                                a(href='javascript:void(0)').tag-link= item
+
+                    section.service-page-treatment#treatment
+                        .h2-title Лечение
+                        .service-page-treatment__items
+                            -
+                                var treatmentPrices = [
+                                    "Первичный прием (осмотр, консультация) врача-терапевта",
+                                    "Название метода лечения длинное или очень короткое так что оно не помещается в одну строчку",
+                                    "Название метода лечения длинное или очень короткое так что оно не помещается в одну строчку",
+                                    "Название метода лечения длинное или очень короткое так что оно не помещается в одну строчку",
+                                ]
+                            include ../components/_price-card
+                            each treatmentPrice in treatmentPrices
+                                +priceCard(treatmentPrice)
+
+                    section.diagnostics.service-page-diagnostics#diagnostics
+                            .diagnostics__inner
+                                .section-top
+                                    .section-title Диагностика и анализы
+                                    .section-description
+                                        p.
+                                            Предлагаем широкий спектр лабораторных и инструментальных исследований,
+                                            используя современное оборудование и передовые методы.
+                                            Диагностика с комфортом и вниманием к каждому пациенту
+                                .diagnostics__wrapper
+                                    .diagnostics__wrapper-tabs.tabs(data-tabs-actions)
+                                        button(data-tab='diagnostics').tab.active Диагностика
+                                        button(data-tab='tests').tab Анализы
+                                    .diagnostics__wrapper-items.showed.tab-content(data-content='diagnostics')
+
+                                        -
+                                            var diagnosticsItems = [
+                                                {
+                                                    title: "Компьютерная томография",
+                                                    details:
+                                                            [
+                                                                "Брюшная полость",
+                                                                "Вверхняя конечность",
+                                                                "Голова",
+                                                                "Грудная клетка",
+                                                                "Нижняя конечность",
+                                                            ]
+                                                },
+                                                {
+                                                    title: "Ультразвуковая диагностика",
+                                                    details:
+                                                            [
+                                                                "Железы внутренней секреции",
+                                                                "Женские половые органы",
+                                                                "Иммунная система",
+                                                                "Крупные кровеносные сосуды",
+                                                                "Мужские половые органы",
+                                                            ]
+                                                },
+                                            ]
+                                        each diagnosticsItem in diagnosticsItems
+                                            .diagnostics__item
+                                                .diagnostics__item-title= diagnosticsItem.title
+                                                ul
+                                                    each item in diagnosticsItem.details
+                                                        li
+                                                            a(href='javascript:void(0)')= item
+                                    .diagnostics__wrapper-items.tab-content(data-content='tests')
+                                        .diagnostics__item
+                                            .diagnostics__item-title Анализы крови
+                                            ul
+                                                li
+                                                    a(href='javascript:void(0)') Общий анализ крови
+                                                li
+                                                    a(href='javascript:void(0)') СРБ
+                                                li
+                                                    a(href='javascript:void(0)') Общий анализ крови
+                                                li
+                                                    a(href='javascript:void(0)') СРБ
+                                                li
+                                                    a(href='javascript:void(0)') СРБ
+
+                    section.specialists.service-page__specialization#specialization
+                        .specialists__inner
+                            .specialists__inner-top.service-page__specialization-top
+                                .service-page__specialization-top-title
+                                    .section-title К какому врачу обратиться
+                                    p.
+                                        При первичном обращении предлагаем записаться к терапевту,
+                                        чтобы он при необходимости направил к узким специалистам.
+                                .specialists__inner-top-nav
+                                    .swiper-nav
+                                        button.arrow-prev
+                                        button.arrow-next
+                            .service-page__specialization-slider
+                                -
+                                    var specialists = [
+                                        {
+                                            name: "Филиппов Александр Олегович",
+                                            specialization: "Врач - невролог, врач - остеопат"
+                                        },
+                                        {
+                                            name: "Гиоева Лаура Валерьевна",
+                                            specialization: "Невролог"
+                                        },
+                                        {
+                                            name: "Егорова Екатерина Сергеевна",
+                                            specialization: "Невролог, Кандидат медицинских наук"
+                                        },
+                                        {
+                                            name: "Катенина Светлана Петровна",
+                                            specialization: "Терапевт, гастроэнтеролог"
+                                        }
+                                    ]
+                                .swiper
+                                    .swiper-wrapper
+                                        each specialist, index in specialists
+                                            .swiper-slide
+                                                include ../components/_doctor-card
+                                                +doctor-card(index, specialist.name, specialist.specialization)
+
+
+                    section.service-page__advantages
+                        .h2-title Преимущества услуги
+                        include ../components/_advantages-block
+                .service-wrapper__rightside
+
+    include ../components/_reviews-section
+    include ../components/_feedback

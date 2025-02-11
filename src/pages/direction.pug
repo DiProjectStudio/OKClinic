@@ -1,0 +1,80 @@
+extends ../layout/layout
+
+block title
+    - title = 'Неврология'
+    - page = 'page-direction'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Услуги', 'Неврология')
+    section.direction-main
+        .container
+            .direction-main__inner
+                .direction-main__inner-top
+                    h1.not-main Неврология
+                    p.
+                        Неврология занимается диагностикой и лечением
+                        различных заболеваний, которые могут поражать
+                        головной мозг, спинной мозг, нервы, мышцы и
+                        нервно-мышечные соединения. Невролог – это врач,
+                        специализирующийся на этих заболеваниях.
+
+                    .direction-main__inner-top-image
+                        +img('notes-doctor.png')
+                    .direction-main__inner-top-crosses
+                        +img('crosses-1.png')
+
+                .direction-main__inner-bottom
+                    .direction-main__inner-bottom-text
+                        p Запишитесь на прием
+                        p Стоимость первичного приема специалиста невролога
+                    .direction-main__inner-bottom-button
+                        p от 1500 ₽
+                        a(href='javascript:void(0)').btn.btn--blue-dark Запись на прием
+
+    section.direction-symptoms
+        .container
+            .direction-symptoms__inner
+                .h2-title Симптомы заболеваний нервной системы
+                .h4-title Врача могут насторожить следующие отклонения:
+                ul.custom-list
+                    li постоянная хроническая усталость;
+                    li частые головные боли любого характера;
+                    li обмороки и предобморочные состояния;
+                    li головокружение, шум и звон в ушах;
+                    li расстройства сна, тревожность и апатия;
+                    li снижение памяти и концентрации внимания, общая рассеянность;
+                    li частые изменения настроения, раздражительность;
+                    li онемение, слабость, чувство «мурашек», жжение, зябкость в верхних и нижних конечностях;
+                    li частые головные боли любого характера;
+                    li боли по ходу позвоночника или в ногах;
+                    li несимметричность лица;
+                p.
+                    Lörem ipsum dekadade spessa dol nyrat. Supras
+                    pronäliga eller miledes, pånera semiss bende.
+                    Prens vik ett matyk punade så krora. Diasamma
+                    epiplande, iliga nälig pred. Mitässade val, rynde.
+                    Benera kabibel völig migon mol. Olålassade ryktig
+                    kyssa filostik. Tärynänisk vören i odenat med segasm
+                    vint. Krovaktigt. Mibel tölig. Epilysa oska då
+                    transism mityning tills astrora kvasisade. Nissa
+                    antis. Du kan vara drabbad.
+    section.direction-diseases
+        .container
+            -
+                var tagBlock = {
+                    title: "Какие заболевания лечат неврологи?",
+                    description: "Неврология лечит заболевания такие как:",
+                    tags: [
+                        "Ишемия головного мозга", "Частые головные боли",
+                        "Головокружение", "Обмороки и предобморочные состояния",
+                        "Расстройства сна", "Снижение памяти и концентрации внимания",
+                        "Раздражительность", "Онемение",
+                        "Слабость", "Частые головные боли", "Несимметричность лица",
+                        "Рассеянный склероз", "Вегетативная дистония",
+                        "Нейрофилис", "Синдром хронической усталости",
+                        "Боковой амиотрофический склероз"
+                    ]
+                }
+            include ../components/_tag-block
+            +tag-block(tagBlock.title, tagBlock.description, tagBlock.tags)

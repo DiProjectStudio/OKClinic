@@ -3,8 +3,8 @@ mixin noteCard(name, serviceItems)
         .note-card__top
             .note-card__icon
             .h4-title.note-card__top-name= name
-        .note-card__wrap
+        .note-card__bottom
             each serviceItem in serviceItems
-                .note-card__wrap-inner
-                    .note-catd__description= serviceItem.title
+                .note-card__bottom-wrapper
+                    .note-card__description= serviceItem.title
                     .note-card__price= `от ${serviceItem.price} ₽`

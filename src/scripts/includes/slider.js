@@ -1,17 +1,17 @@
-import Swiper from 'swiper';
-import { Navigation, Pagination, Autoplay, FreeMode, Thumbs, Scrollbar, Grid } from 'swiper/modules';
-import { sliderClone } from './utils/slider-clone.js';
+import Swiper from "swiper";
+import { Navigation, Pagination, Autoplay, FreeMode, Thumbs, Scrollbar, Grid } from "swiper/modules";
+import { sliderClone } from "./utils/slider-clone.js";
 
 export function initializeSlider() {
 
-    sliderClone('.programs__wrapper-items .swiper');
-    const programsSlider = new Swiper('.programs__wrapper-items .swiper', {
+    sliderClone(".programs__wrapper-items .swiper");
+    const programsSlider = new Swiper(".programs__wrapper-items .swiper", {
         modules: [Navigation],
         slidesPerView: 1.2,
         spaceBetween: 12,
         navigation: {
-            prevEl: '.programs__wrapper .arrow-prev',
-            nextEl: '.programs__wrapper .arrow-next'
+            prevEl: ".programs__wrapper .arrow-prev",
+            nextEl: ".programs__wrapper .arrow-next"
         },
         loop: true,
         breakpoints: {
@@ -24,16 +24,17 @@ export function initializeSlider() {
         }
     });
 
-    sliderClone('.specialists__inner-slider .swiper');
-    const specialistsSlider = new Swiper('.specialists__inner-slider .swiper', {
+    sliderClone(".specialists__inner-slider .swiper");
+    const specialistsSlider = new Swiper(".specialists__inner-slider .swiper", {
         modules: [Navigation, Grid],
         slidesPerView: 1,
         grid: {
-            rows: 3
+            rows: 3,
+            fill: "row"
         },
         navigation: {
-            prevEl: '.specialists__inner-top-nav .arrow-prev',
-            nextEl: '.specialists__inner-top-nav .arrow-next'
+            prevEl: ".specialists__inner-top-nav .arrow-prev",
+            nextEl: ".specialists__inner-top-nav .arrow-next"
         },
         spaceBetween: 4,
         breakpoints: {
@@ -55,14 +56,14 @@ export function initializeSlider() {
     });
 
 
-    sliderClone('.doctor__reviews .swiper');
-    const reviewsSlider = new Swiper('.doctor__reviews .swiper', {
+    sliderClone(".reviews .swiper");
+    const reviewsSlider = new Swiper(".reviews .swiper", {
         modules: [Navigation],
         slidesPerView: 1.05,
         spaceBetween: 4,
         navigation: {
-            prevEl: '.doctor__reviews .arrow-prev',
-            nextEl: '.doctor__reviews .arrow-next'
+            prevEl: ".reviews .arrow-prev",
+            nextEl: ".reviews .arrow-next"
         },
         breakpoints: {
             744: {
@@ -81,18 +82,50 @@ export function initializeSlider() {
         slidesPerView: 1.25,
         spaceBetween: 4,
         navigation: {
-            prevEl: '.note-additional__inner-top .arrow-prev',
-            nextEl: '.note-additional__inner-top .arrow-next'
+            prevEl: ".note-additional__inner-top .arrow-prev",
+            nextEl: ".note-additional__inner-top .arrow-next"
         },
         breakpoints: {
             744: {
-                grid: {
-                    rows: 3
-                },
                 slidesPerView: 1,
+                grid: {
+                    rows: 3,
+                    fill: "row"
+                },
             }
         }
     });
+
+    sliderClone(".service-page__specialization-slider .swiper");
+    const servicePageSpecialistsSlider = new Swiper(".service-page__specialization-slider .swiper", {
+        modules: [Navigation, Grid],
+        slidesPerView: 1,
+        grid: {
+            rows: 3,
+            fill: "row"
+        },
+        navigation: {
+            prevEl: ".service-page-specialization .arrow-prev",
+            nextEl: ".service-page-specialization .arrow-next"
+        },
+        spaceBetween: 4,
+        breakpoints: {
+            744: {
+                slidesPerView: 3,
+                spaceBetween: 12,
+                grid: {
+                    rows: 1
+                }
+            },
+            1200: {
+                slidesPerView: 3,
+                grid: {
+                    rows: 1
+                },
+                spaceBetween: 12
+            }
+        }
+    })
 
 //     const heroMain = new Swiper('.hero-main .swiper', {
 //         modules: [Navigation, Autoplay],

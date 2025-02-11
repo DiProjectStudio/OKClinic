@@ -1,0 +1,49 @@
+section.reviews#reviews
+    .container
+        .reviews-top
+            .h2-title Отзывы
+            .reviews-top-nav
+                a(href='javascript:void(0)').btn.btn--transparent-blue-secondary Все отзывы
+                .swiper-nav
+                    button.arrow-prev
+                    button.arrow-next
+        .reviews-wrapper.reviews-slider.swiper
+            .swiper-wrapper
+
+                include ../components/_review
+                // - var reviewTypes = ["default", "text", "video"];
+                -
+                    var reviews = [
+                        {
+                            type: "default",
+                            name: "Ольга Борисовна",
+                            commentText: "Все супер!"
+                        },
+                        {
+                            type: "text",
+                            name: "Марина Васильевна",
+                            commentText: "Клиника Ок.Клиник - это место, где действительно\n" +
+                                    "                        заботятся о здоровье. Мне была предложена комплексная\n" +
+                                    "                        программа лечения, учитывающая все особенности моего\n" +
+                                    "                        состояния. Работа разных специалистов в команде дала\n" +
+                                    "                        отличный результат. Спасибо вам за ваш профессионализм и\n" +
+                                    "                        индивидуальный подход!\n" +
+                                    "                        Lörem ipsum dekadade spessa dol nyrat. Supras\n" +
+                                    "                        pronäliga eller miledes, pånera semiss bende.\n" +
+                                    "                        Prens vik ett matyk punade så krora. Diasamma\n" +
+                                    "                        epiplande, iliga nälig pred. Mitässade val,\n" +
+                                    "                        rynde. Benera kabibel völig migon mol. Olålassade\n" +
+                                    "                        ryktig kyssa filostik. Tärynänisk vören i odenat med\n" +
+                                    "                        segasm vint. Krovaktigt. Mibel tölig. Epilysa oska då\n" +
+                                    "                        transism mityning tills astrora kvasisade. Nissa antis.\n" +
+                                    "                        Du kan vara drabbad."
+                        },
+                        {
+                            type: "video",
+                            name: "Ольга Борисовна",
+                            commentText: ""
+                        },
+                    ]
+                each review, index in reviews
+                    .swiper-slide
+                        +review(review.type, review.name, review.commentText, index)

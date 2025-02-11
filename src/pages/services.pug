@@ -11,7 +11,41 @@ block main
         .container
             .services-page__inner
                 h1.not-main Услуги
-                .services-page__inner-items
+                .services-page__search
+                    .services-page__search-tabs
+                        -
+                            var tabs = [
+                                "Популярные услуги", "Неврология",
+                                "Педиатрия", "Хирургия",
+                                "Ортопедия", "Гастроэнтерология",
+                                "Офтальмология", "Онкология",
+                                "Флебология", "Гематология",
+                                "Эндокринология", "Травматология",
+                                "Урология", "Психология", "Гематология"
+                            ]
+                        // Костя советует реализовать через get запросы и query параметрами
+                        each tab, index in tabs
+                            if index === 0
+                                a(href='javascript:void(0)').search-tab.tag-link.active= tab
+                            else
+                                a(href='javascript:void(0)').search-tab.tag-link= tab
+                    .services-page__search-results
+                        a(href='service.html').services-page__search-result
+                            span Название услуги
+                            .arrow-up-link.arrow-up-link--black
+                        - var n = 11;
+                        while n > 0
+                            a(href='service.html').services-page__search-result
+                                span Лечение грыжи межпозвонкового диска
+                                .arrow-up-link.arrow-up-link--black
+                            - n--;
+                    a(href='javascript:void(0)').btn.btn--transparent-blue-dark Показать еще
+
+    section.services-page__popular
+        .container
+            .services-page__popular-inner
+                .h2-title Популярные направления
+                .services-page__popular-items
                     -
                         var services = [
                             "Гинекология и акушерство","Неврология",
@@ -19,20 +53,20 @@ block main
                             "Гастроэнтерология","Офтальмология","Оториноларингология (ЛОР)",
                         ]
                     each service, index in services
-                        a(href='service.html').services-page__inner-item
+                        a(href='direction.html').services-page__popular-item
                             p= service
                             .arrow-up-link.arrow-up-link--blue
-                            .services-page__inner-item-image
+                            .services-page__popular-item-image
                                 +img(`services-page-image-${index + 1}.png`)
-                            .services-page__inner-item-crosses
+                            .services-page__popular-item-crosses
                                 +img('crosses-1.png')
 
-    section.services-page__areas
+    section.services-page__directions
         .container
             .section-title Все направления
-            .services-page__areas-items
+            .services-page__directions-items
                 -
-                    var areas = [
+                    var directions = [
                         {
                             letter: "А",
                             list: [
@@ -131,13 +165,13 @@ block main
                             ]
                         }
                     ]
-                each area in areas
-                    .services-page__areas-item
-                        p= area.letter
+                each direction in directions
+                    .services-page__directions-item
+                        p= direction.letter
                         ul
-                            each item in area.list
+                            each item in direction.list
                                 li
-                                    a(href='javascript:void(0)')= item
+                                    a(href='direction.html')= item
     include ../components/sections/_section-programs
     section.services-page__popular-notes
         .container

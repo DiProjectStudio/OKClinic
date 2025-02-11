@@ -35,7 +35,6 @@
         display: grid;
         position: sticky;
         top: 125px;
-        overflow: unset;
       }
 
       @include breakpoint(xl) {
@@ -335,11 +334,15 @@
         align-items: stretch;
 
         .swiper-slide {
-          height: unset;
+          height: unset!important;
 
           .note-card {
             height: 100%;
             grid-auto-rows: fit-content(100%) 1fr;
+
+            //&__description {
+            //  align-self: flex-end;
+            //}
 
             &__price {
               align-self: flex-end;

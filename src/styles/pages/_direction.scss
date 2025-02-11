@@ -1,0 +1,198 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.direction-main {
+  &__inner {
+    display: grid;
+    gap: 12px;
+
+    @include breakpoint(lg) {
+      grid-template-columns: 9fr 3fr;
+    }
+
+    &-top {
+      border-radius: 24px;
+      background: $wf-fw-subdied;
+      padding: 24px;
+      display: grid;
+      position: relative;
+      z-index: 1;
+
+      @include breakpoint(md) {
+        padding: 32px;
+        border-radius: 32px;
+      }
+
+      .not-main {
+        margin-bottom: 16px;
+
+        @include breakpoint(md) {
+          margin-bottom: 24px;
+        }
+      }
+
+      p {
+        color: $wf-wf-dark;
+        line-height: 150%; /* 24px */
+        margin-bottom: 193px;
+
+        @include breakpoint(md) {
+          margin-bottom: 0;
+          max-width: 376px;
+        }
+
+        @include breakpoint(lg) {
+          max-width: 540px;
+          margin-bottom: 50px;
+        }
+
+        @include breakpoint(xl) {
+          margin-bottom: 64px;
+        }
+      }
+
+      &-image {
+        width: 200px;
+        height: 185px;
+        margin-top: 8px;
+        position: absolute;
+        z-index: 0;
+        bottom: 0;
+        right: 0;
+
+        @include breakpoint(md) {
+          width: 260px;
+          height: 240px;
+        }
+
+      }
+
+      &-crosses {
+        position: absolute;
+        z-index: -1;
+        width: 163px;
+        height: 152px;
+        left: 24px;
+        bottom: 33px;
+
+        @include breakpoint(md) {
+          width: 245px;
+          height: 228px;
+          right: 43px;
+          bottom: 18px;
+          left: unset;
+        }
+
+        @include breakpoint(lg) {
+          right: 87px;
+          bottom: 24px;
+        }
+
+        @include breakpoint(xl) {
+          right: 152px;
+          bottom: 4px;
+        }
+      }
+    }
+
+    &-bottom {
+      border-radius: 24px;
+      border: 1px solid $blue-secondary;
+      padding: 24px;
+      display: grid;
+      gap: 24px;
+
+      @include breakpoint(md) {
+        padding: 32px;
+        border-radius: 32px;
+        grid-template-columns: 315px 1fr;
+        justify-content: space-between;
+      }
+
+      @include breakpoint(lg) {
+        grid-template-columns: 1fr;
+        justify-content: unset;
+      }
+
+      &-text {
+        display: grid;
+        gap: 16px;
+
+
+        p {
+          &:first-child {
+            font-size: 23px;
+            font-weight: 600;
+            line-height: 120%; /* 27.6px */
+            letter-spacing: -0.23px;
+          }
+
+          &:last-child {
+            color: $gray-dark;
+            line-height: 150%; /* 24px */
+          }
+        }
+      }
+
+      &-button {
+        display: grid;
+        gap: 16px;
+
+        @include breakpoint(md) {
+          justify-self: flex-end;
+        }
+
+        @include breakpoint(lg) {
+          justify-self: unset;
+        }
+
+        p {
+          font-size: 23px;
+          font-weight: 600;
+          line-height: 120%; /* 27.6px */
+          letter-spacing: -0.23px;
+        }
+
+        .btn {
+          padding: 14px 47px;
+
+          @include breakpoint(lg) {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.direction-symptoms {
+  &__inner {
+    .h2-title {
+      margin-bottom: 24px;
+
+      @include breakpoint(md) {
+        margin-bottom: 32px;
+      }
+    }
+
+    .h4-title {
+      margin-bottom: 24px;
+    }
+
+    ul {
+      display: grid;
+      gap: 8px;
+
+      li {
+        line-height: 150%; /* 24px */
+      }
+    }
+
+    p {
+      color: $gray-dark;
+      line-height: 150%; /* 24px */
+      margin-top: 24px;
+      max-width: 1016px;
+    }
+  }
+}
