@@ -27,6 +27,13 @@
 @use "components/note-card";
 @use "components/advantages-block";
 @use "components/reviews-section";
+@use "components/dropdown";
+@use "components/program-card";
+@use "components/checkup-slider-card";
+@use "components/faq-card";
+@use "components/checkup-card";
+@use "components/test-card";
+@use "components/seo-text-only";
 
 @use 'pages/index';
 @use 'pages/error404';
@@ -38,6 +45,9 @@
 @use 'pages/notes';
 @use 'pages/note';
 @use 'pages/direction';
+@use 'pages/checkups';
+@use 'pages/checkups-category';
+@use 'pages/checkup';
 
 
 

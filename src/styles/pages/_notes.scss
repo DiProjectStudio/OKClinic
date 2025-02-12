@@ -17,6 +17,7 @@
       display: grid;
       position: relative;
       z-index: 1;
+      overflow: clip;
 
       @include breakpoint(md) {
         padding: 32px;

@@ -1,7 +1,13 @@
 @use "../base/mixins" as *;
 @use "../base/variables" as *;
 
-.direction-main {
+.checkups-main {
+  margin-bottom: 12px;
+
+  @include breakpoint(lg) {
+    margin-bottom: 32px;
+  }
+
   &__inner {
     display: grid;
     gap: 12px;
@@ -166,73 +172,107 @@
   }
 }
 
-.direction-symptoms {
-  &__inner {
-    .h2-title {
-      margin-bottom: 24px;
 
-      @include breakpoint(md) {
-        margin-bottom: 32px;
-      }
-    }
-
-    .h4-title {
-      margin-bottom: 24px;
-    }
-
-    ul {
-      display: grid;
-      gap: 8px;
-
-      li {
-        line-height: 150%; /* 24px */
-      }
-    }
-
-    p {
-      color: $gray-dark;
-      line-height: 150%; /* 24px */
-      margin-top: 24px;
-      max-width: 1016px;
-    }
-  }
-}
-
-.direction-treatment {
-  &__inner {
-    display: grid;
-    gap: 24px;
-
-    @include breakpoint(md) {
-      gap: 32px;
-    }
-
-    &-prices {
-      display: grid;
-      gap: 4px;
-
-      @include breakpoint(md) {
-        gap: 12px;
-      }
-    }
-  }
-}
-
-.direction-specialists {
-
-  &__inner-top {
-
-  }
-
-  &__top-title {
+.chekups-wrapper__inner {
+  @include breakpoint(lg) {
     display: grid;
     gap: 12px;
+    grid-template-columns: 3fr minmax(0, 9fr);
+  }
+}
 
-    p {
+.chekups-wrapper__leftside {
+
+  &-dropdowns {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 24px;
+
+    @include breakpoint(md) {
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 32px;
+    }
+
+    @include breakpoint(lg) {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      grid-auto-rows: min-content;
+      position: sticky;
+      left: 0;
+      top: 120px;
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+.chekups-wrapper__main {
+  .anchor-links {
+    margin-bottom: 24px;
+  }
+}
+
+.chekups-about {
+
+  p {
+    color: $gray-dark;
+    font-size: 14px;
+    line-height: 150%; /* 21px */
+    margin-top: 24px;
+
+    @include breakpoint(md) {
+      margin-top: 32px;
+      font-size: 16px;
+    }
+  }
+}
+
+.checkups-objectives {
+  ul {
+    margin-top: 24px;
+    display: grid;
+    gap: 8px;
+
+    @include breakpoint(md) {
+      margin-top: 32px;
+    }
+
+    li {
       color: $gray-dark;
       font-size: 14px;
       line-height: 150%; /* 21px */
+
+      @include breakpoint(md) {
+        font-size: 16px;
+      }
     }
   }
+}
 
+.checkups-popular {
+  &__top {
+    @include flexColumn;
+    gap: 24px;
+    margin-bottom: 16px;
+
+    @include breakpoint(md) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+
+  }
+}
+
+.checkups-faq {
+  &__items {
+    margin-top: 24px;
+    display: grid;
+    gap: 12px;
+
+    @include breakpoint(md) {
+      margin-top: 32px;
+    }
+  }
 }

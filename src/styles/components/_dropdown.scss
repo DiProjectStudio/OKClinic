@@ -1,0 +1,97 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.dropdown {
+  border-radius: 12px;
+  border: 1px solid $stroke;
+  background: $white;
+  padding: 12px;
+  height: min-content;
+
+  &.opened {
+    .dropdown__content {
+      opacity: 1;
+      visibility: visible;
+      margin-top: 16px;
+    }
+
+    .dropdown__top-arrow {
+      svg {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  &__top {
+    @include flexCenterBetween;
+    cursor: pointer;
+
+    &:hover {
+      .dropdown__top-arrow {
+        background: $blue-subdied;
+        & svg path {
+          fill: $blue-dark;
+        }
+      }
+    }
+
+    &-title {
+      font-size: 19px;
+      font-weight: 600;
+      line-height: 120%; /* 22.8px */
+    }
+
+    &-arrow {
+      border-radius: 8px;
+      background: $gray-subdied;
+      width: 32px;
+      height: 32px;
+      @include flexCenterCenter;
+      transition: $transition;
+
+      svg {
+        width: 20px;
+        height: 20px;
+        transition: $transition;
+      }
+    }
+  }
+
+  &__content {
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: $transition;
+
+
+    ul + ul {
+      margin-top: 4px;
+    }
+
+    li {
+      a {
+        border-radius: 8px;
+        padding: 4px 12px;
+        line-height: 150%; /* 24px */
+        transition: $transition;
+        width: 100%;
+        &:hover {
+          background: $blue-subdied;
+          color: $blue-dark;
+        }
+      }
+
+      & + li {
+        margin-top: 4px;
+      }
+    }
+
+    &-title {
+      font-size: 19px;
+      font-weight: 600;
+      line-height: 120%; /* 22.8px */
+      margin: 16px 0;
+    }
+  }
+}

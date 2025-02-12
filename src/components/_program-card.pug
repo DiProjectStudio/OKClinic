@@ -1,0 +1,12 @@
+mixin programCard(title, index)
+    a(href='javascript:void(0)').program-card
+        .program-card__title= title
+        ul.custom-list
+            li Персональное сопровождение
+            li Индивидуальный подход
+            li Обследование за 1 день
+        .program-card__prices
+            span 14 200 ₽
+            span 21 800 ₽
+        .program-card__image
+            +img(`programs-${index + 1}.png`)

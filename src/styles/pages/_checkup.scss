@@ -1,0 +1,62 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.checkup-wrapper {
+
+
+}
+
+.checkup-wrapper__rightside-content {
+  display: grid;
+  gap: 12px;
+
+  .checkup__group {
+    border-radius: 24px;
+    background: $gray-subdied;
+    padding: 24px;
+    display: grid;
+    gap: 4px;
+
+    p {
+      &:first-child {
+        font-size: 11px;
+        line-height: 16px; /* 145.455% */
+      }
+
+      &:last-child {
+        color: $blue-dark;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 120%; /* 24px */
+        letter-spacing: -0.2px;
+      }
+    }
+  }
+
+  .checkup__price {
+    border-radius: 24px;
+    border: 1px solid $blue-secondary;
+    padding: 24px;
+
+    &-top {
+      display: grid;
+      gap: 20px;
+
+      &-title {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 120%; /* 24px */
+        letter-spacing: -0.2px;
+      }
+
+      ul {
+
+      }
+    }
+
+    &-bottom {
+      display: grid;
+      gap: 24px;
+    }
+  }
+}

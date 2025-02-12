@@ -3,7 +3,11 @@
 
 .diagnostics {
   &__inner {
-
+    .section-description {
+      @include breakpoint(md) {
+        max-width: 574px;
+      }
+    }
   }
 
   &__wrapper {

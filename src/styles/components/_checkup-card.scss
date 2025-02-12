@@ -1,0 +1,141 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+
+.checkup-item {
+  display: grid;
+  gap: 16px;
+  background-color: $gray-subdied;
+  padding: 24px;
+  border-radius: 24px;
+  transition: $transition;
+
+  @include breakpoint(md) {
+    grid-template-columns: 1fr min-content;
+    padding: 32px;
+    border-radius: 32px;
+  }
+
+  &:hover {
+    background-color: $blue-subdied;
+
+    .checkup-item__top-title {
+      color: $blue-dark;
+    }
+  }
+
+  &__top {
+    display: grid;
+    gap: 8px;
+
+    @include breakpoint(md) {
+      gap: 12px;
+    }
+    @include breakpoint(lg) {
+
+    }
+
+    &-title {
+      transition: $transition;
+    }
+
+    p {
+      @include textLimit(3);
+      font-size: 14px;
+      line-height: 150%;
+
+      @include breakpoint(md) {
+        @include textLimit(2);
+        font-size: 16px;
+      }
+    }
+  }
+
+  ul {
+    margin-top: 8px;
+
+    @include breakpoint(md) {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-self: center;
+    }
+
+    li {
+      gap: 8px;
+      line-height: 16px;
+      font-size: 11px;
+
+      @include breakpoint(md) {
+        font-size: 13px;
+        line-height: 150%;
+        max-height: fit-content;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    @include breakpoint(md) {
+      flex-direction: column;
+    }
+  }
+
+  &__prices {
+    height: 48px;
+    display: flex;
+    gap: 4px;
+    margin-top: 16px;
+    align-self: flex-end;
+
+    @include breakpoint(md) {
+      margin-top: 0;
+    }
+
+
+    span {
+      flex-shrink: 0;
+
+      &:first-child {
+        align-self: center;
+        color: $blue-dark;
+        font-size: 23px;
+        font-weight: 600;
+        line-height: 120%; /* 27.6px */
+        letter-spacing: -0.23px;
+      }
+
+      &:last-child {
+        color: $blue-lite;
+        font-size: 11px;
+        line-height: 16px; /* 145.455% */
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  .arrow-up-link {
+    grid-row: 3;
+    @include breakpoint(md) {
+      display: none;
+    }
+  }
+
+  .btn {
+    display: none;
+
+    @include breakpoint(md) {
+      display: block;
+      grid-row: 2;
+      grid-column: 2;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+
+

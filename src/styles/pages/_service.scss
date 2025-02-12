@@ -271,6 +271,17 @@
       grid-template-columns: repeat(2, 1fr);
     }
   }
+
+  .section-top {
+    @include breakpoint(lg) {
+      display: grid;
+      gap: 24px;
+    }
+    .section-description {
+      max-width: 673px;
+    }
+
+  }
 }
 
 .service-page__specialization {
@@ -291,14 +302,6 @@
       font-size: 14px;
       line-height: 150%; /* 21px */
 
-    }
-
-    .specialists__inner-top-nav {
-      align-self: flex-end;
-
-      @include breakpoint(md) {
-        align-self: flex-start;
-      }
     }
   }
 }

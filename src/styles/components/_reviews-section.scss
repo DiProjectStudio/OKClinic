@@ -20,11 +20,6 @@
       @include breakpoint(md) {
         gap: 16px;
       }
-
-      .swiper-nav {
-        @include flexAlignCenter;
-        gap: 8px;
-      }
     }
   }
 

@@ -557,8 +557,8 @@ img {
   object-fit: cover;
 }
 
-section {
-  & + .section-block, & + section {
+section, .side-wrapper {
+   & + section {
     margin-top: 48px;
 
     @include breakpoint(md) {
@@ -606,6 +606,13 @@ button, div, a {
   li {
     @include flexAlignCenter;
     gap: 10px;
+    color: $gray-dark;
+    font-size: 14px;
+    line-height: 150%; /* 21px */
+
+    @include breakpoint(md) {
+      font-size: 16px;
+    }
 
     &:before {
       content: '';
@@ -616,6 +623,8 @@ button, div, a {
     }
   }
 }
+
+
 
 
 /////////////////////
@@ -756,3 +765,8 @@ h1 {
 /////////////////////
 /// SWIPER SLIDER
 /////////////////////
+
+.swiper-nav {
+  @include flexAlignCenter;
+  gap: 8px;
+}

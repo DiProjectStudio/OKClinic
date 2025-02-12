@@ -1,0 +1,82 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.faq-item {
+  padding: 20px 24px;
+  border-radius: 16px;
+  background-color: $gray-subdied;
+  transition: $transition;
+  cursor: pointer;
+
+  &__question {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__text {
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: $transition;
+
+    &.opened {
+      opacity: 1;
+      visibility: visible;
+      margin-top: 12px;
+    }
+  }
+
+  &:hover {
+    background-color: $blue-subdied;
+
+    .faq-item-title {
+      color: $blue-dark;
+    }
+  }
+
+  &__title {
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 120%;
+    color: $black;
+    transition: $transition;
+  }
+}
+
+.btn-accordeon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: $white;
+  @include flexCenterCenter;
+  cursor: pointer;
+  flex-shrink: 0;
+
+  &--in, &--out {
+    &:before {
+      content: '';
+      width: 24px;
+      height: 24px;
+      display: block;
+      transition: $transition;
+    }
+  }
+
+  &--in {
+    &:before {
+      background: url("../icons/icon_plus.svg") no-repeat center;
+    }
+  }
+
+  &--out {
+    background-color: $blue-dark;
+
+    &:before {
+      background: url("../icons/icon_plus--white.svg") no-repeat center;
+    }
+  }
+}

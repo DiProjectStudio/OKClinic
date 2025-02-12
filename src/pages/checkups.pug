@@ -1,0 +1,145 @@
+extends ../layout/layout
+
+block title
+    - title = 'Чекапы'
+    - page = 'page-checkups'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Чекапы')
+    section.checkups-main
+        .container
+            .checkups-main__inner
+                .checkups-main__inner-top
+                    h1.not-main Чекапы
+                    p.
+                        Мы предлагаем большой выбор специализированных
+                        программ диспансеризации для людей разных возрастов,
+                        составленных с учетом половых и возрастных
+                        особенностей пациентов.
+
+                    .checkups-main__inner-top-image
+                        +img('checkups-image.png')
+                    .checkups-main__inner-top-crosses
+                        +img('crosses-1.png')
+
+                .checkups-main__inner-bottom
+                    .checkups-main__inner-bottom-text
+                        p Пройдите чекап
+                        p Все обследования и анализы в одном месте
+                    .checkups-main__inner-bottom-button
+                        p от 1500 ₽
+                        a(href='javascript:void(0)').btn.btn--blue-dark Запись на прием
+    .chekups-wrapper.side-wrapper
+        .container
+            .chekups-wrapper__inner
+                .chekups-wrapper__leftside
+                    .chekups-wrapper__leftside-dropdowns
+                        .dropdown
+                            .dropdown__top
+                                .dropdown__top-title Для кого
+                                .dropdown__top-arrow
+                                    include ../icons/icon_chevron-down--black.svg
+                            .dropdown__content
+                                ul
+                                    li
+                                        a(href='checkups-category.html') Для женщин
+                                    li
+                                        a(href='javascript:void(0)') Для мужчин
+                                .dropdown__content-title Возраст
+                                ul
+                                    li
+                                        a(href='javascript:void(0)') Моложе 40 лет
+                                    li
+                                        a(href='javascript:void(0)') Cтарше 40 лет
+
+
+                        include ../components/_dropdown
+                        -
+                            var dropdown = {
+                                title: 'По направлениям',
+                                content: [
+                                    'Гинекология', 'Гастроэнтерология', 'Иммунология',
+                                    'Кардиология', 'Пульмонология', 'Урология'
+                                ]
+                            }
+                        +dropdown(dropdown.title, dropdown.content)
+
+                .chekups-wrapper__main
+                    .anchor-links
+                        a(href='#about').anchor-link.active Об услуге
+                        a(href='#objectives').anchor-link Основные цели
+                        a(href='#popular').anchor-link Популярные чекапы
+                        a(href='#faq').anchor-link Частые вопросы
+                        a(href='#advantages').anchor-link Преимущества
+
+                    section.chekups-about#about
+                        .h2-title Что такое комплексное обследование Check-Up?
+                        p.
+                            Check-Up – это инвестиция в ваше здоровье.
+                            Это возможность своевременно выявить риски,
+                            предотвратить развитие заболеваний и вести
+                            здоровый образ жизни. Регулярные Check-Up
+                            являются важной частью профилактической
+                            медицины и позволяют сохранить здоровье
+                            на долгие годы.
+
+                    section.checkups-objectives#objectives
+                        .h2-title Основные цели
+                        ul.custom-list
+                            li Ранняя диагностика: Выявление заболеваний на ранних стадиях, когда они наиболее поддаются лечению.
+                            li Оценка рисков: Определение факторов риска развития заболеваний (например, сердечно-сосудистых, онкологических, диабета и др.).
+                            li Индивидуальные рекомендации: Получение рекомендаций по питанию, физической активности, образу жизни и профилактике заболеваний, основанных на индивидуальных потребностях и состоянии здоровья.
+                            li Планирование здоровья: Составление плана действий для поддержания и улучшения здоровья на будущее.
+                            li Душевное спокойствие: Получение уверенности в том, что вы заботитесь о своем здоровье, и возможность своевременно принять необходимые меры.
+
+                    section.checkups-popular.checkups__slider#popular
+                        .checkups-popular__top
+                            .h2-title Популярные чекапы
+                            .swiper-nav
+                                button.arrow-prev
+                                button.arrow-next
+                        .checkups-popular__slider.swiper
+                            .swiper-wrapper
+                                -
+                                    var checkups = [
+                                        {
+                                            title: 'Чекап «Скан женского здоровья»',
+                                            description: 'Полный комплекс обследований и выявление заболеваний на ранней стадии за 3-4 дня',
+
+                                        },
+                                        {
+                                            title: 'Чекап «Мужское здоровье»',
+                                            description: 'Две консультации уролога, целый комплекс исследований и забор материалов',
+
+                                        },
+                                        {
+                                            title: 'Чекап «Здоровое пищевариение»',
+                                            description: 'Лабораторные, ультразвуковое и эндоскопические исследования всей пищеварительной системы',
+
+                                        },
+                                    ]
+                                each checkup, index in checkups
+                                    .swiper-slide
+                                        include ../components/_checkup-slider-card
+                                        +checkupSliderCard(checkup.title, checkup.description, index)
+
+
+                    section.checkups-faq#faq
+                        .h2-title Вопрос ответ
+                        .checkups-faq__items
+                            -
+                                var faqItems = [
+                                    'Как подготовиться к чекапу?', 'Когда будут готовы результаты?',
+                                    'Какие обследования будут проводиться?',
+                                    'Можно ли получить отчет на электронную почту?'
+                                ]
+                            include ../components/_faq-card
+                            each faqItem in faqItems
+                                +faqCard(faqItem)
+
+                    section.checkups-advantages#advantages
+                        .h2-title Преимущества услуги
+                        include ../components/_advantages-block
+
+    include ../components/_feedback

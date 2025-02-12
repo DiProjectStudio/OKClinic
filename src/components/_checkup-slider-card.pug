@@ -1,0 +1,9 @@
+mixin checkupSliderCard(title, description, index)
+    a(href='javascript:void(0)').checkup-slider-card
+        .checkup-slider-card__title= title
+        .checkup-slider-card__description= description
+        .checkup-slider-card__prices
+            span 14 200 ₽
+            span 21 800 ₽
+        .checkup-slider-card__image
+            +img(`checkup-image-${index + 1}.png`)

@@ -313,9 +313,6 @@
       }
 
       .swiper-nav {
-        @include flexAlignCenter;
-        gap: 8px;
-
         @include breakpoint(md) {
           justify-self: flex-end;
         }

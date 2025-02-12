@@ -1,0 +1,40 @@
+extends ../layout/layout
+
+block title
+    - title = 'Чекап «Скан женского здоровья»'
+    - page = 'page-checkup'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Чекапы', 'Чекапы гинекология', 'Чекап «Скан женского здоровья»')
+    .checkup-wrapper.side-wrapper
+        .container
+            h1.not-main Чекап «Скан женского здоровья»
+            .checkup-wrapper__inner
+                .checkup-wrapper__rightside
+                    .checkup-wrapper__rightside-content
+                        .checkup__group
+                            p Группа чекапов
+                            p Гинекология
+                        .checkup__price
+                            .checkup__price-top
+                                .checkup__price-top-title Особенности
+                                ul.custom-list
+                                    li 6-8 дней
+                                    li Для пациенток старше 25 лет
+                            .checkup__price-bottom
+                                .checkup__price-bottom-price
+                                    p от 48 600 ₽
+                                    p Доп услуга: 2000 ₽
+                                .checkup__price-bottom-buttons
+                                    a(href='javascript:void(0)').btn.btn--blue-dark Запись на прием
+                                    a(href='javascript:void(0)').btn.btn--gray-subdied Пример результата
+
+                .checkup-wrapper__main
+                    .anchor-links
+                        a(href='#about').anchor-link.active Об услуге
+                        a(href='#whom').anchor-link Для кого
+                        a(href='#composition').anchor-link Состав программы
+                        a(href='#prepare').anchor-link Подготовка
+                    section.checkup-about
+    include ../components/_feedback

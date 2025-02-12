@@ -9,7 +9,7 @@ section.programs
                         улучшение состояния, но и на долгосрочную поддержку здоровья и
                         профилактику рецидивов. Перед лечением мы всегда проводим комплекс
                         тестирования и диагностики.
-            .programs__wrapper
+            .programs__wrapper.programs__slider
                 .programs__wrapper-top
                     a(href='javascript:void(0)').btn.btn--transparent-blue-secondary Все программы
                     .swiper-nav
@@ -26,14 +26,5 @@ section.programs
                         .swiper-wrapper
                             each title, index in programsTitles
                                 .swiper-slide
-                                    a(href='javascript:void(0)').programs-item
-                                        .programs-item__title= title
-                                        ul.custom-list
-                                            li Персональное сопровождение
-                                            li Индивидуальный подход
-                                            li Обследование за 1 день
-                                        .programs-item__prices
-                                            span 14 200 ₽
-                                            span 21 800 ₽
-                                        .programs-item__image
-                                            +img(`programs-${index + 1}.png`)
+                                    include ../_program-card
+                                    +programCard(title, index)

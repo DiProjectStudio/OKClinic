@@ -1,0 +1,43 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.checkups-category-wrapper__inner {
+  @include breakpoint(lg) {
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+    gap: 12px;
+  }
+}
+
+.checkups-category-wrapper__leftside-dropdowns {
+  display: grid;
+  gap: 8px;
+  position: sticky;
+  top: 120px;
+
+  @include breakpoint(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoint(lg) {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+.checkups-category-wrapper__main {
+
+  .checkups-category__items {
+    display: grid;
+    gap: 12px;
+    margin-top: 24px;
+
+    @include breakpoint(md){
+      margin-top: 32px;
+    }
+
+    @include breakpoint(lg) {
+      margin-top: 0;
+    }
+  }
+}
