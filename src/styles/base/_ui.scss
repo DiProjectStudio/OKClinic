@@ -725,7 +725,7 @@ h1 {
   }
 }
 
-.h2-title {
+.h2-title, h2 {
   font-size: 29px;
   font-weight: 600;
   line-height: 120%; /* 34.8px */
@@ -737,7 +737,7 @@ h1 {
   }
 }
 
-.h3-title {
+.h3-title, h3 {
   font-size: 24px;
   font-weight: 600;
   line-height: 120%; /* 28.8px */
@@ -749,7 +749,7 @@ h1 {
   }
 }
 
-.h4-title {
+.h4-title, h4 {
   font-size: 20px;
   font-style: normal;
   font-weight: 600;

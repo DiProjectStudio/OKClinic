@@ -9,34 +9,11 @@ block main
     +breadcrumbs('Услуги', 'Лечение головной боли')
     .service-wrapper
         .container
+            h1.not-main Лечение головной боли
             .service-wrapper__inner
                 .service-wrapper__main
                     section.service-page-main
                         .service-page-main__inner
-                            h1.not-main Лечение головной боли
-                            .service-page-rightside-content
-                                .service-page__price
-                                    .service-page__price-top
-                                        p Лечение головной боли
-                                        ul.custom-list
-                                            li Персональное сопровождение
-                                            li Индивидуальный подход
-                                            li Обследования
-                                    .service-page__price-bottom
-                                        p от 1500 ₽
-                                        .note-main__price-bottom-buttons
-                                            a(href='javascript:void(0)').btn.btn--blue-dark Запись на прием
-                                            a(href='javascript:void(0)').btn.btn--gray-subdied Заказать звонок
-                                .service-page__license
-                                    .service-page__license-title Лицензия
-                                    a(href='javascript:void(0)')
-                                        p.
-                                            Выписка из реестра лицензий от 23.10.2024 г.
-                                            (Лицензия № Л111-1111-11/1111111111 от 11.11.2019г.)
-                                            <br>
-                                            <br>
-                                            <span>PDF 706.42 КБ</span>
-
                             .anchor-links
                                 a(href='#about').anchor-link.active Об услуге
                                 a(href='#reasons').anchor-link Причины
@@ -224,6 +201,30 @@ block main
                         .h2-title Преимущества услуги
                         include ../components/_advantages-block
                 .service-wrapper__rightside
+                    .service-wrapper__rightside-content
+                        .service-page__price
+                            .service-page__price-top
+                                p Лечение головной боли
+                                ul.custom-list
+                                    li Персональное сопровождение
+                                    li Индивидуальный подход
+                                    li Обследования
+                            .service-page__price-bottom
+                                p от 1500 ₽
+                                .note-main__price-bottom-buttons
+                                    a(href='javascript:void(0)').btn.btn--blue-dark Запись на прием
+                                    a(href='javascript:void(0)').btn.btn--gray-subdied Заказать звонок
+                        .service-page__license
+                            .service-page__license-title Лицензия
+                            a(href='javascript:void(0)')
+                                p.
+                                    Выписка из реестра лицензий от 23.10.2024 г.
+                                    (Лицензия № Л111-1111-11/1111111111 от 11.11.2019г.)
+                                    <br>
+                                    <br>
+                                    <span>PDF 706.42 КБ</span>
+
 
     include ../components/_reviews-section
+    +reviews-section('service')
     include ../components/_feedback

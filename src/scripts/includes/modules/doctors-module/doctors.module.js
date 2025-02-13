@@ -31,10 +31,12 @@ export default class DoctorsModule {
 
     /** Подставляет значение количества отзывов на странице врача */
     reviewsCountSetup() {
-        const reviewsCount = document.querySelectorAll(".doctor__reviews .review")?.length;
+        const reviews = document.querySelectorAll(".doctor-reviews .review");
         const doctorReviewsCountElement = document.querySelector(".doctor .anchor-link[href='#reviews']");
-        if (reviewsCount && doctorReviewsCountElement) {
-            doctorReviewsCountElement.textContent = `Отзывы (${reviewsCount})`;
+        if (reviews && reviews.length > 0 && doctorReviewsCountElement) {
+            doctorReviewsCountElement.textContent = `Отзывы (${reviews.length})`;
+        } else if (reviews && reviews.length === 0 && doctorReviewsCountElement){
+            doctorReviewsCountElement.textContent = `Отзывы (0)`;
         }
     }
 }

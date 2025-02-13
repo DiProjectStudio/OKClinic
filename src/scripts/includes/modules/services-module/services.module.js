@@ -5,7 +5,6 @@ export default class ServicesModule {
 
     onInit() {
         // this.searchTabsAction();
-        this.copyRightSideContent();
         this.reviewsCountSetup();
     }
 
@@ -20,21 +19,15 @@ export default class ServicesModule {
             })
         }
     }
-    /** Копирует блок с ценой в боковую секцию */
-    copyRightSideContent() {
-        const rightSideContent = document.querySelector(".service-page-rightside-content");
-        const rightSide = document.querySelector(".service-wrapper__rightside");
-        if (rightSide && rightSideContent) {
-            rightSide.append(rightSideContent.cloneNode(true));
-        }
-    }
 
-    /** Подставляет значение количества отзывов на странице врача */
+    /** Подставляет значение количества отзывов на странице услуги */
     reviewsCountSetup() {
-        const reviewsCount = document.querySelectorAll(".reviews .review")?.length;
+        const reviews = document.querySelectorAll(".service-reviews .review");
         const reviewsCountElement = document.querySelector(".service-page-main .anchor-link[href='#reviews']");
-        if (reviewsCount && reviewsCountElement) {
-            reviewsCountElement.textContent = `Отзывы (${reviewsCount})`;
+        if (reviews && reviews.length > 0 && reviewsCountElement) {
+            reviewsCountElement.textContent = `Отзывы (${reviews.length})`;
+        } else if (reviews && reviews.length === 0 && reviewsCountElement){
+            reviewsCountElement.textContent = `Отзывы (0)`;
         }
     }
 }

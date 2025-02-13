@@ -4,11 +4,14 @@
 .service-wrapper {
   margin-bottom: 48px;
 
+
   @include breakpoint(md) {
     margin-bottom: 64px;
   }
 
   &__inner {
+    @include flexColumn;
+
     @include breakpoint(lg) {
       display: grid;
       grid-template-columns: minmax(0, 9fr) 3fr;
@@ -17,19 +20,28 @@
   }
 
   &__main {
+    order: 2;
+
+    @include breakpoint(lg) {
+      order: 1;
+    }
+
     .service-page-rightside-content {
       display: grid;
       gap: 12px;
-
-      @include breakpoint(lg) {
-        display: none;
-      }
     }
   }
 
   &__rightside {
-    .service-page-rightside-content {
-      display: none;
+    order: 1;
+
+    @include breakpoint(lg) {
+      order: 2;
+    }
+
+    &-content {
+      display: grid;
+      gap: 12px;
 
       @include breakpoint(lg) {
         display: grid;
@@ -277,6 +289,7 @@
       display: grid;
       gap: 24px;
     }
+
     .section-description {
       max-width: 673px;
     }

@@ -1,0 +1,22 @@
+.tests-wrapper__inner {
+  display: grid;
+  gap: 24px;
+
+  &-leftside {
+
+  }
+
+  &-main {
+
+  }
+}
+
+.tests-popular {
+  display: grid;
+  gap: 24px;
+
+  &__items {
+    display: grid;
+    gap: 16px;
+  }
+}

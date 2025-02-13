@@ -49,30 +49,34 @@
         font-size: 16px;
       }
     }
-  }
 
-  ul {
-    margin-top: 8px;
-
-    @include breakpoint(md) {
-      display: flex;
-      flex-direction: row;
-      gap: 20px;
-      align-self: center;
-    }
-
-    li {
+    ul {
+      margin-top: 8px;
+      display: grid;
       gap: 8px;
-      line-height: 16px;
-      font-size: 11px;
 
       @include breakpoint(md) {
-        font-size: 13px;
-        line-height: 150%;
-        max-height: fit-content;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        align-self: center;
+      }
+
+      li {
+        gap: 8px;
+        line-height: 16px;
+        font-size: 11px;
+
+        @include breakpoint(md) {
+          font-size: 13px;
+          line-height: 150%;
+          max-height: fit-content;
+        }
       }
     }
   }
+
+
 
   &__bottom {
     display: flex;
