@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги</title>
+    <!-- Styles::Start-->
+    <!-- Styles::End-->
+    <!--if yandexMap === true-->
+    <script data-skip-moving="true" src="https://api-maps.yandex.ru/2.1/?apikey=39aa5abe-ec5b-45c6-9d35-323c61ba7263&amp;lang=ru_RU"></script>
+    <!--link(rel='apple-touch-icon' sizes='180x180' href='')-->
+    <!--link(rel='icon' type='image/png' sizes='32x32' href='')-->
+    <!--link(rel='icon' type='image/png' sizes='16x16' href='')-->
+    <!--link(rel='manifest' href='./favicon/site.webmanifest')-->
+    <!--meta(name='msapplication-TileColor' content='#da532c')-->
+    <!--meta(name='theme-color' content='#ffffff')-->
+    <script type="module" src="./assets/js/vendor.min.js"></script>
+    <script type="module" src="./assets/js/main2.js"></script>
+    <link rel="stylesheet" href="./assets/css/plugins.min.css">
+    <link rel="stylesheet" href="./assets/css/style.min.css">
+  </head>
+  <body>
+    <div id="overlay"></div>
+    <!-- Header::Start-->
+    <header class="header" id="header">
+      <div class="container">
+        <div class="header__inner"><a class="header__inner-logo" href="/"><svg width="72" height="68" viewBox="0 0 72 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.5298 13.4539V0H29.7044V13.4539H16.1836V26.2159H29.7044L29.7044 39.6699H42.5298V26.2159H56.0506V13.4539H42.5298Z" fill="#1FA3E4"/>
+<path d="M30.9799 14.1972C33.9467 13.7974 35.5383 15.8245 35.9633 16.888C36.3882 15.8245 37.9798 13.7974 40.9466 14.1972C44.6552 14.6969 45.8141 19.2713 43.6894 21.6161L35.9633 29.3041L28.2371 21.6161C26.1124 19.2713 27.2713 14.6969 30.9799 14.1972Z" fill="#007AC5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M28.2336 21.6163C26.1089 19.2715 27.2679 14.6971 30.9764 14.1974C32.7864 13.9535 34.0846 14.6129 34.9182 15.4057C35.451 15.9123 35.7941 16.4735 35.9598 16.8882C36.1255 16.4735 36.4686 15.9123 37.0014 15.4057C37.835 14.6129 39.1332 13.9535 40.9432 14.1974C44.6517 14.6971 45.8106 19.2715 43.686 21.6163L35.9598 29.3043L28.2336 21.6163ZM35.9598 14.1684C37.091 13.121 38.8089 12.2806 41.1609 12.5975C43.7261 12.9432 45.3964 14.7219 46.0457 16.7177C46.6797 18.6667 46.4064 21.0249 44.891 22.6974L44.8629 22.7284L35.9598 31.5875L27.0567 22.7284L27.0286 22.6974C25.5132 21.0249 25.2399 18.6667 25.8739 16.7177C26.5232 14.7219 28.1935 12.9432 30.7587 12.5975C33.1107 12.2806 34.8286 13.121 35.9598 14.1684Z" fill="white"/>
+<path d="M36 61.4269C35.794 61.1066 35.3742 59.8816 35.3433 57.5445C35.3046 54.623 34.6479 48.1267 31.0939 44.129C29.3941 42.1301 26.69 40.7847 24.8743 40.1697C23.0587 39.5546 16.5687 37.3251 15.0621 36.1335C14.3061 35.5355 13.9804 35.1725 13.6328 34.6344C13.2078 33.9296 12.1648 32.574 11.3922 32.7892C10.465 33.0476 9.96671 35.0572 11.3922 38.2093C12.0875 39.7468 14.444 41.5151 16.5301 42.3992C17.0462 42.618 17.7634 42.8602 18.5348 43.1208C20.8808 43.9134 23.7277 44.8752 22.9428 45.8588C22.3247 46.7506 20.3159 46.7941 19.3888 46.7045C18.0496 46.4354 14.9617 45.4667 13.3237 43.7446C11.2763 41.592 8.1472 37.0561 6.44745 33.3274C4.59317 28.9914 3.61452 27.4461 3.35698 27.2155C2.59724 26.011 0.884613 23.902 0.111998 25.1013C-0.289763 25.7163 0.485429 27.8689 0.923244 28.8684C1.43832 30.0088 2.74662 33.6119 3.85918 38.9012C5.24989 45.5128 9.57654 50.164 12.3193 52.2398C14.5136 53.9004 17.9465 55.2893 19.3888 55.7762L21.2817 56.5066C24.076 57.1729 29.6414 60.4044 29.5487 68.0001H42.4513C42.3586 60.4044 47.924 57.1729 50.7183 56.5066L52.6112 55.7762C54.0535 55.2893 57.4864 53.9004 59.6807 52.2398C62.4235 50.164 66.7501 45.5128 68.1408 38.9012C69.2534 33.6119 70.5617 30.0088 71.0768 28.8684C71.5146 27.8689 72.2898 25.7163 71.888 25.1013C71.1154 23.902 69.4027 26.011 68.643 27.2155C68.3855 27.4461 67.4068 28.9914 65.5526 33.3274C63.8528 37.0561 60.7237 41.592 58.6763 43.7446C57.0383 45.4667 53.9504 46.4354 52.6112 46.7045C51.6841 46.7941 49.6753 46.7506 49.0572 45.8588C48.2723 44.8752 51.1192 43.9134 53.4652 43.1208C54.2366 42.8602 54.9538 42.618 55.4699 42.3992C57.556 41.5151 59.9125 39.7468 60.6078 38.2093C62.0333 35.0572 61.535 33.0476 60.6078 32.7892C59.8352 32.574 58.7922 33.9296 58.3672 34.6344C58.0195 35.1725 57.6939 35.5355 56.9379 36.1335C55.4313 37.3251 48.9413 39.5546 47.1257 40.1697C45.31 40.7847 42.6059 42.1301 40.9061 44.129C37.3521 48.1267 36.6954 54.623 36.6567 57.5445C36.6258 59.8816 36.206 61.1066 36 61.4269Z" fill="#007AC5"/>
+</svg>
+<span>OK.clinic</span></a>
+          <div class="header__inner-nav">
+            <div class="header__inner-nav-top"><a class="header__inner-nav-top-address" href="javascript:void(0)">Санкт-Петербург, Смоленская., д. 14</a>
+              <div class="header__inner-nav-top-worktime">Пн-Вс 8:00 - 21:00</div><a class="header__inner-nav-top-mail" href="mailto:info@domain.com">info@domain.com</a>
+            </div>
+            <div class="header__inner-nav-bottom">
+              <nav>
+                <ul>
+                  <li class="with-submenu"><a href="services.html">Услуги</a>
+                    <ul class="submenu">
+                      <li><a href="javascript:void(0)">Направления</a></li>
+                      <li><a href="javascript:void(0)">Программы здоровья</a></li>
+                      <li><a href="notes.html">Справки</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="checkups.html">Чекапы</a></li>
+                  <li><a href="doctors.html">Врачи</a></li>
+                  <li><a href="tests.html">Анализы</a></li>
+                  <li><a href="javascript:void(0)">Диагностика</a></li>
+                  <li><a href="javascript:void(0)">Заболевания</a></li>
+                  <li class="with-submenu"><a href="javascript:void(0)">Клиника</a>
+                    <ul class="submenu">
+                      <li><a href="javascript:void(0)">Акции</a></li>
+                      <li><a href="javascript:void(0)">Новости</a></li>
+                      <li><a href="javascript:void(0)">Отзывы</a></li>
+                      <li><a href="javascript:void(0)">Контакты</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="header__inner-additional">
+            <div class="header__inner-additional-top"><a class="header__inner-additional-top-phone" href="tel:78129892424">+ 7 812 989-24-24</a>
+              <div class="header__inner-additional-top-socials">
+                <noindex><a href="javascript:void(0)" rel="nofollow"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6861_4187)">
+<path d="M10 20C4.478 20 0 15.522 0 10C0 4.478 4.478 0 10 0C15.522 0 20 4.478 20 10C20 15.522 15.522 20 10 20Z" fill="#25D366"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M14.6783 5.34402C13.4383 4.10202 11.7863 3.41802 10.0283 3.41602C6.40634 3.41602 3.45634 6.36402 3.45634 9.98802C3.45634 11.146 3.75834 12.278 4.33434 13.274L3.40234 16.68L6.88634 15.766C7.84634 16.29 8.92634 16.566 10.0263 16.566H10.0283C13.6503 16.566 16.5983 13.618 16.6003 9.99402C16.6023 8.23802 15.9203 6.58602 14.6783 5.34402ZM10.0303 15.456H10.0283C9.04834 15.456 8.08634 15.192 7.24834 14.694L7.04834 14.576L4.98034 15.118L5.53234 13.102L5.40234 12.896C4.85634 12.026 4.56634 11.022 4.56634 9.98802C4.56834 6.97601 7.01834 4.52602 10.0323 4.52602C11.4923 4.52602 12.8623 5.09602 13.8943 6.12802C14.9263 7.16002 15.4943 8.53402 15.4923 9.99202C15.4923 13.006 13.0403 15.456 10.0303 15.456ZM13.0263 11.364C12.8623 11.282 12.0543 10.884 11.9043 10.83C11.7543 10.776 11.6443 10.748 11.5343 10.912C11.4243 11.076 11.1103 11.446 11.0143 11.556C10.9183 11.666 10.8223 11.68 10.6583 11.598C10.4943 11.516 9.96434 11.342 9.33834 10.782C8.85034 10.346 8.52034 9.80802 8.42434 9.64402C8.32834 9.48002 8.41434 9.39002 8.49634 9.30801C8.57034 9.23401 8.66034 9.11602 8.74234 9.02002C8.82434 8.92402 8.85234 8.85602 8.90634 8.74602C8.96034 8.63602 8.93434 8.54002 8.89234 8.45802C8.85034 8.37602 8.52234 7.56802 8.38634 7.23802C8.25234 6.91802 8.11834 6.96202 8.01634 6.95602C7.92034 6.95202 7.81034 6.95002 7.70234 6.95002C7.59234 6.95002 7.41434 6.99202 7.26434 7.15602C7.11434 7.32002 6.69034 7.71802 6.69034 8.52602C6.69034 9.33402 7.27834 10.116 7.36034 10.224C7.44234 10.334 8.51834 11.992 10.1663 12.704C10.5583 12.874 10.8643 12.974 11.1023 13.05C11.4963 13.176 11.8543 13.158 12.1363 13.116C12.4523 13.068 13.1083 12.718 13.2443 12.336C13.3803 11.952 13.3803 11.624 13.3403 11.556C13.3003 11.488 13.1903 11.448 13.0263 11.364Z" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_6861_4187">
+<rect width="20" height="20" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+</a></noindex>
+                <noindex><a href="javascript:void(0)" rel="nofollow"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6861_4194)">
+<path d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z" fill="url(#paint0_linear_6861_4194)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.52782 9.89446C7.44302 8.62435 9.38695 7.78702 10.3596 7.38246C13.1367 6.22737 13.7138 6.02672 14.0899 6.02009C14.1726 6.01863 14.3576 6.03913 14.4774 6.13635C14.5785 6.21844 14.6064 6.32934 14.6197 6.40717C14.633 6.485 14.6496 6.6623 14.6364 6.80083C14.4859 8.38207 13.8348 12.2193 13.5035 13.9903C13.3633 14.7397 13.0873 14.991 12.8201 15.0156C12.2393 15.069 11.7984 14.6318 11.2359 14.2631C10.3558 13.6861 9.85857 13.327 9.00425 12.764C8.01694 12.1134 8.65697 11.7558 9.21964 11.1714C9.36689 11.0184 11.9256 8.69115 11.9751 8.48003C11.9813 8.45362 11.987 8.3552 11.9285 8.30323C11.8701 8.25126 11.7838 8.26903 11.7215 8.28316C11.6332 8.3032 10.2272 9.23253 7.50344 11.0711C7.10435 11.3452 6.74286 11.4787 6.41898 11.4717C6.06193 11.464 5.37511 11.2698 4.86452 11.1039C4.23827 10.9003 3.74054 10.7927 3.78388 10.4469C3.80646 10.2669 4.05443 10.0827 4.52782 9.89446Z" fill="white"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_6861_4194" x1="1000" y1="0" x2="1000" y2="1985.17" gradientUnits="userSpaceOnUse">
+<stop stop-color="#2AABEE"/>
+<stop offset="1" stop-color="#229ED9"/>
+</linearGradient>
+<clipPath id="clip0_6861_4194">
+<rect width="20" height="20" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+</a></noindex>
+              </div>
+            </div>
+            <div class="header__inner-additional-bottom"><a class="search-button" data-src="#popupSearch" data-fancybox><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9 3.5C5.96243 3.5 3.5 5.96243 3.5 9C3.5 12.0376 5.96243 14.5 9 14.5C10.519 14.5 11.893 13.8852 12.8891 12.8891C13.8852 11.893 14.5 10.519 14.5 9C14.5 5.96243 12.0376 3.5 9 3.5ZM2 9C2 5.13401 5.13401 2 9 2C12.866 2 16 5.13401 16 9C16 10.6625 15.4197 12.1906 14.4517 13.3911L17.7803 16.7197C18.0732 17.0126 18.0732 17.4874 17.7803 17.7803C17.4874 18.0732 17.0126 18.0732 16.7197 17.7803L13.3911 14.4517C12.1906 15.4197 10.6625 16 9 16C5.13401 16 2 12.866 2 9Z" fill="#007AC5"/>
+</svg>
+</a><a class="btn btn--blue-dark" href="javascript:void(0)">Запись на прием</a></div>
+          </div>
+          <div class="header-burger" id="clickWrapper">
+            <div class="menu"></div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-menu-js" id="navMenuJS"></div>
+    </header>
+    <!-- Header::End-->
+    <!-- Main::Start-->
+    <main>
+      <div class="page-services">
+                <div class="breadcrumbs">
+                  <div class="container">
+                    <div class="breadcrumbs-wrapper">
+                      <div class="breadcrumbs-item"><a href="/">Главная</a></div><span class="breadcrumbs-separator">—</span>
+                      <div class="breadcrumbs-item"><span>Услуги</span></div>
+                    </div>
+                  </div>
+                </div>
+        <section class="services-page">
+          <div class="container">
+            <div class="services-page__inner">
+              <h1 class="not-main">Услуги</h1>
+              <div class="services-page__search">
+                <div class="services-page__search-tabs">
+                  <!-- Костя советует реализовать через get запросы и query параметрами--><a class="search-tab tag-link active" href="javascript:void(0)">Популярные услуги</a><a class="search-tab tag-link" href="javascript:void(0)">Неврология</a><a class="search-tab tag-link" href="javascript:void(0)">Педиатрия</a><a class="search-tab tag-link" href="javascript:void(0)">Хирургия</a><a class="search-tab tag-link" href="javascript:void(0)">Ортопедия</a><a class="search-tab tag-link" href="javascript:void(0)">Гастроэнтерология</a><a class="search-tab tag-link" href="javascript:void(0)">Офтальмология</a><a class="search-tab tag-link" href="javascript:void(0)">Онкология</a><a class="search-tab tag-link" href="javascript:void(0)">Флебология</a><a class="search-tab tag-link" href="javascript:void(0)">Гематология</a><a class="search-tab tag-link" href="javascript:void(0)">Эндокринология</a><a class="search-tab tag-link" href="javascript:void(0)">Травматология</a><a class="search-tab tag-link" href="javascript:void(0)">Урология</a><a class="search-tab tag-link" href="javascript:void(0)">Психология</a><a class="search-tab tag-link" href="javascript:void(0)">Гематология</a>
+                </div>
+                <div class="services-page__search-results"><a class="services-page__search-result" href="service.html"><span>Название услуги</span>
+                    <div class="arrow-up-link arrow-up-link--black"></div></a><a class="services-page__search-result" href="service.html"><span>Лечение грыжи межпозвонкового диска</span>
+                    <div class="arrow-up-link arrow-up-link--black"></div></a><a class="services-page__search-result" href="service.html"><span>Лечение грыжи межпозвонкового диска</span>
+                    <div class="arrow-up-link arrow-up-link--black"></div></a><a class="services-page__search-result" href="service.html"><span>Лечение грыжи межпозвонкового диска</span>
+                    <div class="arrow-up-link arrow-up-link--black"></div></a><a class="services-page__search-result" href="service.html"><span>Лечение грыжи межпозвонкового диска</span>
+                    <div class="arrow-up-link arrow-up-link--black"></div></a><a class="services-page__search-result" href="service.html"><span>Лечение грыжи межпозвонкового диска</span>
+                    <div class="arrow-up-link arrow-up-link--black"></div></a><a class="services-page__search-result" href="service.html"><span>Лечение грыжи межпозвонкового диска</span>
+                    <div class="arrow-up-link arrow-up-link--black"></div></a><a class="services-page__search-result" href="service.html"><span>Лечение грыжи межпозвонкового диска</span>
+                    <div class="arrow-up-link arrow-up-link--black"></div></a><a class="services-page__search-result" href="service.html"><span>Лечение грыжи межпозвонкового диска</span>
+                    <div class="arrow-up-link arrow-up-link--black"></div></a><a class="services-page__search-result" href="service.html"><span>Лечение грыжи межпозвонкового диска</span>
+                    <div class="arrow-up-link arrow-up-link--black"></div></a><a class="services-page__search-result" href="service.html"><span>Лечение грыжи межпозвонкового диска</span>
+                    <div class="arrow-up-link arrow-up-link--black"></div></a><a class="services-page__search-result" href="service.html"><span>Лечение грыжи межпозвонкового диска</span>
+                    <div class="arrow-up-link arrow-up-link--black"></div></a>
+                </div><a class="btn btn--transparent-blue-dark" href="javascript:void(0)">Показать еще</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="services-page__popular">
+          <div class="container">
+            <div class="services-page__popular-inner">
+              <div class="h2-title">Популярные направления</div>
+              <div class="services-page__popular-items"><a class="services-page__popular-item" href="direction.html">
+                  <p>Гинекология и акушерство</p>
+                  <div class="arrow-up-link arrow-up-link--blue"></div>
+                  <div class="services-page__popular-item-image"><img src="./assets/images/services-page-image-1.png" alt="img">
+                  </div>
+                  <div class="services-page__popular-item-crosses"><img src="./assets/images/crosses-1.png" alt="img">
+                  </div></a><a class="services-page__popular-item" href="direction.html">
+                  <p>Неврология</p>
+                  <div class="arrow-up-link arrow-up-link--blue"></div>
+                  <div class="services-page__popular-item-image"><img src="./assets/images/services-page-image-2.png" alt="img">
+                  </div>
+                  <div class="services-page__popular-item-crosses"><img src="./assets/images/crosses-1.png" alt="img">
+                  </div></a><a class="services-page__popular-item" href="direction.html">
+                  <p>Педиатрия</p>
+                  <div class="arrow-up-link arrow-up-link--blue"></div>
+                  <div class="services-page__popular-item-image"><img src="./assets/images/services-page-image-3.png" alt="img">
+                  </div>
+                  <div class="services-page__popular-item-crosses"><img src="./assets/images/crosses-1.png" alt="img">
+                  </div></a><a class="services-page__popular-item" href="direction.html">
+                  <p>Хирургия</p>
+                  <div class="arrow-up-link arrow-up-link--blue"></div>
+                  <div class="services-page__popular-item-image"><img src="./assets/images/services-page-image-4.png" alt="img">
+                  </div>
+                  <div class="services-page__popular-item-crosses"><img src="./assets/images/crosses-1.png" alt="img">
+                  </div></a><a class="services-page__popular-item" href="direction.html">
+                  <p>Ортопедия и травматология</p>
+                  <div class="arrow-up-link arrow-up-link--blue"></div>
+                  <div class="services-page__popular-item-image"><img src="./assets/images/services-page-image-5.png" alt="img">
+                  </div>
+                  <div class="services-page__popular-item-crosses"><img src="./assets/images/crosses-1.png" alt="img">
+                  </div></a><a class="services-page__popular-item" href="direction.html">
+                  <p>Гастроэнтерология</p>
+                  <div class="arrow-up-link arrow-up-link--blue"></div>
+                  <div class="services-page__popular-item-image"><img src="./assets/images/services-page-image-6.png" alt="img">
+                  </div>
+                  <div class="services-page__popular-item-crosses"><img src="./assets/images/crosses-1.png" alt="img">
+                  </div></a><a class="services-page__popular-item" href="direction.html">
+                  <p>Офтальмология</p>
+                  <div class="arrow-up-link arrow-up-link--blue"></div>
+                  <div class="services-page__popular-item-image"><img src="./assets/images/services-page-image-7.png" alt="img">
+                  </div>
+                  <div class="services-page__popular-item-crosses"><img src="./assets/images/crosses-1.png" alt="img">
+                  </div></a><a class="services-page__popular-item" href="direction.html">
+                  <p>Оториноларингология (ЛОР)</p>
+                  <div class="arrow-up-link arrow-up-link--blue"></div>
+                  <div class="services-page__popular-item-image"><img src="./assets/images/services-page-image-8.png" alt="img">
+                  </div>
+                  <div class="services-page__popular-item-crosses"><img src="./assets/images/crosses-1.png" alt="img">
+                  </div></a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="services-page__directions">
+          <div class="container">
+            <div class="section-title">Все направления</div>
+            <div class="services-page__directions-items">
+              <div class="services-page__directions-item">
+                <p>А</p>
+                <ul>
+                  <li><a href="direction.html">Аллергология и иммунология</a></li>
+                  <li><a href="direction.html">Андрология</a></li>
+                  <li><a href="direction.html">Артимология</a></li>
+                </ul>
+              </div>
+              <div class="services-page__directions-item">
+                <p>Г</p>
+                <ul>
+                  <li><a href="direction.html">Гастроэнтерология</a></li>
+                  <li><a href="direction.html">Гематология</a></li>
+                </ul>
+              </div>
+              <div class="services-page__directions-item">
+                <p>Д</p>
+                <ul>
+                  <li><a href="direction.html">Дерматовенерология</a></li>
+                  <li><a href="direction.html">Диетология</a></li>
+                </ul>
+              </div>
+              <div class="services-page__directions-item">
+                <p>И</p>
+                <ul>
+                  <li><a href="direction.html">Инфекционные болезни</a></li>
+                </ul>
+              </div>
+              <div class="services-page__directions-item">
+                <p>К</p>
+                <ul>
+                  <li><a href="direction.html">Кардиология</a></li>
+                  <li><a href="direction.html">Клиника лечения боли</a></li>
+                  <li><a href="direction.html">Колопроктология</a></li>
+                </ul>
+              </div>
+              <div class="services-page__directions-item">
+                <p>М</p>
+                <ul>
+                  <li><a href="direction.html">Маммология</a></li>
+                </ul>
+              </div>
+              <div class="services-page__directions-item">
+                <p>Н</p>
+                <ul>
+                  <li><a href="direction.html">Нефрология</a></li>
+                </ul>
+              </div>
+              <div class="services-page__directions-item">
+                <p>О</p>
+                <ul>
+                  <li><a href="direction.html">Онкология (химиотерапия)</a></li>
+                  <li><a href="direction.html">Ортодонтия</a></li>
+                  <li><a href="direction.html">Отоларингология</a></li>
+                  <li><a href="direction.html">Офтальмология</a></li>
+                </ul>
+              </div>
+              <div class="services-page__directions-item">
+                <p>П</p>
+                <ul>
+                  <li><a href="direction.html">Пластическая хирургия</a></li>
+                  <li><a href="direction.html">Проктология</a></li>
+                  <li><a href="direction.html">Психиатрия</a></li>
+                  <li><a href="direction.html">Психология</a></li>
+                  <li><a href="direction.html">Психотерапия</a></li>
+                  <li><a href="direction.html">Пульмонология</a></li>
+                </ul>
+              </div>
+              <div class="services-page__directions-item">
+                <p>Р</p>
+                <ul>
+                  <li><a href="direction.html">Ревматология</a></li>
+                  <li><a href="direction.html">Рефлексотерапия</a></li>
+                </ul>
+              </div>
+              <div class="services-page__directions-item">
+                <p>С</p>
+                <ul>
+                  <li><a href="direction.html">Сосудистая хирургия</a></li>
+                </ul>
+              </div>
+              <div class="services-page__directions-item">
+                <p>Т</p>
+                <ul>
+                  <li><a href="direction.html">Терапия</a></li>
+                  <li><a href="direction.html">Травматология и ортопедия</a></li>
+                </ul>
+              </div>
+              <div class="services-page__directions-item">
+                <p>У</p>
+                <ul>
+                  <li><a href="direction.html">Урология</a></li>
+                </ul>
+              </div>
+              <div class="services-page__directions-item">
+                <p>Ф</p>
+                <ul>
+                  <li><a href="direction.html">Физиотерапия</a></li>
+                  <li><a href="direction.html">Флебология</a></li>
+                </ul>
+              </div>
+              <div class="services-page__directions-item">
+                <p>Х</p>
+                <ul>
+                  <li><a href="direction.html">Хирургия</a></li>
+                </ul>
+              </div>
+              <div class="services-page__directions-item">
+                <p>Э</p>
+                <ul>
+                  <li><a href="direction.html">Эндокринная хирургия</a></li>
+                  <li><a href="direction.html">Эндокринология</a></li>
+                  <li><a href="direction.html">Эндоскопия</a></li>
+                  <li><a href="direction.html">Эстетическая гинекология</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="programs">
+          <div class="container">
+            <div class="programs__inner">
+              <div class="section-top">
+                <div class="section-title">Популярные программы здоровья</div>
+                <div class="section-description">
+                  <p>
+                    Комплексные программы здоровья нацелены не только на краткосрочное
+                    улучшение состояния, но и на долгосрочную поддержку здоровья и
+                    профилактику рецидивов. Перед лечением мы всегда проводим комплекс
+                    тестирования и диагностики.
+                  </p>
+                </div>
+              </div>
+              <div class="programs__wrapper programs__slider">
+                <div class="programs__wrapper-top"><a class="btn btn--transparent-blue-secondary" href="javascript:void(0)">Все программы</a>
+                  <div class="swiper-nav">
+                    <button class="arrow-prev"></button>
+                    <button class="arrow-next"></button>
+                  </div>
+                </div>
+                <div class="programs__wrapper-items">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide"><a class="program-card" href="javascript:void(0)">
+                                                  <div class="program-card__title">Программа «Мама и ребенок»</div>
+                                                  <ul class="custom-list">
+                                                    <li>Персональное сопровождение</li>
+                                                    <li>Индивидуальный подход</li>
+                                                    <li>Обследование за 1 день</li>
+                                                  </ul>
+                                                  <div class="program-card__prices"><span>14 200 ₽</span><span>21 800 ₽</span></div>
+                                                  <div class="program-card__image"><img src="./assets/images/programs-1.png" alt="img">
+                                                  </div></a>
+                      </div>
+                      <div class="swiper-slide"><a class="program-card" href="javascript:void(0)">
+                                                  <div class="program-card__title">Программа «Мужское здоровье»</div>
+                                                  <ul class="custom-list">
+                                                    <li>Персональное сопровождение</li>
+                                                    <li>Индивидуальный подход</li>
+                                                    <li>Обследование за 1 день</li>
+                                                  </ul>
+                                                  <div class="program-card__prices"><span>14 200 ₽</span><span>21 800 ₽</span></div>
+                                                  <div class="program-card__image"><img src="./assets/images/programs-2.png" alt="img">
+                                                  </div></a>
+                      </div>
+                      <div class="swiper-slide"><a class="program-card" href="javascript:void(0)">
+                                                  <div class="program-card__title">Программа «Пожилым здоровье»</div>
+                                                  <ul class="custom-list">
+                                                    <li>Персональное сопровождение</li>
+                                                    <li>Индивидуальный подход</li>
+                                                    <li>Обследование за 1 день</li>
+                                                  </ul>
+                                                  <div class="program-card__prices"><span>14 200 ₽</span><span>21 800 ₽</span></div>
+                                                  <div class="program-card__image"><img src="./assets/images/programs-3.png" alt="img">
+                                                  </div></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="services-page__popular-notes">
+          <div class="container">
+            <div class="section-top section-top--with-btn">
+              <div class="section-title">Популярные справки</div><a class="btn btn--transparent-blue-secondary" href="javascript:void(0)">Все справки</a>
+            </div>
+            <div class="services-page__popular-notes-wrapper"><a class="note-card" href="note.html">
+                              <div class="note-card__top">
+                                <div class="note-card__icon"></div>
+                                <div class="h4-title note-card__top-name">Справка в бассейн детям</div>
+                              </div>
+                              <div class="note-card__bottom">
+                                <div class="note-card__bottom-wrapper">
+                                  <div class="note-card__description">Оформление справки для посещения бассейна с заключением врача по допуску к оздоровительному плаванию (без стоимости обследования)</div>
+                                  <div class="note-card__price">от 1000 ₽</div>
+                                </div>
+                              </div></a><a class="note-card" href="note.html">
+                              <div class="note-card__top">
+                                <div class="note-card__icon"></div>
+                                <div class="h4-title note-card__top-name">Справка в лагерь  (079/У)</div>
+                              </div>
+                              <div class="note-card__bottom">
+                                <div class="note-card__bottom-wrapper">
+                                  <div class="note-card__description">Прием (осмотр, консультация) врача-педиатра первичный</div>
+                                  <div class="note-card__price">от 1000 ₽</div>
+                                </div>
+                                <div class="note-card__bottom-wrapper">
+                                  <div class="note-card__description">Оформление справки на ребенка, отъезжающего в санаторный оздоровительный лагерь с заключением врача (форма 079/у) (без стоимости обследования) (у детей)</div>
+                                  <div class="note-card__price">от 1000 ₽</div>
+                                </div>
+                              </div></a><a class="note-card" href="note.html">
+                              <div class="note-card__top">
+                                <div class="note-card__icon"></div>
+                                <div class="h4-title note-card__top-name">Справка в ГИБДД</div>
+                              </div>
+                              <div class="note-card__bottom">
+                                <div class="note-card__bottom-wrapper">
+                                  <div class="note-card__description">Программа медицинского обследования для взрослых &quot;Медицинское освидетельствование водителей транспортных средств для ГИБДД (категории прав &quot;M&quot;, &quot;A&quot;, &quot;A1&quot;, &quot;B&quot;, &quot;B1&quot;, &quot;BE&quot;) (КДЦ)&quot;</div>
+                                  <div class="note-card__price">от 8000 ₽</div>
+                                </div>
+                              </div></a>
+            </div>
+          </div>
+        </section>
+        <section class="seo">
+          <div class="container">
+            <div class="seo__inner">
+              <div class="seo__inner-main">
+                <div class="h2-title">Заголовок блока для продвижения который может быть длинным или очень коротким h2</div>
+                <div class="seo-image"><img src="./assets/images/seo-image.png" alt="img">
+                </div>
+              </div>
+              <div class="seo__inner-content">
+                <p>
+                  Lörem ipsum dekadade spessa dol nyrat. Supras pronäliga eller miledes,
+                  pånera semiss bende. Prens vik ett matyk punade så krora.
+                  Diasamma epiplande, iliga nälig pred. Mitässade val, rynde.
+                  Benera kabibel völig migon mol. Olålassade ryktig kyssa filostik.
+                  Tärynänisk vören i odenat med segasm vint. Krovaktigt. Mibel tölig.
+                  Epilysa oska då transism mityning tills astrora kvasisade.
+                  Nissa antis. Du kan vara drabbad.
+                </p>
+                <div class="h3-title">Заголовок блока для продвижения h3</div>
+                <p>
+                  Lörem ipsum dekadade spessa dol nyrat. Supras pronäliga
+                  eller miledes, pånera semiss bende. Prens vik ett matyk punade
+                  så krora. Diasamma epiplande, iliga nälig pred. Mitässade val,
+                  rynde. Benera kabibel völig migon mol. Olålassade ryktig kyssa
+                  filostik. Tärynänisk vören i odenat med segasm vint. Krovaktigt.
+                  Mibel tölig. Epilysa oska då transism mityning tills astrora kvasisade.
+                  Nissa antis. Du kan vara drabbad.
+                </p>
+                <div class="h4-title">Заголовок блока для продвижения h4</div>
+                <p>
+                  Lörem ipsum dekadade spessa dol nyrat. Supras pronäliga eller miledes,
+                  pånera semiss bende. Prens vik ett matyk punade så krora. Diasamma
+                  epiplande, iliga nälig pred. Mitässade val, rynde. Benera kabibel völig migon mol.
+                  Olålassade ryktig kyssa filostik. Tärynänisk vören i odenat med segasm vint.
+                  Krovaktigt. Mibel tölig. Epilysa oska då transism mityning tills astrora kvasisade.
+                  Nissa antis. Du kan vara drabbad.
+                  <br>
+                  <br>
+                  Lörem ipsum dekadade spessa dol nyrat. Supras pronäliga eller miledes,
+                  pånera semiss bende. Prens vik ett matyk punade så krora. Diasamma
+                  epiplande, iliga nälig pred. Mitässade val, rynde. Benera kabibel völig migon mol
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <!-- Main::End-->
+    <!-- Footer::Start-->
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__inner-top">
+            <div class="footer__inner-top-links">
+              <div class="links-block links-block--showdown">
+                <div class="links-block__title">Диагностика</div>
+                <div class="links-block__items">
+                  <ul>
+                    <li><a class="link-hover" href="javascript:void(0)">МРТ</a></li>
+                    <li><a class="link-hover" href="javascript:void(0)">УЗИ</a></li>
+                    <li><a class="link-hover" href="javascript:void(0)">ЭКГ</a></li>
+                    <li><a class="link-hover" href="javascript:void(0)">Рентген</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="links-block links-block--showdown">
+                <div class="links-block__title">Анализы</div>
+                <div class="links-block__items">
+                  <ul>
+                    <li><a class="link-hover" href="javascript:void(0)">Лабораторные анализы</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="links-block links-block--showdown">
+                <div class="links-block__title">Обследования</div>
+                <div class="links-block__items">
+                  <ul>
+                    <li><a class="link-hover" href="checkups.html">Чекапы</a></li>
+                    <li><a class="link-hover" href="javascript:void(0)">Программы здоровья</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="links-block links-block--showdown">
+                <div class="links-block__title">Направления</div>
+                <div class="links-block__items">
+                  <ul>
+                    <li><a class="link-hover" href="javascript:void(0)">Гастроэнтерология</a></li>
+                    <li><a class="link-hover" href="javascript:void(0)">Инфектология</a></li>
+                    <li><a class="link-hover" href="javascript:void(0)">Кардиология</a></li>
+                    <li><a class="link-hover" href="javascript:void(0)">Косметология</a></li>
+                    <li><a class="link-hover" href="javascript:void(0)">Маммология</a></li>
+                    <li><a class="link-hover" href="javascript:void(0)">Неврология</a></li>
+                    <li><a class="link-hover" href="javascript:void(0)">Общая хирургия</a></li>
+                    <li><a class="link-hover" href="javascript:void(0)">Онкология</a></li>
+                    <li><a class="link-hover" href="javascript:void(0)">Офтальмология</a></li>
+                    <li><a class="link-hover" href="javascript:void(0)">Педиатрия</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="links-block">
+                <div class="links-block__title">О клинике</div>
+                <div class="links-block__items">
+                  <ul>
+                    <li><a class="link-hover" href="services.html">Услуги</a></li>
+                    <li><a class="link-hover" href="notes.html">Справки</a></li>
+                    <li><a class="link-hover" href="doctors.html">Врачи</a></li>
+                    <li><a class="link-hover" href="tests.html">Анализы</a></li>
+                    <li><a class="link-hover" href="javascript:void(0)">Диагностика</a></li>
+                    <li><a class="link-hover" href="javascript:void(0)">Заболевания</a></li>
+                    <li><a class="link-hover" href="javascript:void(0)">Отзывы</a></li>
+                    <li><a class="link-hover" href="javascript:void(0)">Акции</a></li>
+                    <li><a class="link-hover" href="javascript:void(0)">Контакты</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="footer__inner-top-map">
+              <script>
+                let placemarks = [{
+                    coordinates: [59.90523263569599,30.322833620156818],
+                },]
+                let centerPoint = [59.90523263569599,30.322833620156818];
+                let zoomValue = 16;
+              </script>
+              <div class="map__wrapper">
+                <div id="map" style="width:100%; height:100%;"></div>
+                <div class="map__wrapper-address">Санкт-Петербург, Смоленская, д. 14</div>
+              </div>
+            </div>
+          </div>
+          <div class="footer__inner-middle">
+            <div class="footer__inner-middle-main"><a class="footer__logo" href="/"><svg width="72" height="68" viewBox="0 0 72 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.5298 13.4539V0H29.7044V13.4539H16.1836V26.2159H29.7044L29.7044 39.6699H42.5298V26.2159H56.0506V13.4539H42.5298Z" fill="#1FA3E4"/>
+<path d="M30.9799 14.1972C33.9467 13.7974 35.5383 15.8245 35.9633 16.888C36.3882 15.8245 37.9798 13.7974 40.9466 14.1972C44.6552 14.6969 45.8141 19.2713 43.6894 21.6161L35.9633 29.3041L28.2371 21.6161C26.1124 19.2713 27.2713 14.6969 30.9799 14.1972Z" fill="#007AC5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M28.2336 21.6163C26.1089 19.2715 27.2679 14.6971 30.9764 14.1974C32.7864 13.9535 34.0846 14.6129 34.9182 15.4057C35.451 15.9123 35.7941 16.4735 35.9598 16.8882C36.1255 16.4735 36.4686 15.9123 37.0014 15.4057C37.835 14.6129 39.1332 13.9535 40.9432 14.1974C44.6517 14.6971 45.8106 19.2715 43.686 21.6163L35.9598 29.3043L28.2336 21.6163ZM35.9598 14.1684C37.091 13.121 38.8089 12.2806 41.1609 12.5975C43.7261 12.9432 45.3964 14.7219 46.0457 16.7177C46.6797 18.6667 46.4064 21.0249 44.891 22.6974L44.8629 22.7284L35.9598 31.5875L27.0567 22.7284L27.0286 22.6974C25.5132 21.0249 25.2399 18.6667 25.8739 16.7177C26.5232 14.7219 28.1935 12.9432 30.7587 12.5975C33.1107 12.2806 34.8286 13.121 35.9598 14.1684Z" fill="white"/>
+<path d="M36 61.4269C35.794 61.1066 35.3742 59.8816 35.3433 57.5445C35.3046 54.623 34.6479 48.1267 31.0939 44.129C29.3941 42.1301 26.69 40.7847 24.8743 40.1697C23.0587 39.5546 16.5687 37.3251 15.0621 36.1335C14.3061 35.5355 13.9804 35.1725 13.6328 34.6344C13.2078 33.9296 12.1648 32.574 11.3922 32.7892C10.465 33.0476 9.96671 35.0572 11.3922 38.2093C12.0875 39.7468 14.444 41.5151 16.5301 42.3992C17.0462 42.618 17.7634 42.8602 18.5348 43.1208C20.8808 43.9134 23.7277 44.8752 22.9428 45.8588C22.3247 46.7506 20.3159 46.7941 19.3888 46.7045C18.0496 46.4354 14.9617 45.4667 13.3237 43.7446C11.2763 41.592 8.1472 37.0561 6.44745 33.3274C4.59317 28.9914 3.61452 27.4461 3.35698 27.2155C2.59724 26.011 0.884613 23.902 0.111998 25.1013C-0.289763 25.7163 0.485429 27.8689 0.923244 28.8684C1.43832 30.0088 2.74662 33.6119 3.85918 38.9012C5.24989 45.5128 9.57654 50.164 12.3193 52.2398C14.5136 53.9004 17.9465 55.2893 19.3888 55.7762L21.2817 56.5066C24.076 57.1729 29.6414 60.4044 29.5487 68.0001H42.4513C42.3586 60.4044 47.924 57.1729 50.7183 56.5066L52.6112 55.7762C54.0535 55.2893 57.4864 53.9004 59.6807 52.2398C62.4235 50.164 66.7501 45.5128 68.1408 38.9012C69.2534 33.6119 70.5617 30.0088 71.0768 28.8684C71.5146 27.8689 72.2898 25.7163 71.888 25.1013C71.1154 23.902 69.4027 26.011 68.643 27.2155C68.3855 27.4461 67.4068 28.9914 65.5526 33.3274C63.8528 37.0561 60.7237 41.592 58.6763 43.7446C57.0383 45.4667 53.9504 46.4354 52.6112 46.7045C51.6841 46.7941 49.6753 46.7506 49.0572 45.8588C48.2723 44.8752 51.1192 43.9134 53.4652 43.1208C54.2366 42.8602 54.9538 42.618 55.4699 42.3992C57.556 41.5151 59.9125 39.7468 60.6078 38.2093C62.0333 35.0572 61.535 33.0476 60.6078 32.7892C59.8352 32.574 58.7922 33.9296 58.3672 34.6344C58.0195 35.1725 57.6939 35.5355 56.9379 36.1335C55.4313 37.3251 48.9413 39.5546 47.1257 40.1697C45.31 40.7847 42.6059 42.1301 40.9061 44.129C37.3521 48.1267 36.6954 54.623 36.6567 57.5445C36.6258 59.8816 36.206 61.1066 36 61.4269Z" fill="#007AC5"/>
+</svg>
+<span>OK.clinic</span></a>
+              <p>Многопрофильный центр неврологии, кардиологии, иммунологии, эндокринологии, аллергологии, общей терапии и педиатрии "ОКclinic"</p>
+            </div>
+            <div class="footer__inner-middle-contacts">
+              <div class="footer__contacts-top"><a class="footer__phone link-hover" href="tel:78129892424">+ 7 812 989-24-24</a>
+                <noindex><a href="javascript:void(0)" rel="nofollow"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6861_4187)">
+<path d="M10 20C4.478 20 0 15.522 0 10C0 4.478 4.478 0 10 0C15.522 0 20 4.478 20 10C20 15.522 15.522 20 10 20Z" fill="#25D366"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M14.6783 5.34402C13.4383 4.10202 11.7863 3.41802 10.0283 3.41602C6.40634 3.41602 3.45634 6.36402 3.45634 9.98802C3.45634 11.146 3.75834 12.278 4.33434 13.274L3.40234 16.68L6.88634 15.766C7.84634 16.29 8.92634 16.566 10.0263 16.566H10.0283C13.6503 16.566 16.5983 13.618 16.6003 9.99402C16.6023 8.23802 15.9203 6.58602 14.6783 5.34402ZM10.0303 15.456H10.0283C9.04834 15.456 8.08634 15.192 7.24834 14.694L7.04834 14.576L4.98034 15.118L5.53234 13.102L5.40234 12.896C4.85634 12.026 4.56634 11.022 4.56634 9.98802C4.56834 6.97601 7.01834 4.52602 10.0323 4.52602C11.4923 4.52602 12.8623 5.09602 13.8943 6.12802C14.9263 7.16002 15.4943 8.53402 15.4923 9.99202C15.4923 13.006 13.0403 15.456 10.0303 15.456ZM13.0263 11.364C12.8623 11.282 12.0543 10.884 11.9043 10.83C11.7543 10.776 11.6443 10.748 11.5343 10.912C11.4243 11.076 11.1103 11.446 11.0143 11.556C10.9183 11.666 10.8223 11.68 10.6583 11.598C10.4943 11.516 9.96434 11.342 9.33834 10.782C8.85034 10.346 8.52034 9.80802 8.42434 9.64402C8.32834 9.48002 8.41434 9.39002 8.49634 9.30801C8.57034 9.23401 8.66034 9.11602 8.74234 9.02002C8.82434 8.92402 8.85234 8.85602 8.90634 8.74602C8.96034 8.63602 8.93434 8.54002 8.89234 8.45802C8.85034 8.37602 8.52234 7.56802 8.38634 7.23802C8.25234 6.91802 8.11834 6.96202 8.01634 6.95602C7.92034 6.95202 7.81034 6.95002 7.70234 6.95002C7.59234 6.95002 7.41434 6.99202 7.26434 7.15602C7.11434 7.32002 6.69034 7.71802 6.69034 8.52602C6.69034 9.33402 7.27834 10.116 7.36034 10.224C7.44234 10.334 8.51834 11.992 10.1663 12.704C10.5583 12.874 10.8643 12.974 11.1023 13.05C11.4963 13.176 11.8543 13.158 12.1363 13.116C12.4523 13.068 13.1083 12.718 13.2443 12.336C13.3803 11.952 13.3803 11.624 13.3403 11.556C13.3003 11.488 13.1903 11.448 13.0263 11.364Z" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_6861_4187">
+<rect width="20" height="20" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+</a></noindex>
+                <noindex><a href="javascript:void(0)" rel="nofollow"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6861_4194)">
+<path d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z" fill="url(#paint0_linear_6861_4194)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.52782 9.89446C7.44302 8.62435 9.38695 7.78702 10.3596 7.38246C13.1367 6.22737 13.7138 6.02672 14.0899 6.02009C14.1726 6.01863 14.3576 6.03913 14.4774 6.13635C14.5785 6.21844 14.6064 6.32934 14.6197 6.40717C14.633 6.485 14.6496 6.6623 14.6364 6.80083C14.4859 8.38207 13.8348 12.2193 13.5035 13.9903C13.3633 14.7397 13.0873 14.991 12.8201 15.0156C12.2393 15.069 11.7984 14.6318 11.2359 14.2631C10.3558 13.6861 9.85857 13.327 9.00425 12.764C8.01694 12.1134 8.65697 11.7558 9.21964 11.1714C9.36689 11.0184 11.9256 8.69115 11.9751 8.48003C11.9813 8.45362 11.987 8.3552 11.9285 8.30323C11.8701 8.25126 11.7838 8.26903 11.7215 8.28316C11.6332 8.3032 10.2272 9.23253 7.50344 11.0711C7.10435 11.3452 6.74286 11.4787 6.41898 11.4717C6.06193 11.464 5.37511 11.2698 4.86452 11.1039C4.23827 10.9003 3.74054 10.7927 3.78388 10.4469C3.80646 10.2669 4.05443 10.0827 4.52782 9.89446Z" fill="white"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_6861_4194" x1="1000" y1="0" x2="1000" y2="1985.17" gradientUnits="userSpaceOnUse">
+<stop stop-color="#2AABEE"/>
+<stop offset="1" stop-color="#229ED9"/>
+</linearGradient>
+<clipPath id="clip0_6861_4194">
+<rect width="20" height="20" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+</a></noindex>
+              </div>
+              <div class="footer__contacts-bottom"><a class="link-hover" href="https://yandex.ru/maps/-/CHeIFW06" target="_blank" rel="noopener">Санкт-Петербург, ул. Смоленская., д. 14</a></div>
+            </div>
+            <div class="footer__inner-middle-socials">
+              <div class="footer__socials">
+                <noindex><a href="javascript:void(0)" rel="nofollow"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 15.36C0 8.11923 0 4.49884 2.24942 2.24942C4.49884 0 8.11923 0 15.36 0H16.64C23.8808 0 27.5012 0 29.7506 2.24942C32 4.49884 32 8.11923 32 15.36V16.64C32 23.8808 32 27.5012 29.7506 29.7506C27.5012 32 23.8808 32 16.64 32H15.36C8.11923 32 4.49884 32 2.24942 29.7506C0 27.5012 0 23.8808 0 16.64V15.36Z" fill="#0077FF"/>
+<path d="M17.0267 23.0534C9.73334 23.0534 5.57338 18.0534 5.40005 9.7334H9.05337C9.17337 15.8401 11.8666 18.4267 14 18.96V9.7334H17.4401V15C19.5468 14.7734 21.7598 12.3734 22.5065 9.7334H25.9466C25.3733 12.9867 22.9733 15.3867 21.2666 16.3734C22.9733 17.1734 25.7067 19.2667 26.7467 23.0534H22.9599C22.1466 20.5201 20.1201 18.56 17.4401 18.2934V23.0534H17.0267Z" fill="white"/>
+</svg>
+</a></noindex>
+                <noindex><a href="javascript:void(0)" rel="nofollow"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6861_4194)">
+<path d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z" fill="url(#paint0_linear_6861_4194)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.52782 9.89446C7.44302 8.62435 9.38695 7.78702 10.3596 7.38246C13.1367 6.22737 13.7138 6.02672 14.0899 6.02009C14.1726 6.01863 14.3576 6.03913 14.4774 6.13635C14.5785 6.21844 14.6064 6.32934 14.6197 6.40717C14.633 6.485 14.6496 6.6623 14.6364 6.80083C14.4859 8.38207 13.8348 12.2193 13.5035 13.9903C13.3633 14.7397 13.0873 14.991 12.8201 15.0156C12.2393 15.069 11.7984 14.6318 11.2359 14.2631C10.3558 13.6861 9.85857 13.327 9.00425 12.764C8.01694 12.1134 8.65697 11.7558 9.21964 11.1714C9.36689 11.0184 11.9256 8.69115 11.9751 8.48003C11.9813 8.45362 11.987 8.3552 11.9285 8.30323C11.8701 8.25126 11.7838 8.26903 11.7215 8.28316C11.6332 8.3032 10.2272 9.23253 7.50344 11.0711C7.10435 11.3452 6.74286 11.4787 6.41898 11.4717C6.06193 11.464 5.37511 11.2698 4.86452 11.1039C4.23827 10.9003 3.74054 10.7927 3.78388 10.4469C3.80646 10.2669 4.05443 10.0827 4.52782 9.89446Z" fill="white"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_6861_4194" x1="1000" y1="0" x2="1000" y2="1985.17" gradientUnits="userSpaceOnUse">
+<stop stop-color="#2AABEE"/>
+<stop offset="1" stop-color="#229ED9"/>
+</linearGradient>
+<clipPath id="clip0_6861_4194">
+<rect width="20" height="20" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+</a></noindex>
+              </div>
+              <p>Социальные сети</p>
+            </div>
+            <div class="footer__inner-middle-mail"><a class="link-hover" href="mailto:info@domain.com">info@domain.com</a>
+              <p>Пн-Вс 8:00 - 21:00</p>
+            </div>
+            <div class="footer__inner-middle-requests"><a class="btn btn--blue-dark" data-src="#popupAppointment" data-fancybox>Запись на прием</a><a class="btn btn--gray-subdied" data-src="#popupCallDoctor" data-fancybox>Вызов врача на дом</a></div>
+          </div>
+          <div class="footer__inner-bottom">
+            <div class="footer__devs"><a class="link-hover" href="https://di-project.studio/">Сделано в Di-Project.Studio</a></div>
+            <div class="footer__rights">© Все права защищены <span></span></div>
+            <div class="footer__policy"><a class="link-hover" href="policy.html">Политика конфиденциальности</a></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer::End-->
+    <!-- Popups::Start-->
+    <!-- ЗАПИСЬ НА ПРИЕМ-->
+    <div class="popup popup--small" id="popupAppointment">
+      <div class="popup__inner">
+        <div class="popup__title">Запись на прием</div>
+        <form>
+          <input class="input" type="text" placeholder="Имя" required>
+          <input class="input" type="text" placeholder="E-mail" required>
+          <input class="input" type="text" placeholder="Телефон" required data-phone-number>
+          <div class="popup__agree">Нажимая кнопку «Отправить сообщение» вы соглашаетесь с <a href='javascript:void(0)'>политикой конфиденциальности сайта</a> и <a href='javascript:void(0)'> условиями обработки персональных данных</a></div>
+          <button class="btn btn--blue-dark">Отправить запрос</button>
+        </form>
+      </div>
+    </div>
+    <!-- ВЫЗВАТЬ ВРАЧА НА ДОМ-->
+    <div class="popup popup--big" id="popupCallDoctor">
+      <div class="popup__inner">
+        <div class="popup__title">Выезд врача на дом</div>
+        <form>
+          <div class="popup__form_inputs">
+            <input class="input" type="text" placeholder="Имя" required>
+            <input class="input" type="text" placeholder="E-mail" required>
+            <input class="input" type="text" placeholder="Телефон" required data-phone-number>
+            <textarea class="input" placeholder="Район, Адрес, какого врача вызвать"></textarea>
+          </div>
+          <div class="popup__form_bottom">
+            <div class="popup__agree">Нажимая кнопку «Отправить сообщение» вы соглашаетесь с <a href='javascript:void(0)'>политикой конфиденциальности сайта</a> и <a href='javascript:void(0)'> условиями обработки персональных данных</a></div>
+            <button class="btn btn--blue-dark">Отправить запрос</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- ПОПАП ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ-->
+    <div class="popup popup--small" id="popupConsultation">
+      <div class="popup__inner">
+        <div class="popup__title">Получить консультацию</div>
+        <form>
+          <input class="input" type="text" placeholder="Имя" required>
+          <input class="input" type="text" placeholder="E-mail" required>
+          <input class="input" type="text" placeholder="Телефон" required data-phone-number>
+          <div class="popup__agree">Нажимая кнопку «Отправить сообщение» вы соглашаетесь с <a href='javascript:void(0)'>политикой конфиденциальности сайта</a> и <a href='javascript:void(0)'> условиями обработки персональных данных</a></div>
+          <button class="btn btn--blue-dark">Отправить запрос</button>
+        </form>
+      </div>
+    </div>
+    <!-- ПОПАП ПОИСКА-->
+    <div class="popup__search" id="popupSearch">
+      <div class="popup__inner">
+        <form>
+          <div class="input-wrapper has--close-btn">
+            <input class="input" type="search" placeholder="Поиск по сайту"><span></span>
+          </div>
+          <button class="btn btn--blue-dark">Найти</button>
+        </form>
+      </div>
+    </div>
+    <!-- Popups::End-->
+    <!-- Scripts::Start-->
+    <script data-skip-moving="true">
+      const home_dir = './';
+      
+    </script>
+    <script data-skip-moving="true" src="https://code.jquery.com/jquery-3.7.1.js"="anonymous"></script>
+    <!-- Scripts::End-->
+  </body>
+</html>
