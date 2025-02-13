@@ -1,0 +1,15 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.clinic-main {
+
+
+  &__inner {
+    display: grid;
+    gap: 48px;
+
+    @include breakpoint(lg) {
+      gap: 64px;
+    }
+  }
+}

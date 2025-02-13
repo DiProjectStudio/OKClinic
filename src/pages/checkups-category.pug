@@ -39,9 +39,10 @@ block main
                                 content: [
                                     'Гинекология', 'Гастроэнтерология', 'Иммунология',
                                     'Кардиология', 'Пульмонология', 'Урология'
-                                ]
+                                ],
+                                href: 'checkups-category.html'
                             }
-                        +dropdown(dropdown.title, dropdown.content)
+                        +dropdown(dropdown.title, dropdown.content, dropdown.href)
 
                 .checkups-category-wrapper__main
                     section.checkups-category__items
@@ -51,4 +52,4 @@ block main
                             - n--;
                     section.checkups-category__seo
                         include ../components/_seo-text-only
-    include ../components/_feedback
+    include ../components/sections/_section-installment

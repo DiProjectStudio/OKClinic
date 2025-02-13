@@ -1,0 +1,25 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.tests-category-wrapper__inner {
+  display: grid;
+  gap: 24px;
+
+  @include breakpoint(lg) {
+    grid-template-columns: 3fr 9fr;
+    gap: 12px;
+  }
+
+  &-leftside {
+    .dropdown {
+      max-width: 352px;
+
+    }
+  }
+
+}
+
+.tests-category-items__grid {
+  display: grid;
+  gap: 16px;
+}

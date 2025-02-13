@@ -34,6 +34,7 @@
         height: 38px;
         @include flexCenterCenter;
         border-radius: 12px;
+        transition: $transition;
 
         @include breakpoint(md) {
           width: 56px;

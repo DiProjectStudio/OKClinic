@@ -1,128 +1,145 @@
 @use "../base/mixins" as *;
 @use "../base/variables" as *;
 
-.promo__items{
+.promo-card {
+  padding: 24px;
+  border-radius: 24px;
+  background-color: $blue-dark;
+  overflow: clip;
+  position: relative;
+  transition: $transition;
+  display: grid;
+  gap: 12px;
+
+  @include breakpoint(lg) {
+    gap: 16px;
+  }
+
+  &:hover {
+    background-color: $blue-lite;
+
+    & .promo-card__item-image {
+      scale: 110%;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__bottom {
     display: grid;
-    grid-template-columns: 1fr;
     gap: 12px;
-    @include breakpoint(lg){
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
+  }
 
-.promo-card__item{
-    padding: 24px;
-    border-radius: 24px;
-    background-color: $blue-dark;
-    overflow: hidden;
-    position: relative;
-    transition: $transition;
-    @include breakpoint(md){
-        height: 184px;
-    }
-    @include breakpoint(lg){
-        height: 276px;
-    }
-    &:hover{
-        background-color: $blue-lite;
-        & .promo-card__item-image{
-            scale: 110%;
-        }
-    }
-}
-
-.promo-card-wrap{
-    position: relative;
-    z-index: 1;
-    display: grid;
-    grid-template-columns: 1fr 50px;
-    gap: 12px 0;
+  &__title {
     color: $white;
-    @include breakpoint(lg){
-        gap: 16px 0;
-    }
-}
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 24px */
+    letter-spacing: -0.2px;
+    max-width: 200px;
 
-.promo-card__item-crosses{
+    @include breakpoint(md) {
+      font-size: 23px;
+      letter-spacing: -0.23px;
+      max-width: unset;
+    }
+
+    @include breakpoint(lg) {
+      max-width: 200px;
+      letter-spacing: -0.2px;
+      font-size: 20px;
+    }
+  }
+
+  &__description {
+    color: $white-subdied;
+    font-size: 14px;
+    line-height: 150%; /* 21px */
+    @include textLimit(2);
+    max-width: 200px;
+
+    @include breakpoint(md) {
+      font-size: 16px;
+      max-width: unset;
+    }
+
+    @include breakpoint(lg) {
+      max-width: 200px;
+    }
+  }
+
+  &__crosses {
     position: absolute;
     z-index: 0;
     top: 10px;
     left: 5px;
-}
+  }
 
-.promo-card__item-name{
-    grid-column: 1;
-    grid-row: 1;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 120%;
-    letter-spacing: -0.2px;
-}
 
-.promo-card__item-descr{
-    grid-column: 1;
-    grid-row: 2;
-    @include textLimit(2);
-    color: rgba(255, 255, 255, 0.80);
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 150%;
-    @include breakpoint(md){
-        @include textLimit(1);
-        font-size: 16px;
-    }
-    @include breakpoint(lg){
-        @include textLimit(3);
-        font-size: 16px;
-    }
-}
-
-.promo-card__item__prices{
-    grid-column: 1;
-    grid-row: 3;
-    display: grid;
-    grid-template-columns: fit-content(100%) fit-content(100%);
-    gap: 4px;
-    @include breakpoint(lg){
-        margin-top: 30px;
-    }
-    span {
-        &:first-child {
-          align-self: center;
-          color: $white;
-          font-size: 23px;
-          font-weight: 600;
-          line-height: 120%; /* 27.6px */
-          letter-spacing: -0.23px;
-          white-space: nowrap;
-        }
-
-        &:last-child {
-            color: $gray-subdied;
-            font-size: 11px;
-            line-height: 16px; /* 145.455% */
-            text-decoration: line-through;
-        }
-    }
-    
-}
-
-.promo-card__item-image{
+  &__image {
     position: absolute;
-    bottom: 0px;
-    right: 0px;
+    bottom: 0;
+    right: 0;
     z-index: 0;
     transition: $transition;
-    & img{
-        width: 109px;
-        height: 109px;
+    width: 109px;
+    height: 109px;
+
+    @include breakpoint(lg) {
+      width: 92px;
+      height: 92px;
     }
+  }
+
+  &__prices {
+    height: 48px;
+    display: flex;
+    gap: 4px;
+    margin-top: 16px;
+    align-self: flex-end;
+
+    @include breakpoint(md) {
+      margin-top: 0;
+    }
+
+    span {
+      flex-shrink: 0;
+
+      &:first-child {
+        align-self: center;
+        color: $white;
+        font-size: 23px;
+        font-weight: 600;
+        line-height: 120%; /* 27.6px */
+        letter-spacing: -0.23px;
+      }
+
+      &:last-child {
+        color: $gray-subdied;
+        font-size: 11px;
+        line-height: 16px; /* 145.455% */
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  .arrow-up-link {
+    flex-shrink: 0;
+  }
 }
 
-.promo-card-btn{
-    justify-self: end;
-    grid-row: 1/3;
-    @include breakpoint(lg){
-        grid-row: 1;
+.tests-faq {
+  &__items {
+    margin-top: 24px;
+    display: grid;
+    gap: 12px;
+
+    @include breakpoint(md) {
+      margin-top: 32px;
     }
+  }
 }

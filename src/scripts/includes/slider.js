@@ -77,7 +77,7 @@ export function initializeSlider() {
         }
     });
 
-    const noteCardsSlider = new Swiper('.note-additional__inner-swiper.swiper', {
+    const noteCardsSlider = new Swiper(".note-additional__inner-swiper.swiper", {
         modules: [Navigation, Grid],
         slidesPerView: 1.25,
         spaceBetween: 4,
@@ -171,6 +171,33 @@ export function initializeSlider() {
             744: {
                 slidesPerView: 3,
             }
+        }
+    });
+
+    const testCardsSlider = new Swiper(".test-additional__swiper.swiper", {
+        modules: [Navigation, Grid],
+        slidesPerView: 1.05,
+        spaceBetween: 4,
+        navigation: {
+            prevEl: ".test-additional__top .arrow-prev",
+            nextEl: ".test-additional__top .arrow-next"
+        },
+        breakpoints: {
+            744: {
+                slidesPerView: 1,
+                spaceBetween: 12,
+                grid: {
+                    rows: 3,
+                    fill: "row"
+                },
+            },
+            // 1200: {
+            //     slidesPerView: 3,
+            //     spaceBetween: 12,
+            //     grid: {
+            //         rows: 1
+            //     }
+            // }
         }
     });
 }

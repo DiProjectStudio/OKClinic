@@ -1,4 +1,4 @@
-mixin dropdown(title, content)
+mixin dropdown(title, content, href)
 
     .dropdown
         .dropdown__top
@@ -9,4 +9,4 @@ mixin dropdown(title, content)
             ul
                 each item in content
                     li
-                        a(href='javascript:void(0)')= item
+                        a(href=`${href}`)= item

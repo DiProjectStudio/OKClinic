@@ -34,6 +34,7 @@
 @use "components/checkup-card";
 @use "components/test-card";
 @use "components/seo-text-only";
+@use "components/promo-card";
 
 @use 'pages/index';
 @use 'pages/error404';
@@ -49,6 +50,9 @@
 @use 'pages/checkups-category';
 @use 'pages/checkup';
 @use 'pages/tests';
+@use 'pages/tests-category';
+@use 'pages/test';
+@use 'pages/clinic';
 
 
 

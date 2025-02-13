@@ -1,0 +1,27 @@
+extends ../layout/layout
+
+block title
+    - var title = 'Клиника'
+    - var page = 'page-clinic'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Клиника')
+    section.clinic-main
+        .container
+            .clinic-main__inner
+                .clinic-main__hero
+                    h1 Многопрофильная клиника Okclinik
+                    p.
+                        Эффективные технологии лечения, авторские наработки,
+                        гарантирующие высокий результат. В ОК.clinic главный
+                        ориентир в лечении - это комплексный взгляд на здоровье
+                        человека. Обывателю сложно найти причину самостоятельно.
+                        А мы решаем эту задачу приемом консилиума врачей разных
+                        профилей и специализаций. Это профессионально и обоснованно.
+                        Так лечат в серьезных медучреждениях Израиля, Швейцарии и Европы.
+                    a(href='javascript:void(0)').btn.btn--blue-dark Записаться на прием
+                    .clinic-main__hero-image
+                        +img()
+                    .clinic-main__hero-crosses
+                        +img()

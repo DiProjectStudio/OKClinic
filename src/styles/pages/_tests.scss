@@ -1,9 +1,20 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
 .tests-wrapper__inner {
   display: grid;
   gap: 24px;
 
-  &-leftside {
+  @include breakpoint(lg) {
+    grid-template-columns: 3fr 9fr;
+    gap: 12px;
+  }
 
+  &-leftside {
+    .dropdown {
+      max-width: 352px;
+
+    }
   }
 
   &-main {
@@ -18,5 +29,31 @@
   &__items {
     display: grid;
     gap: 16px;
+  }
+
+  &__text {
+    color: $gray-dark;
+    font-size: 14px;
+    line-height: 150%; /* 21px */
+
+    @include breakpoint(md) {
+      font-size: 16px;
+    }
+  }
+}
+
+.tests-promo {
+  &__items {
+    margin-top: 24px;
+    display: grid;
+    gap: 12px;
+
+    @include breakpoint(md) {
+      margin-top: 32px;
+    }
+
+    @include breakpoint(lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }

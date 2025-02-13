@@ -1,17 +1,17 @@
 extends ../layout/layout
 
 block title
-    - var title = 'Анализы'
-    - var page = 'page-tests'
+    - var title = 'Сдать анализы аллергологии'
+    - var page = 'page-tests-category'
 
 block main
     include ../components/_breadcrumbs
-    +breadcrumbs('Анализы')
-    .tests-wrapper
+    +breadcrumbs('Анализы', 'Сдать анализы аллергологии')
+    .tests-cetagory-wrapper
         .container
-            h1.not-main Сдать анализы в СПБ
-            .tests-wrapper__inner
-                .tests-wrapper__inner-leftside
+            h1.not-main Сдать анализы аллергологии
+            .tests-category-wrapper__inner
+                .tests-category-wrapper__inner-leftside
                     include ../components/_dropdown
                     -
                         var dropdown = {
@@ -39,53 +39,24 @@ block main
                             href: 'tests-category.html'
                         }
                     +dropdown(dropdown.title, dropdown.content, dropdown.href)
-                .tests-wrapper__inner-main
-                    section.tests-popular
-                        .h2-title Популярные анализы
-                        .tests-popular__items
-                            - var n = 4;
+                .tests-category-wrapper__inner-main
+                    section.tests-cetagory
+                        .tests-category-items__grid
+                            - var n = 8;
                             while n > 0
                                 include ../components/_test-card
                                 - n--;
-                        .tests-popular__text
-                            p.
-                                Головная боль может быть индикатором целого ряда
-                                различных проблем, от таких незначительных, как
-                                неправильно подобранные очки, до серьезных (например,
-                                опухоль головного мозга). Ежегодно головная боль
-                                становится причиной временной утраты трудоспособности
-                                примерно у 40% взрослого населения. В настоящее время
-                                специалисты насчитывают свыше 300 причин ее появления.
+                        include ../components/_pagination
 
-                    section.tests-promo
-                        .h2-title Акции
-                        .tests-promo__items
-                            -
-                                var promos = [
-                                    {
-                                        title: 'Скидка до 20% на комплексное обследование',
-                                        description: 'Существенная экономия времени и денег'
-                                    },
-                                    {
-                                        title: 'Анализ COVID-19 -5%',
-                                        description: 'Выявление РНК коронавируса SARS-CoV-2, включая британский и южноафриканские штаммы'
-                                    },
-                                    {
-                                        title: 'Пенсионерам и инвалидам скидка 5% ',
-                                        description: 'Пенсионеры и инвалиды всех постоянная скидка'
-                                    },
-                                ]
-                            include ../components/_promo-card
-                            each promo, index in promos
-                                +promoCard(promo.title, promo.description, index)
+                    section.tests-category-seo
+                        include ../components/_seo-text-only
 
-                    section.tests-faq
+                    section.tests-category-faq
                         .h2-title Вопрос ответ
                         .tests-faq__items
                             -
                                 var faqItems = [
-                                    'Почему при гемолизе некоторые тесты были выполнены? Почему не все тесты выполнены при гемолизе образца?',
-                                    'Почему результаты разных лабораторий не совпадают?',
+                                    'Как быстро будут готовы результаты?',
                                     'Как подготовиться к анализу?',
                                     'Можно ли получить анализ на электронную почту?'
                                 ]
