@@ -2,6 +2,7 @@
 @use "../../base/variables" as *;
 
 .installment {
+
   &__inner {
     border-radius: 24px;
     background: $blue-dark;
@@ -10,6 +11,11 @@
     padding: 24px;
     z-index: 1;
     margin-top: 48px;
+    min-height: 281px;
+
+    @include breakpoint(md) {
+      min-height: 260px;
+    }
 
     @include breakpoint(md) {
       padding: 32px;
@@ -19,8 +25,9 @@
     @include breakpoint(lg) {
       @include flexAlignCenter;
       justify-content: flex-end;
+      padding: 32px;
+      min-height: 236px;
     }
-
     &-main {
 
       @include breakpoint(md) {
@@ -35,8 +42,14 @@
         @include flexAlignCenter;
         gap: 40px;
         justify-content: flex-end;
-        margin-right: 64px;
+        margin-right: 48px;
       }
+
+      @include breakpoint(xl) {
+        margin-right: 45px;
+      }
+
+
 
       &-top {
         max-width: 355px;
@@ -47,7 +60,7 @@
         }
 
         @include breakpoint(lg) {
-          margin-bottom: 32px;
+          margin-bottom: 0;
           max-width: 478px;
         }
 

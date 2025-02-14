@@ -1,0 +1,15 @@
+a(href='news-inner.html').news-n-article__item
+    .news-n-article__item-image
+        +img('news-image.jpg')
+    .news-n-article__item-options
+
+        - var typeOf = Math.floor(Math.random() * 2);
+        if typeOf === 1
+            .news-n-article__item-options-type Новость
+        else
+            .news-n-article__item-options-type Статья
+        .news-n-article__item-options-date от 9.01.2025
+    .news-n-article__item-title
+        p.
+            Сегодня свой очередной день рождения
+            отмечает наша клиника ОК Клиник

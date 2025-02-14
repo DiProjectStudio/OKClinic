@@ -5,6 +5,7 @@
   @include flexColumn;
   gap: 16px;
   margin: 24px auto 0;
+  width: 100%;
 
   @include breakpoint(md) {
     flex-direction: row;
@@ -62,7 +63,8 @@
   }
 
   &__additional {
-    @include flexCenterBetween;
+    @include flexCenterCenter;
+    gap: 36px;
 
     @include breakpoint(md) {
       justify-content: unset;

@@ -303,13 +303,11 @@
   background: $white;
   border-top: 1px solid $stroke;
   position: fixed;
-  min-height: 746px;
   height: calc(100vh - 68px);
   overflow-y: auto;
   z-index: 10;
   top: 68px;
   width: 100%;
-  max-height: 80vh;
 
   @include breakpoint(md) {
     width: 227px;
@@ -335,6 +333,7 @@
 
   .header__inner-nav-bottom {
     transition: $transition;
+    margin-bottom: 20px;
 
     ul {
       @include flexColumn;

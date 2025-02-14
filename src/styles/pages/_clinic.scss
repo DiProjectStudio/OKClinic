@@ -3,7 +3,6 @@
 
 .clinic-main {
 
-
   &__inner {
     display: grid;
     gap: 48px;
@@ -12,4 +11,490 @@
       gap: 64px;
     }
   }
+
+  &__hero {
+    padding: 32px;
+    border-radius: 32px;
+    background: $wf-fw-subdied;
+    //background: black;
+    margin-top: 24px;
+    display: grid;
+    gap: 24px;
+    position: relative;
+    overflow: clip;
+    z-index: 1;
+
+    h1 {
+      word-break: break-word;
+
+      @include breakpoint(lg) {
+        max-width: 560px;
+      }
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 150%; /* 21px */
+
+      @include breakpoint(md) {
+        max-width: 437px;
+        font-size: 16px;
+      }
+
+      @include breakpoint(lg) {
+        max-width: 640px;
+      }
+    }
+
+    .btn {
+      padding: 14px 32px;
+      margin-bottom: 235px;
+      font-size: 13px;
+
+      @include breakpoint(md) {
+        margin-bottom: 0;
+      }
+    }
+
+    &-image {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 328px;
+      height: 201px;
+
+      @include breakpoint(md) {
+        width: 486px;
+        height: 298px;
+        right: -216px;
+        left: unset;
+      }
+
+      @include breakpoint(lg) {
+        right: -33px;
+      }
+
+      @include breakpoint(xl) {
+        width: 598px;
+        height: 367px;
+      }
+    }
+
+    &-crosses {
+      position: absolute;
+      right: -59px;
+      bottom: 139px;
+      z-index: -1;
+      width: 200px;
+      height: 205px;
+
+      @include breakpoint(md) {
+        width: 302px;
+        height: 310px;
+        right: 10px;
+        bottom: 108px;
+      }
+
+      @include breakpoint(lg) {
+        right: 313px;
+        bottom: 36px;
+      }
+
+      @include breakpoint(xl) {
+        right: 414px;
+      }
+    }
+  }
+
+  &__about {
+
+    @include breakpoint(lg) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    &-item {
+      padding: 20px 16px;
+      border-top: 1px solid $wf-fw-light;
+      display: grid;
+
+      @include breakpoint(md) {
+        padding: 20px 32px;
+      }
+
+      @include breakpoint(lg) {
+        border-top: none;
+        border-left: 1px solid $wf-fw-light;
+      }
+
+      &:last-child {
+        border-bottom: 1px solid var(--WF-WF-Lite, #D7DBE0);
+
+        @include breakpoint(lg) {
+          border-bottom: none;
+        }
+      }
+
+      &-title {
+        margin-bottom: 15px;
+        color: $blue-dark;
+        font-size: 33px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%; /* 39.6px */
+        letter-spacing: -0.99px;
+      }
+
+      &-subtitle {
+        margin-bottom: 14px;
+        font-size: 19px;
+        font-weight: 600;
+        line-height: 120%; /* 22.8px */
+      }
+
+      &-description {
+        color: $gray-dark;
+        font-size: 14px;
+        line-height: 150%; /* 21px */
+      }
+    }
+  }
 }
+
+.clinic-mission {
+  &__inner {
+    display: grid;
+    gap: 24px;
+
+    @include breakpoint(md) {
+      display: grid;
+      gap: 32px;
+    }
+
+    &-items {
+      display: grid;
+      gap: 12px;
+
+
+      .clinic-mission__inner-item {
+        display: grid;
+        gap: 16px;
+        border-radius: 24px;
+        background: $gray-subdied;
+        padding: 24px;
+
+        @include breakpoint(md) {
+          gap: 20px;
+          border-radius: 32px;
+          padding: 32px;
+        }
+
+        &-title {
+
+        }
+
+        p {
+          color: $gray-dark;
+          font-size: 14px;
+          line-height: 150%; /* 21px */
+
+          @include breakpoint(md) {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.clinic-additional {
+  &__inner {
+    display: grid;
+    gap: 12px;
+
+    @include breakpoint(md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &-item {
+      border-radius: 24px;
+      padding: 24px;
+      position: relative;
+      display: grid;
+      gap: 16px;
+      grid-template-rows: repeat(2, fit-content(100%)) 1fr;
+      overflow: clip;
+      z-index: 1;
+
+      @include breakpoint(md) {
+        gap: 16px;
+        border-radius: 32px;
+      }
+
+      @include breakpoint(lg) {
+        padding: 32px;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 150%; /* 21px */
+
+        @include breakpoint(md) {
+          font-size: 16px;
+        }
+      }
+
+      .arrow-up-link {
+        align-self: flex-end;
+        justify-self: flex-end;
+        margin-top: 3px;
+
+        @include breakpoint(md) {
+          margin-top: 0;
+        }
+      }
+
+      &.promo {
+        color: $white;
+        background: $blue-dark;
+
+        .promo-cross {
+          position: absolute;
+
+          &.small {
+            width: 35px;
+            height: 35px;
+            top: 24px;
+            right: 24px;
+
+            @include breakpoint(md) {
+              width: 46px;
+              height: 46px;
+              right: -14px;
+              top: 19px;
+            }
+
+            @include breakpoint(lg) {
+              width: 40px;
+              height: 40px;
+              right: 4px;
+              top: 32px;
+            }
+
+            @include breakpoint(xl) {
+              right: 44px;
+              top: 27px;
+            }
+          }
+
+          &.big{
+            width: 93px;
+            height: 96px;
+            left: -24px;
+            bottom: -36px;
+
+            @include breakpoint(md) {
+              width: 123px;
+              height: 127px;
+              left: -62px;
+              bottom: -22px;
+            }
+
+            @include breakpoint(lg) {
+              width: 106px;
+              height: 110px;
+              left: -17px;
+              bottom: -30px;
+            }
+
+            @include breakpoint(xl) {
+              width: 123px;
+              height: 127px;
+              left: -30px;
+              bottom: -47px;
+            }
+          }
+        }
+      }
+
+      &.reviews {
+        background: $gray-subdied;
+
+
+        p {
+          @include breakpoint(lg) {
+            max-width: 270px;
+          }
+        }
+
+        .reviews-line {
+          position: absolute;
+          bottom: 19px;
+          z-index: -2;
+        }
+
+        .reviews-image {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          width: 137px;
+          height: 127px;
+          z-index: -1;
+
+          @include breakpoint(md) {
+            right: -39px;
+          }
+
+          @include breakpoint(lg) {
+            width: 160px;
+            height: 148px;
+            right: 0;
+            bottom: 0;
+          }
+
+          @include breakpoint(xl) {
+            width: 226px;
+            height: 209px;
+          }
+        }
+      }
+
+      &.services {
+        background: $blue-lite;
+        color: $white;
+      }
+    }
+  }
+}
+
+.clinic-licenses {
+  &__inner {
+    &-top {
+      @include flexColumn;
+      gap: 20px;
+      margin-bottom: 16px;
+
+      @include breakpoint(md) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 32px;
+      }
+    }
+
+    &-swiper {
+      margin-right: -16px;
+
+      @include breakpoint(md) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__item {
+    &-image {
+      border-radius: 24px;
+      background: $wf-fw-subdied;
+      padding: 11px;
+      position: relative;
+      height: auto;
+
+      img {
+        border-radius: 20px;
+        background: $white;
+        width: 100%;
+        height: auto;
+      }
+
+      .btn-zoom {
+        position: absolute;
+        top: 32px;
+        right: 32px;
+      }
+    }
+    &-text {
+      padding: 12px 12px 0;
+      p {
+
+        &:first-of-type {
+          font-size: 11px;
+          line-height: 16px; /* 145.455% */
+        }
+
+        &:last-of-type {
+          font-size: 19px;
+          font-weight: 600;
+          line-height: 120%; /* 22.8px */
+        }
+
+        & + p {
+          margin-top: 4px;
+        }
+      }
+    }
+  }
+}
+
+.clinic-news {
+  &__inner {
+    &-top {
+      @include flexColumn;
+      gap: 20px;
+      margin-bottom: 16px;
+
+      @include breakpoint(md) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 32px;
+      }
+
+      &-nav {
+        @include flexAlignCenter;
+        gap: 16px;
+
+        .btn {
+          padding: 16px 32px;
+          font-size: 13px;
+        }
+      }
+    }
+
+    &-swiper {
+      @include breakpoint(md) {
+        margin-right: -16px;
+      }
+
+
+      @include breakpoint(lg) {
+        margin-right: 0;
+      }
+    }
+
+  }
+}
+.clinic-licenses__popup {
+  display: none;
+  border-radius: 32px;
+  background: $wf-fw-subdied;
+  position: relative;
+  padding: 12px;
+
+  &-image {
+    border-radius: 24px;
+    overflow: clip;
+    isolation: isolate;
+
+    .btn-zoom {
+      position: absolute;
+      top: 32px;
+      right: 32px;
+    }
+  }
+
+  .f-button.is-close-btn {
+    display: none;
+  }
+}
+
+

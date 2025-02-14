@@ -3,8 +3,6 @@
 @use "../base/container" as *;
 
 .seo {
-
-
   &__inner {
 
     @include breakpoint(lg) {
@@ -36,6 +34,7 @@
 
     @include breakpoint(md) {
       border-radius: 32px;
+      height: 426px;
     }
   }
 
@@ -57,11 +56,11 @@
     }
   }
 
-  .h3-title {
+  .h3-title, h3 {
     margin-bottom: 16px;
   }
 
-  .h4-title {
+  .h4-title, h4 {
     margin-bottom: 16px;
   }
 }

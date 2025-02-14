@@ -35,6 +35,7 @@
 @use "components/test-card";
 @use "components/seo-text-only";
 @use "components/promo-card";
+@use "components/news-n-article";
 
 @use 'pages/index';
 @use 'pages/error404';
@@ -53,6 +54,9 @@
 @use 'pages/tests-category';
 @use 'pages/test';
 @use 'pages/clinic';
+@use 'pages/reviews';
+@use 'pages/news';
+@use 'pages/news-inner';
 
 
 

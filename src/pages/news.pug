@@ -1,0 +1,30 @@
+extends ../layout/layout
+
+block title
+    - title = 'Новости и статьи'
+    - page = 'page-news'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Клиника', 'Новости и статьи')
+    section.news-page
+        .container
+            h1.not-main Новости и статьи
+            .news-page__inner
+                .news-page__top
+                    .reviews-page__tabs.tabs
+                        a(href='javascript:void(0)').tab.active Новости
+                        a(href='javascript:void(0)').tab Статьи
+                    .reviews-page__tabs.tabs.tabs--transparent
+                        a(href='javascript:void(0)').tab.active Все
+                        a(href='javascript:void(0)').tab 2025
+                        a(href='javascript:void(0)').tab 2024
+                        a(href='javascript:void(0)').tab 2023
+                        a(href='javascript:void(0)').tab 2022
+
+            .news-page__items
+                - var n = 0;
+                while n < 12
+                    include ../components/news-n-article
+                    - n++;
+            include ../components/_pagination

@@ -1,0 +1,36 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.news-page {
+  &__top {
+    margin-bottom: 24px;
+    @include flexColumn;
+    gap: 16px;
+
+    @include breakpoint(md) {
+      @include flexCenterBetween;
+      flex-direction: row;
+    }
+
+    .tab {
+      font-size: 14px;
+
+      @include breakpoint(md) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__items {
+    display: grid;
+    gap: 12px;
+
+    @include breakpoint(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint(lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

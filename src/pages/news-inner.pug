@@ -1,0 +1,25 @@
+extends ../layout/layout
+
+block title
+    - title = 'Детальная страница новости'
+    - page = 'page-news-inner'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Клиника', 'Новости', 'Детальная страница новости')
+    section.news-inner
+        .container
+            .news-inner__inner
+                h1.not-main Детальная страница новости
+                .news-inner__image
+                    +img('news-image.jpg')
+                .news-inner__content
+                    .h2-title Заголовок h2
+                    .small-title Заголовок для списка маркерами
+                    ul.custom-list
+                        li Lorem ipsum dolor sit amet consectetur. Pretium sed id tempus volutpat
+                        li Lorem ipsum dolor sit amet consectetur. Pretium sed id tempus volutpat
+                        li Lorem ipsum dolor sit amet consectetur. Pretium sed id tempus volutpat
+                        li Lorem ipsum dolor sit amet consectetur. Pretium sed id tempus volutpat
+                        li Lorem ipsum dolor sit amet consectetur. Pretium sed id tempus volutpat
+                    .small-title Заголовок для списка нумерованный

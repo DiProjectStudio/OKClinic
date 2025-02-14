@@ -1,0 +1,23 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.reviews-page {
+  &__inner {
+
+  }
+
+  &__items {
+    display: grid;
+    gap: 12px;
+    margin-top: 16px;
+
+    @include breakpoint(md) {
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 24px;
+    }
+
+    @include breakpoint(lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
