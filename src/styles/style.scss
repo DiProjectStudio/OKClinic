@@ -36,6 +36,8 @@
 @use "components/seo-text-only";
 @use "components/promo-card";
 @use "components/news-n-article";
+@use "components/diagnostics-item";
+@use "components/diagnostics-card";
 
 @use 'pages/index';
 @use 'pages/error404';
@@ -57,6 +59,10 @@
 @use 'pages/reviews';
 @use 'pages/news';
 @use 'pages/news-inner';
+@use 'pages/promotions';
+@use 'pages/promotion';
+@use 'pages/contacts';
+@use 'pages/diagnostics';
 
 
 

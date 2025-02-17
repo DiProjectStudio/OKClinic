@@ -64,12 +64,7 @@
     }
 
     .links-block__items {
-      max-height: 0;
-      overflow: hidden;
 
-      @include breakpoint(md) {
-        max-height: unset;
-      }
     }
 
     .links-block__title {
@@ -96,9 +91,12 @@
 
     &.showdown {
       .links-block__items {
-        max-height: 1000px;
-        padding-bottom: 12px;
+        margin-bottom: 12px;
+        opacity: 1;
+        visibility: visible;
       }
+
+
 
       .links-block__title:after {
         transform: rotate(180deg);
@@ -118,7 +116,18 @@
   }
 
   &__items {
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: $transition;
 
+    @include breakpoint(md) {
+      height: unset;
+      overflow: unset;
+      opacity: 1;
+      visibility: visible;
+    }
     ul {
       column-count: 2;
 

@@ -1,0 +1,66 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.diagnostics__item {
+  border-radius: 24px;
+  background: $gray-subdied;
+  padding: 24px;
+  @include flexColumn;
+  justify-items: flex-start;
+
+  @include breakpoint(md) {
+    padding: 32px;
+    border-radius: 32px;
+  }
+
+  &-title {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 120%; /* 24px */
+    letter-spacing: -0.2px;
+    margin-bottom: 20px;
+
+    @include breakpoint(md) {
+      font-size: 23px;
+      letter-spacing: -0.23px;
+    }
+  }
+
+  ul {
+    @include flexColumn;
+    gap: 4px;
+    margin-bottom: 12px;
+
+    @include breakpoint(md) {
+      gap: 8px;
+    }
+
+    @include breakpoint(lg) {
+      gap: 16px;
+    }
+    li {
+      a {
+        color: $blue-dark;
+        font-size: 14px;
+        line-height: 150%; /* 21px */
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        @include breakpoint(md) {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .btn {
+    margin-top: auto;
+    padding: 16px 32px;
+    font-size: 13px;
+    border-radius: 12px;
+    width: fit-content;
+    justify-self: flex-end;
+  }
+}

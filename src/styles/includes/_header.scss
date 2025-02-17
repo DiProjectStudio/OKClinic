@@ -298,7 +298,6 @@
 }
 
 .nav-menu-js {
-  display: none;
   padding: 24px 32px;
   background: $white;
   border-top: 1px solid $stroke;
@@ -308,6 +307,24 @@
   z-index: 10;
   top: 68px;
   width: 100%;
+  display: grid;
+  grid-template-rows: 1fr fit-content(100%) fit-content(100%);
+  transform: translateX(100%);
+  visibility: hidden;
+  opacity: 0;
+  transition: $transition;
+
+
+  &.active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+
+    @include breakpoint(md) {
+
+      pointer-events: auto;
+    }
+  }
 
   @include breakpoint(md) {
     width: 227px;
@@ -318,6 +335,10 @@
     right: $container;
     min-height: 463px;
     height: unset;
+    transform: unset;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
   }
 
   &:before {
@@ -385,10 +406,7 @@
 
   }
 
-  &.active {
-    display: grid;
-    grid-template-rows: 1fr fit-content(100%) fit-content(100%);
-  }
+
 
 
   .submenu-block {

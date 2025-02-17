@@ -1,18 +1,17 @@
-section.diagnostics
-    .container
-        .diagnostics__inner
-            .section-top
-                .section-title Диагностика и анализы
-                .section-description
-                    p.
-                        Предлагаем широкий спектр лабораторных и инструментальных исследований,
-                        используя современное оборудование и передовые методы.
-                        Диагностика с комфортом и вниманием к каждому пациенту
-            .diagnostics__wrapper
-                .diagnostics__wrapper-tabs.tabs(data-tabs-actions)
-                    button(data-tab='diagnostics').tab.active Диагностика
-                    button(data-tab='tests').tab Анализы
-                .diagnostics__wrapper-items.showed.tab-content(data-content='diagnostics')
+extends ../layout/layout
+
+block title
+    - title = 'Диагностика'
+    - page = 'page-diagnostics'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Диагностика')
+    section.diagnostics-page
+        .container
+            .diagnostics-page__inner
+                h1.not-main Диагностика
+                .diagnostics-page__inner-items
                     -
                         var diagnosticsItems = [
                             {
@@ -82,22 +81,18 @@ section.diagnostics
                                         ]
                             },
                         ]
-                    include ../../components/_diagnostics-item
+
+                    include ../components/_diagnostics-item
                     each diagnosticsItem in diagnosticsItems
                         +diagnosticItem(diagnosticsItem.title, diagnosticsItem.details)
-                .diagnostics__wrapper-items.tab-content(data-content='tests')
-                    .diagnostics__item
-                        .diagnostics__item-title Анализы крови
-                        ul
-                            li
-                                a(href='javascript:void(0)') Общий анализ крови
-                            li
-                                a(href='javascript:void(0)') СРБ
-                            li
-                                a(href='javascript:void(0)') Общий анализ крови
-                            li
-                                a(href='javascript:void(0)') СРБ
-                            li
-                                a(href='javascript:void(0)') СРБ
-                        a(href='javascript:void(0)').btn.btn--transparent-blue-secondary Смотреть все
 
+    include ../components/sections/_section-installment
+    section.diagnostics-page-popular
+        .container
+            .diagnostics-page-popular__inner
+                .h2-title Популярные услуги диагностики
+                .diagnostics-page-popular__inner-items
+                    - var n = 8
+                    while n > 0
+                        include ../components/_diagnostics-card
+                        - n--;

@@ -1,0 +1,84 @@
+extends ../layout/layout
+
+block title
+    - title = 'Акции'
+    - page = 'page-promotions'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Клиника', 'Акции')
+    section.promotions
+        .container
+            .promotions__inner
+                h1.not-main Акции
+                .promotions__inner-items
+                    -
+                        var promos = [
+                            {
+                                title: 'Скидка до 20% на комплексное обследование',
+                                description: 'Существенная экономия времени и денег'
+                            },
+                            {
+                                title: 'Анализ COVID-19 -5%',
+                                description: 'Выявление РНК коронавируса SARS-CoV-2, включая британский и южноафриканские штаммы'
+                            },
+                            {
+                                title: 'Пенсионерам и инвалидам скидка 5% ',
+                                description: 'Пенсионеры и инвалиды всех постоянная скидка'
+                            },
+                        ]
+                    include ../components/_promo-card
+                    - var n = 3
+                    while n > 0
+                        each promo, index in promos
+                            +promoCard(promo.title, promo.description, index)
+                        - n--;
+                include ../components/_pagination
+
+
+    section.promotions-seo
+        .container
+            .h2-title Текст для продвижения h2
+            p.
+                Lörem ipsum dekadade spessa dol nyrat. Supras
+                pronäliga eller miledes, pånera semiss bende.
+                Prens vik ett matyk punade så krora. Diasamma
+                epiplande, iliga nälig pred. Mitässade val, rynde.
+                Benera kabibel völig migon mol. Olålassade ryktig kyssa
+                filostik. Tärynänisk vören i odenat med segasm vint.
+                Krovaktigt. Mibel tölig. Epilysa oska då transism mityning
+                tills astrora kvasisade. Nissa antis. Du kan vara drabbad.
+
+    section.promotions-checkups-popular
+        .container
+            .promotions-checkups-popular__top
+                .h2-title Популярные чекапы
+                .swiper-nav
+                    button.arrow-prev
+                    button.arrow-next
+            .promotions-checkups-popular__slider.swiper
+                .swiper-wrapper
+                    -
+                        var checkups = [
+                            {
+                                title: 'Чекап «Скан женского здоровья»',
+                                description: 'Полный комплекс обследований и выявление заболеваний на ранней стадии за 3-4 дня',
+
+                            },
+                            {
+                                title: 'Чекап «Мужское здоровье»',
+                                description: 'Две консультации уролога, целый комплекс исследований и забор материалов',
+
+                            },
+                            {
+                                title: 'Чекап «Здоровое пищевариение»',
+                                description: 'Лабораторные, ультразвуковое и эндоскопические исследования всей пищеварительной системы',
+
+                            },
+                        ]
+                    each checkup, index in checkups
+                        .swiper-slide
+                            include ../components/_checkup-slider-card
+                            +checkupSliderCard(checkup.title, checkup.description, index)
+
+    include ../components/sections/_section-installment

@@ -9,7 +9,8 @@
   overflow: clip;
   transition: $transition;
   display: grid;
-  grid-template-rows: fit-content(100%);
+  grid-template-rows: fit-content(100%) fit-content(100%) 1fr;
+  z-index: 1;
 
   @include breakpoint(md) {
     border-radius: 32px;
@@ -86,5 +87,6 @@
     right: 0;
     bottom: 0;
     transition: $transition;
+    z-index: -1;
   }
 }

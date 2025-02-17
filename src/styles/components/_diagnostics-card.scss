@@ -1,0 +1,99 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+
+.diagnostics-card {
+  display: grid;
+  grid-template-rows: fit-content(100%) 1fr;
+  gap: 12px;
+  border-radius: 24px;
+  background: $gray-subdied;
+  padding: 24px;
+  transition: $transition;
+
+  @include breakpoint(md) {
+    border-radius: 32px;
+    padding: 32px;
+    gap: 14px;
+  }
+
+  &:hover {
+    background: $blue-subdied;
+
+    .diagnostics-card__top-title {
+      color: $blue-dark;
+    }
+  }
+
+  &__top {
+    display: grid;
+    gap: 12px;
+
+    @include breakpoint(md) {
+      gap: 14px;
+    }
+
+    &-code {
+      font-size: 19px;
+      font-weight: 600;
+      line-height: 120%; /* 22.8px */
+    }
+
+    &-title {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 120%; /* 24px */
+      letter-spacing: -0.2px;
+      transition: $transition;
+
+      @include breakpoint(md) {
+        font-size: 23px;
+        letter-spacing: -0.23px;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-self: flex-end;
+
+    &-price {
+      @include flexColumn;
+
+      @include breakpoint(md) {
+        flex-direction: row;
+        gap: 4px;
+      }
+
+      span {
+        &:first-child {
+          order: 2;
+          color: $blue-dark;
+          font-size: 23px;
+          font-weight: 600;
+          line-height: 120%; /* 27.6px */
+          letter-spacing: -0.23px;
+
+          @include breakpoint(md) {
+            order: 1;
+          }
+        }
+
+        &:last-child {
+          order: 1;
+          color: $gray-dark;
+          font-size: 14px;
+          line-height: 150%; /* 21px */
+          text-decoration: line-through;
+
+          @include breakpoint(md) {
+            order: 2;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.promotions {
+  &__inner {
+    &-items {
+      display: grid;
+      gap: 12px;
+
+      @include breakpoint(lg) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+}
+
+.promotions-seo {
+  p {
+    color: $gray-dark;
+    line-height: 150%; /* 24px */
+    margin-top: 24px;
+
+    @include breakpoint(md) {
+      margin-top: 32px;
+    }
+  }
+}
+
+
+.promotions-checkups-popular {
+  &__top {
+    @include flexColumn;
+    gap: 24px;
+    margin-bottom: 16px;
+
+    @include breakpoint(md) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+
+  }
+
+  .swiper-wrapper {
+    align-items: stretch;
+
+    .swiper-slide {
+      height: unset;
+    }
+
+    .checkup-slider-card {
+      height: 100%;
+    }
+  }
+}

@@ -16,10 +16,57 @@ block main
                 .news-inner__content
                     .h2-title Заголовок h2
                     .small-title Заголовок для списка маркерами
-                    ul.custom-list
+                    ul
                         li Lorem ipsum dolor sit amet consectetur. Pretium sed id tempus volutpat
                         li Lorem ipsum dolor sit amet consectetur. Pretium sed id tempus volutpat
                         li Lorem ipsum dolor sit amet consectetur. Pretium sed id tempus volutpat
                         li Lorem ipsum dolor sit amet consectetur. Pretium sed id tempus volutpat
                         li Lorem ipsum dolor sit amet consectetur. Pretium sed id tempus volutpat
                     .small-title Заголовок для списка нумерованный
+                    ol
+                        li Lorem ipsum dolor sit amet consectetur. Pretium sed id tempus volutpat
+                        li Lorem ipsum dolor sit amet consectetur. Pretium sed id tempus volutpat
+                        li Lorem ipsum dolor sit amet consectetur. Pretium sed id tempus volutpat
+                        li Lorem ipsum dolor sit amet consectetur. Pretium sed id tempus volutpat
+
+                    .h3-title Заголовок блока для продвижения h3
+                    p.
+                        Lörem ipsum dekadade spessa dol nyrat. Supras pronäliga
+                        eller miledes, pånera semiss bende. Prens vik ett matyk
+                        punade så krora. Diasamma epiplande, iliga nälig pred.
+                        Mitässade val, rynde. Benera kabibel völig migon mol.
+                        Olålassade ryktig kyssa filostik. Tärynänisk vören i odenat
+                        med segasm vint. Krovaktigt. Mibel tölig. Epilysa oska då
+                        transism mityning tills astrora kvasisade. Nissa antis.
+                        Du kan vara drabbad.
+                    .h4-title Заголовок блока для продвижения h4
+                    p.
+                        Lörem ipsum dekadade spessa dol nyrat. Supras pronäliga eller
+                        miledes, pånera semiss bende. Prens vik ett matyk punade så krora.
+                        Diasamma epiplande, iliga nälig pred. Mitässade val, rynde. Benera
+                        kabibel völig migon mol. Olålassade ryktig kyssa filostik. Tärynänisk
+                        vören i odenat med segasm vint. Krovaktigt. Mibel tölig. Epilysa oska
+                        då transism mityning tills astrora kvasisade. Nissa antis. Du kan
+                        vara drabbad.
+                        <br>
+                        <br>
+                        Lörem ipsum dekadade spessa dol nyrat. Supras pronäliga eller miledes,
+                        pånera semiss bende. Prens vik ett matyk punade så krora. Diasamma
+                        epiplande, iliga nälig pred. Mitässade val, rynde. Benera kabibel
+                        völig migon mol
+
+    section.news-inner-another
+        .container
+            .news-inner-another__inner
+                .news-inner-another__inner-top
+                    .h2-title Другие новости
+                    .swiper-nav
+                        button.arrow-prev
+                        button.arrow-next
+                .news-inner-another__inner-swiper.swiper
+                    .swiper-wrapper
+                        - var n = 6;
+                        while n > 0
+                            .swiper-slide
+                                include ../components/news-n-article
+                            - n--;

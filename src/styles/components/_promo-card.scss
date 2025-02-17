@@ -8,8 +8,14 @@
   overflow: clip;
   position: relative;
   transition: $transition;
-  display: grid;
-  gap: 12px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+
+  @include breakpoint(md) {
+    padding: 32px;
+    border-radius: 32px;
+  }
 
   @include breakpoint(lg) {
     gap: 16px;
@@ -18,14 +24,15 @@
   &:hover {
     background-color: $blue-lite;
 
-    & .promo-card__item-image {
+    & .promo-card__image {
       scale: 110%;
     }
   }
 
-  &__top {
-    display: flex;
-    justify-content: space-between;
+  &__main{
+    display: grid;
+    gap: 12px;
+    grid-template-rows: repeat(2, fit-content(100%)) 1fr;
   }
 
   &__bottom {
@@ -84,7 +91,7 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    z-index: 0;
+    z-index: -1;
     transition: $transition;
     width: 109px;
     height: 109px;
@@ -99,7 +106,6 @@
     height: 48px;
     display: flex;
     gap: 4px;
-    margin-top: 16px;
     align-self: flex-end;
 
     @include breakpoint(md) {

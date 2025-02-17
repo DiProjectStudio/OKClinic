@@ -1,14 +1,13 @@
 mixin promoCard(title, description, index)
-    a(href='javascript:void(0)').promo-card
-        .promo-card__crosses
-            +img('crosses.png')
-        .promo-card__top
+    a(href='promotion.html').promo-card
+        .promo-card__main
+            .promo-card__crosses
+                +img('crosses.png')
             .h4-title.promo-card__title= title
-            .arrow-up-link.arrow-up-link--white
-        .promo-card__bottom
             .promo-card__description= description
             .promo-card__prices
                 span 14 200 ₽
                 span 21 800 ₽
-        .promo-card__image
-            +img(`promo-${index + 1}.png`)
+            .promo-card__image
+                +img(`promo-${index + 1}.png`)
+        .arrow-up-link.arrow-up-link--white

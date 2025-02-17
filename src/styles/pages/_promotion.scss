@@ -1,0 +1,225 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.promotion {
+  &__inner {
+    margin-top: 24px;
+    display: grid;
+    gap: 12px;
+
+    @include breakpoint(md) {
+      margin-top: 32px;
+      grid-template-columns: 9fr 3fr;
+    }
+
+    &-main {
+      color: $white;
+      border-radius: 32px;
+      background: $blue-dark;
+      padding: 24px;
+      position: relative;
+      overflow: clip;
+      z-index: 1;
+
+      @include breakpoint(md) {
+        padding: 32px;
+      }
+
+      h1 {
+        margin-bottom: 16px;
+
+        @include breakpoint(md) {
+          margin-bottom: 24px;
+          max-width: 461px;
+        }
+
+        @include breakpoint(lg) {
+          max-width: 541px;
+        }
+
+        @include breakpoint(xl) {
+          max-width: 754px;
+        }
+      }
+
+      p {
+        color: $white-subdied;
+        font-size: 19px;
+        font-weight: 600;
+        line-height: 120%; /* 22.8px */
+        margin-bottom: 24px;
+
+        @include breakpoint(md) {
+          margin-bottom: 32px;
+          max-width: 461px;
+        }
+
+        @include breakpoint(lg) {
+          max-width: 541px;
+        }
+
+        @include breakpoint(xl) {
+          max-width: 674px;
+        }
+      }
+
+      .btn {
+        margin-bottom: 258px;
+
+        @include breakpoint(md) {
+          margin-bottom: 0;
+        }
+      }
+
+      &-image {
+        position: absolute;
+        width: 267px;
+        height: 247px;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+
+        @include breakpoint(md) {
+          width: 260px;
+          height: 240px;
+        }
+      }
+
+      &-cross-1 {
+        position: absolute;
+        width: 109px;
+        height: 114px;
+        left: 82px;
+        bottom: 97px;
+        z-index: -2;
+
+        @include breakpoint(md) {
+          width: 134px;
+          height: 140px;
+          right: 67px;
+          top: 41px;
+          left: unset;
+        }
+
+        @include breakpoint(lg) {
+          width: 88px;
+          height: 92px;
+          right: 16px;
+          top: 63px;
+        }
+
+        @include breakpoint(xl) {
+          right: 166px;
+        }
+      }
+
+      &-cross-2 {
+        position: absolute;
+        width: 56px;
+        height: 60px;
+        left: 12px;
+        bottom: 17px;
+        z-index: -2;
+
+        @include breakpoint(md) {
+          width: 69px;
+          height: 73px;
+          left: unset;
+          right: 219px;
+          bottom: 30px;
+        }
+
+        @include breakpoint(lg) {
+          width: 45px;
+          height: 48px;
+          right: 116px;
+          bottom: 90px;
+        }
+
+        @include breakpoint(xl) {
+          right: 266px;
+          bottom: 42px;
+        }
+      }
+    }
+
+    &-terms {
+      border-radius: 32px;
+      background: $gray-subdied;
+      padding: 32px;
+      display: grid;
+      gap: 4px;
+      grid-auto-rows: fit-content(100%);
+
+      p {
+        &:first-child {
+          font-size: 11px;
+          line-height: 16px; /* 145.455% */
+        }
+
+        &:last-child {
+          color: $blue-dark;
+          font-size: 23px;
+          font-weight: 600;
+          line-height: 120%; /* 27.6px */
+          letter-spacing: -0.23px;
+        }
+      }
+    }
+  }
+}
+
+.promotion__conditions {
+  margin-top: 32px;
+  ol {
+    display: grid;
+    gap: 8px;
+    padding-left: 16px;
+    margin-top: 32px;
+
+    li {
+      color: $gray-dark;
+      font-size: 16px;
+      line-height: 150%; /* 21px */
+      list-style: unset;
+
+      @include breakpoint(md) {
+        font-size: 16px;
+      }
+
+      &::marker {
+        color: $blue-dark;
+      }
+    }
+  }
+}
+
+.promotion-another {
+  &__inner {
+    &-top {
+      @include flexCenterBetween;
+      margin-bottom: 24px;
+
+      @include breakpoint(md) {
+        margin-bottom: 32px;
+      }
+    }
+
+
+    .swiper-wrapper {
+      align-items: stretch;
+
+      .swiper-slide {
+        height: unset!important;
+
+        .promo-card {
+          height: 100%;
+        }
+      }
+
+      .checkup-slider-card {
+        height: 100%;
+      }
+    }
+  }
+}

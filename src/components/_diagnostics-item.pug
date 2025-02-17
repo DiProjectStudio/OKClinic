@@ -1,0 +1,8 @@
+mixin diagnosticItem(title, details)
+    .diagnostics__item
+        .diagnostics__item-title= title
+        ul
+            each detail in details
+                li
+                    a(href='javascript:void(0)')= detail
+        a(href='javascript:void(0)').btn.btn--transparent-blue-secondary Смотреть все
