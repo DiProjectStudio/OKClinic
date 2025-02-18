@@ -1,0 +1,278 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+
+.diagnostics-category {
+  margin-top: 24px;
+
+  &__inner {
+    display: grid;
+    gap: 12px;
+
+    @include breakpoint(lg) {
+      grid-template-columns: 9fr 3fr;
+    }
+
+    &-top {
+      border-radius: 24px;
+      background: $wf-fw-subdied;
+      padding: 24px;
+      position: relative;
+      z-index: 1;
+      overflow: clip;
+
+      @include breakpoint(md) {
+        border-radius: 32px;
+        padding: 32px;
+      }
+
+      h1 {
+        @include breakpoint(md) {
+          width: min-content;
+        }
+
+        @include breakpoint(lg) {
+          width: unset;
+        }
+      }
+
+      p {
+        color: $wf-wf-dark;
+        line-height: 150%; /* 24px */
+        margin-top: 16px;
+        margin-bottom: 177px;
+
+        @include breakpoint(md) {
+          margin-top: 24px;
+          max-width: 376px;
+          margin-bottom: 0;
+        }
+
+        @include breakpoint(lg) {
+          max-width: 540px;
+        }
+
+        @include breakpoint(xl) {
+          max-width: 640px;
+        }
+      }
+
+      &-crosses {
+        position: absolute;
+        left: 24px;
+        bottom: 33px;
+        width: 163px;
+        height: 152px;
+
+        @include breakpoint(md) {
+          width: 245px;
+          height: 228px;
+          left: unset;
+          right: 43px;
+          top: 10px;
+        }
+
+        @include breakpoint(lg) {
+          right: 87px;
+          top: 20px;
+        }
+
+        @include breakpoint(xl) {
+          right: 152px;
+          top: 40px;
+        }
+      }
+
+      &-image {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 200px;
+        height: 185px;
+
+        @include breakpoint(md) {
+          width: 260px;
+          height: 240px;
+        }
+      }
+    }
+
+    &-bottom {
+      border-radius: 24px;
+      border: 1px solid $blue-secondary;
+      padding: 24px;
+      display: grid;
+      gap: 24px;
+
+      @include breakpoint(md) {
+        grid-template-columns: 315px fit-content(100%);
+        justify-content: space-between;
+        padding: 32px;
+        border-radius: 32px;
+      }
+
+      @include breakpoint(lg) {
+        grid-template-columns: 1fr;
+      }
+
+      &-title {
+        font-size: 23px;
+        font-weight: 600;
+        line-height: 120%; /* 27.6px */
+        letter-spacing: -0.23px;
+      }
+
+      &-block {
+        &:first-child {
+          display: grid;
+          gap: 16px;
+
+          p {
+            color: $gray-dark;
+            line-height: 150%; /* 24px */
+          }
+        }
+
+        &:last-child {
+          @include flexCenterBetween;
+          gap: 16px;
+
+          @include breakpoint(md) {
+            flex-direction: column;
+            align-items: unset;
+          }
+
+          span {
+            font-size: 23px;
+            font-weight: 600;
+            line-height: 120%; /* 27.6px */
+            letter-spacing: -0.23px;
+          }
+
+          .btn {
+            padding: 14px 28px;
+
+            @include breakpoint(lg) {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.diagnostics-category__wrapper {
+  margin-top: 24px;
+  @include flexColumn;
+  gap: 24px;
+
+  @include breakpoint(md) {
+    margin-top: 32px;
+    gap: 48px;
+  }
+
+  @include breakpoint(lg) {
+    display: grid;
+    grid-template-columns: 3fr minmax(0, 9fr);
+    gap: 12px;
+  }
+
+  &-leftside {
+    display: grid;
+    gap: 8px;
+    grid-auto-rows: fit-content(100%);
+
+    @include breakpoint(md) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    @include breakpoint(lg) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &-rightside {
+    .anchor-links {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.diagnostics-category-how, .diagnostics-category-application {
+  p {
+    color: $gray-dark;
+    font-size: 14px;
+    line-height: 150%; /* 21px */
+    margin-top: 24px;
+
+    @include breakpoint(md) {
+      font-size: 16px;
+      margin-top: 32px;
+    }
+  }
+}
+
+.diagnostics-category-popular {
+  &__items {
+    margin-top: 24px;
+    display: grid;
+    gap: 12px;
+
+    @include breakpoint(md) {
+      margin-top: 32px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint(lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.diagnostics-category-specialists {
+
+  &__inner {
+
+    &-top {
+      display: grid;
+      gap: 24px;
+
+      @include breakpoint(md) {
+        grid-template-columns: 503px fit-content(100%);
+        justify-content: space-between;
+      }
+      p {
+        color: $gray-dark;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 21px */
+        margin-top: 12px;
+
+        @include breakpoint(md) {
+          font-size: 16px;
+          margin-top: 24px;
+        }
+      }
+    }
+
+    &-slider {
+      margin-top: 12px;
+
+      @include breakpoint(md) {
+        margin-top: 40px;
+      }
+    }
+
+  }
+}
+
+.diagnostics-category-feedback {
+  margin-top: 48px;
+
+  @include breakpoint(lg) {
+    margin-top: 64px;
+  }
+}

@@ -1,10 +1,10 @@
 import Swiper from "swiper";
-import { Navigation, Pagination, Autoplay, FreeMode, Thumbs, Scrollbar, Grid } from "swiper/modules";
+import { Navigation, Grid } from "swiper/modules";
 import { sliderClone } from "./utils/slider-clone.js";
 
 export function initializeSlider() {
 
-    sliderClone(".programs__slider .swiper");
+    // sliderClone(".programs__slider .swiper");
     const programsSlider = new Swiper(".programs__slider .swiper", {
         modules: [Navigation],
         slidesPerView: 1.2,
@@ -24,7 +24,7 @@ export function initializeSlider() {
         }
     });
 
-    sliderClone(".specialists__inner-slider .swiper");
+    // sliderClone(".specialists__inner-slider .swiper");
     const specialistsSlider = new Swiper(".specialists__inner-slider .swiper", {
         modules: [Navigation, Grid],
         slidesPerView: 1,
@@ -56,7 +56,7 @@ export function initializeSlider() {
     });
 
 
-    sliderClone(".reviews .swiper");
+    // sliderClone(".reviews .swiper");
     const reviewsSlider = new Swiper(".reviews .swiper", {
         modules: [Navigation],
         slidesPerView: 1.05,
@@ -96,7 +96,7 @@ export function initializeSlider() {
         }
     });
 
-    sliderClone(".service-page__specialization .swiper");
+    // sliderClone(".service-page__specialization .swiper");
     const servicePageSpecialistsSlider = new Swiper(".service-page__specialization .swiper", {
         modules: [Navigation, Grid],
         slidesPerView: 1,
@@ -127,7 +127,7 @@ export function initializeSlider() {
         }
     });
 
-    sliderClone(".direction-specialists .swiper");
+    // sliderClone(".direction-specialists .swiper");
     const directionPageSpecialistsSlider = new Swiper(".direction-specialists .swiper", {
         modules: [Navigation, Grid],
         slidesPerView: 1,
@@ -158,7 +158,7 @@ export function initializeSlider() {
         }
     })
 
-    sliderClone(".checkups__slider .swiper");
+    // sliderClone(".checkups__slider .swiper");
     const checkupsPageSlider = new Swiper(".checkups__slider .swiper", {
         modules: [Navigation],
         slidesPerView: 1.2,
@@ -262,7 +262,7 @@ export function initializeSlider() {
         }
     });
 
-    sliderClone(".promotions-checkups-popular .swiper");
+    // sliderClone(".promotions-checkups-popular .swiper");
     const promotionsPageCheckupsSlider = new Swiper(".promotions-checkups-popular .swiper", {
         modules: [Navigation, Grid],
         slidesPerView: 1,
@@ -277,7 +277,7 @@ export function initializeSlider() {
         },
         breakpoints: {
             744: {
-                slidesPerView: 3,
+                slidesPerView: 4,
                 grid: {
                     rows: 1
                 }
@@ -287,7 +287,7 @@ export function initializeSlider() {
     
     const promotionPagePromotionsSlider = new Swiper(".promotion-another .swiper", {
         modules: [Navigation, Grid],
-        slidesPerView: 1,
+        slidesPerView: 1.05,
         spaceBetween: 12,
         navigation: {
             prevEl: ".promotion-another .arrow-prev",
@@ -306,6 +306,74 @@ export function initializeSlider() {
                 grid: {
                     rows: 1
                 }
+            }
+        }
+    });
+
+    // sliderClone(".diagnostics-page-checkups .swiper");
+    const diagnosticsPageCheckupsSlider = new Swiper(".diagnostics-page-checkups .swiper", {
+        modules: [Navigation],
+        slidesPerView: 1.25,
+        spaceBetween: 8,
+        navigation: {
+            prevEl: ".diagnostics-page-checkups .arrow-prev",
+            nextEl: ".diagnostics-page-checkups .arrow-next"
+        },
+        breakpoints: {
+            744: {
+                slidesPerView: 2,
+            },
+            1200: {
+                slidesPerView: 4,
+                spaceBetween: 12
+            }
+        }
+    });
+
+    // sliderClone(".diagnostics-category-specialists .swiper");
+    const diagnosticsCategoryPageSpecialistsSlider = new Swiper(".diagnostics-category-specialists .swiper", {
+        modules: [Navigation, Grid],
+        slidesPerView: 1,
+        spaceBetween: 4,
+        grid: {
+            rows: 3,
+            fill: "row"
+        },
+        navigation: {
+            prevEl: ".diagnostics-category-specialists .arrow-prev",
+            nextEl: ".diagnostics-category-specialists .arrow-next"
+        },
+        breakpoints: {
+            744: {
+                slidesPerView: 3,
+                grid: {
+                    rows: 1
+                },
+                spaceBetween: 12
+            }
+        }
+    });
+
+    // sliderClone(".diagnostics-inner-specialists .swiper");
+    const diagnosticsInnerPageSpecialistsSlider = new Swiper(".diagnostics-inner-specialists .swiper", {
+        modules: [Navigation, Grid],
+        slidesPerView: 1,
+        spaceBetween: 4,
+        grid: {
+            rows: 3,
+            fill: "row"
+        },
+        navigation: {
+            prevEl: ".diagnostics-inner-specialists .arrow-prev",
+            nextEl: ".diagnostics-inner-specialists .arrow-next"
+        },
+        breakpoints: {
+            744: {
+                slidesPerView: 3,
+                grid: {
+                    rows: 1
+                },
+                spaceBetween: 12
             }
         }
     });

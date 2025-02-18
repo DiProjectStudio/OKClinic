@@ -22,6 +22,11 @@
       border-radius: 32px;
       border: 1px solid $blue-secondary;
       overflow: clip;
+      height: 384px;
+
+      @include breakpoint(md) {
+        height: unset;
+      }
     }
 
     &-worker {

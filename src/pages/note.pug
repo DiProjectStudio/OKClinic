@@ -9,29 +9,14 @@ block main
     +breadcrumbs('Услуги', 'Справки', 'Справка 070/у для получения путевки')
     .note-wrapper
         .container
+            h1.not-main Справка 070/у для получения путевки
             .note-wrapper__inner
-                .note-wrapper__main
-                    section.note-main
-                        .note-main__inner
-                            h1.not-main Справка 070/у для получения путевки
-                            .note-main__inner
-                                .note-main__inner
-                                    .note-main__price
-                                        .note-main__price-top
-                                            p Код 070/у
-                                            ul.custom-list
-                                                li 1 рабочий день
-                                                li Обследования
-                                        .note-main__price-bottom
-                                            p от 1500 ₽
-                                            .note-main__price-bottom-buttons
-                                                a(href='javascript:void(0)').btn.btn--blue-dark Запись на прием
-                                                a(href='javascript:void(0)').btn.btn--gray-subdied Пример справки
-                                    .anchor-links
-                                        a(href='#about').anchor-link.active Об услуге
-                                        a(href='#why').anchor-link Зачем нужна справка
-                                        a(href='#how').anchor-link Как получить
-                                        a(href='#deadlines').anchor-link Срок выдачи
+                .note-wrapper__inner-leftside
+                    .anchor-links
+                        a(href='#about').anchor-link.active Об услуге
+                        a(href='#why').anchor-link Зачем нужна справка
+                        a(href='#how').anchor-link Как получить
+                        a(href='#deadlines').anchor-link Срок выдачи
                     section.note-about#about
                         .note-about__inner
                             .h2-title Об услуге
@@ -123,7 +108,19 @@ block main
                         .note-advantages__inner
                             .h2-title Преимущества услуги
                             include ../components/_advantages-block
-                .note-wrapper__rightside
+                .note-wrapper__inner-rightside
+                    .rightside-content
+                        .rightside-content__inner
+                            .rightside-content__inner-top
+                                p Код 070/у
+                                ul.custom-list
+                                    li 1 рабочий день
+                                    li Обследования
+                            .rightside-content__inner-bottom
+                                p от 1500 ₽
+                                .rightside-content__inner-bottom-buttons
+                                    a(href='javascript:void(0)').btn.btn--blue-dark Запись на прием
+                                    a(href='javascript:void(0)').btn.btn--gray-subdied Пример справки
     section.note-additional
         .container
             .note-additional__inner

@@ -25,6 +25,7 @@
   &__top {
     @include flexCenterBetween;
     cursor: pointer;
+    gap: 10px;
 
     &:hover {
       .dropdown__top-arrow {
@@ -48,6 +49,7 @@
       height: 32px;
       @include flexCenterCenter;
       transition: $transition;
+      flex-shrink: 0;
 
       svg {
         width: 20px;

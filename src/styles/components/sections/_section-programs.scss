@@ -28,6 +28,9 @@
 
       @include breakpoint(lg) {
         margin-bottom: 32px;
+        justify-content: unset;
+        gap: 16px;
+        justify-self: flex-end;
       }
 
       .btn {

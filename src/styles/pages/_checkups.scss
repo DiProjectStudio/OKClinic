@@ -3,6 +3,7 @@
 
 .checkups-main {
   margin-bottom: 12px;
+  margin-top: 24px;
 
   @include breakpoint(lg) {
     margin-bottom: 32px;
@@ -262,6 +263,28 @@
       margin-bottom: 32px;
     }
 
+  }
+
+  &__slider {
+    margin-right: -16px;
+
+    @include breakpoint(md) {
+      margin-right: 0;
+    }
+
+    .swiper-slide {
+      @include breakpoint(md) {
+        height: unset;
+      }
+
+
+      .checkup-slider-card {
+        @include breakpoint(md) {
+          height: 100%;
+        }
+
+      }
+    }
   }
 }
 

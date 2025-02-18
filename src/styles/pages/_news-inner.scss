@@ -13,6 +13,22 @@
     @include breakpoint(xl) {
       @include columnCountMaxXlWidth(8);
     }
+
+    h1.not-main {
+      margin-bottom: 0;
+    }
+
+    &-date {
+      color: $wf-wf-dark;
+      font-size: 11px;
+      line-height: 16px; /* 145.455% */
+      margin-top: 8px;
+      margin-bottom: 24px;
+
+      @include breakpoint(md) {
+        margin-bottom: 32px;
+      }
+    }
   }
 
   &__image {
@@ -36,8 +52,16 @@
       margin-bottom: 18px;
     }
 
-    .small-title {
+    h6 {
       margin-bottom: 16px;
+      font-size: 19px;
+      font-weight: 600;
+      line-height: 120%; /* 22.8px */
+    }
+
+
+    h6 + ul, h6 + ol {
+      margin-top: 16px;
     }
 
     ul {
@@ -65,7 +89,7 @@
         }
       }
 
-      & + .small-title, & + h2, & + h3, & + h4,
+      & + h2, & + h3, & + h4,
       & + h5, & + h6, & + .h3-title, & + .h4-title {
         margin-top: 24px;
       }
@@ -91,7 +115,7 @@
         }
       }
 
-      & + .small-title, & + h2, & + h3, & + h4,
+      & + h2, & + h3, & + h4,
       & + h5, & + h6, & + .h3-title, & + .h4-title {
         margin-top: 24px;
       }

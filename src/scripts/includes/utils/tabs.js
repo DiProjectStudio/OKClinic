@@ -27,7 +27,7 @@ export default function tabActions()  {
 
 /** Передаем значение активного таба и селектор всего блока с табами */
 function showContent(dataTab, tabBlock) {
-    const tabContentElements = tabBlock.parentElement.querySelectorAll(".tab-content");
+    const tabContentElements = tabBlock.closest('section').querySelectorAll(".tab-content");
     tabContentElements.forEach(tabContent => {
         const tabContentData = tabContent.dataset.content;
 
