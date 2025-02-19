@@ -1,0 +1,201 @@
+extends ../layout/layout
+
+block title
+    - title = 'Неврология'
+    - page = 'page-direction'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Услуги', 'Неврология')
+    section.direction-main
+        .container
+            .direction-main__inner
+                .direction-main__inner-top
+                    h1.not-main Неврология
+                    p.
+                        Неврология занимается диагностикой и лечением
+                        различных заболеваний, которые могут поражать
+                        головной мозг, спинной мозг, нервы, мышцы и
+                        нервно-мышечные соединения. Невролог – это врач,
+                        специализирующийся на этих заболеваниях.
+
+                    .direction-main__inner-top-image
+                        +img('direction-image.png')
+                    .direction-main__inner-top-crosses
+                        +img('crosses-1.png')
+
+                .direction-main__inner-bottom
+                    .direction-main__inner-bottom-text
+                        p Запишитесь на прием
+                        p Стоимость первичного приема специалиста невролога
+                    .direction-main__inner-bottom-button
+                        p от 1500 ₽
+                        a(href='javascript:void(0)').btn.btn--blue-dark Запись на прием
+
+    section.direction-symptoms
+        .container
+            .direction-symptoms__inner
+                .h2-title Симптомы заболеваний нервной системы
+                .h4-title Врача могут насторожить следующие отклонения:
+                ul.custom-list
+                    li постоянная хроническая усталость;
+                    li частые головные боли любого характера;
+                    li обмороки и предобморочные состояния;
+                    li головокружение, шум и звон в ушах;
+                    li расстройства сна, тревожность и апатия;
+                    li снижение памяти и концентрации внимания, общая рассеянность;
+                    li частые изменения настроения, раздражительность;
+                    li онемение, слабость, чувство «мурашек», жжение, зябкость в верхних и нижних конечностях;
+                    li частые головные боли любого характера;
+                    li боли по ходу позвоночника или в ногах;
+                    li несимметричность лица;
+                p.
+                    Lörem ipsum dekadade spessa dol nyrat. Supras
+                    pronäliga eller miledes, pånera semiss bende.
+                    Prens vik ett matyk punade så krora. Diasamma
+                    epiplande, iliga nälig pred. Mitässade val, rynde.
+                    Benera kabibel völig migon mol. Olålassade ryktig
+                    kyssa filostik. Tärynänisk vören i odenat med segasm
+                    vint. Krovaktigt. Mibel tölig. Epilysa oska då
+                    transism mityning tills astrora kvasisade. Nissa
+                    antis. Du kan vara drabbad.
+    section.direction-diseases
+        .container
+            -
+                var tagBlock = {
+                    title: "Какие заболевания лечат неврологи?",
+                    description: "Неврология лечит заболевания такие как:",
+                    tags: [
+                        "Ишемия головного мозга", "Частые головные боли",
+                        "Головокружение", "Обмороки и предобморочные состояния",
+                        "Расстройства сна", "Снижение памяти и концентрации внимания",
+                        "Раздражительность", "Онемение",
+                        "Слабость", "Частые головные боли", "Несимметричность лица",
+                        "Рассеянный склероз", "Вегетативная дистония",
+                        "Нейрофилис", "Синдром хронической усталости",
+                        "Боковой амиотрофический склероз"
+                    ]
+                }
+            include ../components/_tag-block
+            +tag-block(tagBlock.title, tagBlock.description, tagBlock.tags)
+
+    section.direction-treatment
+        .container
+            .direction-treatment__inner
+                .h2-title Лечение
+                .direction-treatment__inner-prices
+                    -
+                        var prices = [
+                            "Первичный прием (осмотр, консультация) врача-терапевта",
+                            "Назначение лекарственных препаратов при заболеваниях (схемы лечения)",
+                            "Название метода лечения длинное или очень короткое так что оно не помещается в одну строчку",
+                            "Название метода лечения длинное или очень короткое так что оно не помещается в одну строчку",
+                        ]
+                    each price in prices
+                        include ../components/_price-card
+                        +priceCard(price)
+
+    section.direction-specialists
+        .container
+            .direction-specialists__inner
+                .specialists__inner-top
+                    .direction-specialists__top-title
+                        .section-title К какому врачу обратиться
+                        p.
+                            При первичном обращении предлагаем записаться к терапевту,
+                            чтобы он при необходимости направил к узким специалистам.
+                    .specialists__inner-top-nav
+                        .swiper-nav
+                            button.arrow-prev
+                            button.arrow-next
+                .service-page__specialization-slider
+                    -
+                        var specialists = [
+                            {
+                                name: "Филиппов Александр Олегович",
+                                specialization: "Врач - невролог, врач - остеопат"
+                            },
+                            {
+                                name: "Гиоева Лаура Валерьевна",
+                                specialization: "Невролог"
+                            },
+                            {
+                                name: "Егорова Екатерина Сергеевна",
+                                specialization: "Невролог, Кандидат медицинских наук"
+                            },
+                            {
+                                name: "Катенина Светлана Петровна",
+                                specialization: "Терапевт, гастроэнтеролог"
+                            }
+                        ]
+                    .swiper
+                        .swiper-wrapper
+                            each specialist, index in specialists
+                                .swiper-slide
+                                    include ../components/_doctor-card
+                                    +doctor-card(index, specialist.name, specialist.specialization)
+
+    section.direction-diagnostics
+        .container
+            .diagnostics__inner
+                .section-top
+                    .section-title Диагностика и анализы
+                    .section-description
+                        p.
+                            Предлагаем широкий спектр лабораторных и инструментальных исследований,
+                            используя современное оборудование и передовые методы.
+                            Диагностика с комфортом и вниманием к каждому пациенту
+                .diagnostics__wrapper
+                    .diagnostics__wrapper-tabs.tabs(data-tabs-actions)
+                        button(data-tab='diagnostics').tab.active Диагностика
+                        button(data-tab='tests').tab Анализы
+                    .diagnostics__wrapper-items.showed.tab-content(data-content='diagnostics')
+
+                        -
+                            var diagnosticsItems = [
+                                {
+                                    title: "Компьютерная томография",
+                                    details:
+                                            [
+                                                "Брюшная полость",
+                                                "Вверхняя конечность",
+                                                "Голова",
+                                                "Грудная клетка",
+                                                "Нижняя конечность",
+                                            ]
+                                },
+                                {
+                                    title: "Ультразвуковая диагностика",
+                                    details:
+                                            [
+                                                "Железы внутренней секреции",
+                                                "Женские половые органы",
+                                                "Иммунная система",
+                                                "Крупные кровеносные сосуды",
+                                                "Мужские половые органы",
+                                            ]
+                                },
+                            ]
+                        each diagnosticsItem in diagnosticsItems
+                            .diagnostics__item
+                                .diagnostics__item-title= diagnosticsItem.title
+                                ul
+                                    each item in diagnosticsItem.details
+                                        li
+                                            a(href='javascript:void(0)')= item
+                    .diagnostics__wrapper-items.tab-content(data-content='tests')
+                        .diagnostics__item
+                            .diagnostics__item-title Анализы крови
+                            ul
+                                li
+                                    a(href='javascript:void(0)') Общий анализ крови
+                                li
+                                    a(href='javascript:void(0)') СРБ
+                                li
+                                    a(href='javascript:void(0)') Общий анализ крови
+                                li
+                                    a(href='javascript:void(0)') СРБ
+                                li
+                                    a(href='javascript:void(0)') СРБ
+
+    include ../components/_feedback

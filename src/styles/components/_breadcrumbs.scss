@@ -3,9 +3,7 @@
 
 
 .breadcrumbs {
-  @include breakpoint(md) {
-    margin-bottom: 8px;
-  }
+  margin-bottom: 8px;
 
   @include breakpoint(lg) {
     margin-top: 10px;

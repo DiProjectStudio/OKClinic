@@ -1,0 +1,235 @@
+extends ../layout/layout
+
+block title
+    - title = 'Простуда'
+    - page = 'page-disease'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Заболевания', 'Инфекционные болезни', 'Простуда')
+    section.disease-wrapper
+        .container
+            h1.not-main Простуда
+            .disease-wrapper__inner
+                .disease-wrapper__inner-leftside
+                    .anchor-links
+                        a(href='#about').anchor-link.active О болезни
+                        a(href='#reasons').anchor-link Причины
+                        a(href='#types').anchor-link Виды заболевания
+                        a(href='#symptoms').anchor-link Симптомы
+                        a(href='#treatment').anchor-link Лечение
+                        a(href='#diagnostics').anchor-link Диагностика и анализы
+                    section.disease-about#about
+                        .h2-title О болезни
+                        p.
+                            Простуда – это собирательное понятие, включающее симптомы
+                            легкой формы воспаления верхних дыхательных путей.
+                            Вызывается обычно неспецифическими респираторными
+                            инфекциями. О простуде говорят, когда заболевает горло,
+                            появляется насморк, кашель, тяжесть в носовых пазухах.
+                            В медицине симптомокомплекс называется ОРЗ, а при подтверждении
+                            вирусного происхождения воспаления – ОРВИ. В ряде случаев под
+                            симптомами простуды маскируются серьезные заболевания. Обращение
+                            к врачу поможет исключить их и избежать осложнений.
+
+                    section.disease-reasons#reasons
+                        .h2-title Причины возникновения простуды
+                        .subtitle.
+                            Возбудители простуды проникают через нос или рот.
+                            Заражение происходит от больного человека с явными
+                            или стертыми симптомами. Специфический иммунитет не
+                            актуален, поскольку видовое разнообразие возбудителей
+                            достигает более 200. Эпидемии возникают преимущественно
+                            в осенне-зимний период.
+                        ul.custom-list
+                            li Риновирусы;
+                            li Коронавирусы;
+                            li Стафилококки;
+                            li Аденовирусы;
+                            li Вирусы гриппа, парагриппа, герпеса;
+                            li Пневмококки;
+                            li Энтеровирусы;
+                            li Стрептококки;
+                            li Хламидии, микоплазмы.
+                        p.
+                            Внутри носа в районе кончика располагаются клетки слизистой,
+                            которые вырабатывают экзосомы – пузырьки с ферментами. Они
+                            атакуют вдыхаемые инфекции, облепляют и обезвреживают их,
+                            не давая распространяться. На холоде экзосомы вырабатываются
+                            медленнее, с патогенами справляются менее эффективно, степень
+                            защиты организма снижается. Инфекционный агент внедряется в
+                            слизистые, адаптируется и начинает размножаться.
+                            <br>
+                            <br>
+                            Само по себе переохлаждение простуду не вызывает. Ее появление
+                            означает, что на фоне снизившейся иммунной защиты в организм
+                            проник патоген либо активизировалась уже имеющаяся инфекция.
+
+                    section.disease-types#types
+                        .disease-types__title Виды заболевания
+                        .disease-types__items
+                            -
+                                var tagLinks = [
+                                    'Ринит (насморк)', 'Тонзиллит',
+                                    'Фарингит', 'Трахеит',
+                                    'Ларингит', 'Бронхит',
+                                    'Рассеянный склероз',
+                                ]
+
+                            each tagLink in tagLinks
+                                a(href='javascript:void(0)').tag-link= tagLink
+
+                    section.disease-symptoms#symptoms
+                        .h2-title Симптомы
+                        .subtitle.
+                            Симптомы простуды у взрослых и детей примерно одинаковы,
+                            зависят от локализации и типа возбудителя.
+                        ul.custom-list
+                            li.
+                                Ринит. Характерно затрудненное дыхание из-за отека слизистой носовых ходов,
+                                чихание, ухудшение обоняния. При первых признаках простуды выделяется
+                                прозрачная слизь, затем к ней примешивается гной вследствие присоединения
+                                бактериальной инфекции. Выделения становятся плотными, приобретают
+                                желто-зеленый оттенок.
+                            li.
+                                Трахеит. Ощущается саднение за грудиной, боли. Характерен сухой изнуряющий кашель.
+                            li.
+                                Ринит. Характерно затрудненное дыхание из-за отека слизистой носовых ходов,
+                                чихание, ухудшение обоняния. При первых признаках простуды выделяется
+                                прозрачная слизь, затем к ней примешивается гной вследствие присоединения
+                                бактериальной инфекции. Выделения становятся плотными, приобретают
+                                желто-зеленый оттенок.
+                            li.
+                                Фарингит. Первая стадия простуды начинается с першения в горле.
+                                Постоянно присутствует желание откашляться. По мере развития воспаления
+                                возникает боль при глотании.
+                            li.
+                                Бронхит. Отличается кашлем с обильным отхождением мокроты, который
+                                сопровождается саднящими болями в грудине. Дыхание с сухими хрипами.
+                            li.
+                                Бронхит. Отличается кашлем с обильным отхождением мокроты, который
+                                сопровождается саднящими болями в грудине. Дыхание с сухими хрипами.
+                            li.
+                                Ларингит. Проявляется болью в горле, специфическим «лающим» кашлем,
+                                осиплостью. Иногда голос вовсе пропадает.
+
+                    section.disease-treatment#treatment
+                        .h2-title Лечение простуды
+                        .disease-treatment__items
+                            -
+                                var priceNames = [
+                                    'Первичный прием (осмотр, консультация) врача-терапевта',
+                                    'Название метода лечения длинное или очень короткое так что оно не помещается в одну строчку'
+                                ]
+                            include ../components/_price-card
+                            each priceName in priceNames
+                                +priceCard(priceName)
+
+                    section.disease-diagnostics#diagnostics
+                        .h2-title Диагностика и анализы
+                        p.
+                            Lörem ipsum syst plapresk, renir reling prere. Jiv porade spenade krokar
+                            ulåligt förutom infralår. Goning båjonar. Telesöjoskade bövis sera plasamma,
+                            tesaling. Polydyt plalåns. Kvasipod dopp. Multisevis fade deng, monosör
+                            yspesiren, madade supraser. Dor jonat för att fanesa jyjönat. Tiv fant.
+                            Soss intragon utom decir prespesamma då parasöbelt och kvasinade pen. Fade
+                            pol hexaning. Goling pseudortad best.
+                        .disease-diagnostics__wrapper
+                            .disease-diagnostics__wrapper-tabs.tabs(data-tabs-actions)
+                                button(data-tab='diagnostics').tab.active Диагностика
+                                button(data-tab='tests').tab Анализы
+                            .disease-diagnostics__wrapper-items.showed.tab-content(data-content='diagnostics')
+                                .disease-diagnostics__wrapper-item
+                                    p Компьютерная томография
+                                    ul
+                                        li
+                                            a(href='javascript:void(0)') Брюшная полость
+                                        li
+                                            a(href='javascript:void(0)') Вверхняя конечность
+                                        li
+                                            a(href='javascript:void(0)') Сердце
+                                        li
+                                            a(href='javascript:void(0)') Сосуды
+                                        li
+                                            a(href='javascript:void(0)') Таз
+                                        li
+                                            a(href='javascript:void(0)') Шея
+                                .disease-diagnostics__wrapper-item
+                                    p Ультразвуковая диагностика
+                                    ul
+                                        li
+                                            a(href='javascript:void(0)') Железы внутренней секреции
+                                        li
+                                            a(href='javascript:void(0)') Женские половые органы
+                                        li
+                                            a(href='javascript:void(0)') Иммунная система
+                            .disease-diagnostics__wrapper-items.tab-content(data-content='tests')
+                                .disease-diagnostics__wrapper-item
+                                    p Анализы
+                                    ul
+                                        li
+                                            a(href='javascript:void(0)') ОАК
+                                        li
+                                            a(href='javascript:void(0)') ОАМ
+                                        li
+                                            a(href='javascript:void(0)') Биохимия
+
+                    section.disease-specialists
+                        .disease-specialists__inner
+                            .disease-specialists__inner-top
+                                .h2-title К какому врачу обратиться
+                                p.
+                                    При первичном обращении предлагаем записаться к терапевту,
+                                    чтобы он при необходимости направил к узким специалистам.
+                            .swiper-nav
+                                button.arrow-prev
+                                button.arrow-next
+                        .disease-specialists__slider.swiper
+                            -
+                                var specialists = [
+                                    {
+                                        name: "Филиппов Александр Олегович",
+                                        specialization: "Врач - невролог, врач - остеопат"
+                                    },
+                                    {
+                                        name: "Гиоева Лаура Валерьевна",
+                                        specialization: "Невролог"
+                                    },
+                                    {
+                                        name: "Егорова Екатерина Сергеевна",
+                                        specialization: "Невролог, Кандидат медицинских наук"
+                                    },
+                                    {
+                                        name: "Катенина Светлана Петровна",
+                                        specialization: "Терапевт, гастроэнтеролог"
+                                    }
+                                ]
+                            include ../components/_doctor-card
+                            .swiper-wrapper
+                                each specialist, index in specialists
+                                    .swiper-slide
+                                        +doctor-card(index, specialist.name, specialist.specialization)
+                    section.disease-advantages
+                        .h2-title Преимущества услуги
+                        include ../components/_advantages-block
+                .disease-wrapper__inner-rightside
+                    .rightside-content
+                        .rightside-content__group
+                            p Группа болезней
+                            p Инфекционные болезни
+                        .rightside-content__service
+                            .rightside-content__service-top
+                                .rightside-content__service-top-title Лечение простуды
+                                ul.custom-list
+                                    li Описание или опция
+                                    li Описание или опция
+                            .rightside-content__service-bottom
+                                .rightside-content__service-bottom-price от 1500 ₽
+                                .rightside-content__service-bottom-buttons
+                                    a(href='javascript:void(0)').btn.btn--blue-dark Запись на прием
+                                    a(href='javascript:void(0)').btn.btn--gray-subdied Заказать звонок
+
+    include ../components/_feedback
+
+
+

@@ -1,0 +1,228 @@
+extends ../layout/layout
+
+block title
+    - var title = 'Услуги'
+    - var page = 'page-services'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Услуги')
+    section.services-page
+        .container
+            .services-page__inner
+                h1.not-main Услуги
+                .services-page__search
+                    .services-page__search-tabs
+                        -
+                            var tabs = [
+                                "Популярные услуги", "Неврология",
+                                "Педиатрия", "Хирургия",
+                                "Ортопедия", "Гастроэнтерология",
+                                "Офтальмология", "Онкология",
+                                "Флебология", "Гематология",
+                                "Эндокринология", "Травматология",
+                                "Урология", "Психология", "Гематология"
+                            ]
+                        // Костя советует реализовать через get запросы и query параметрами
+                        each tab, index in tabs
+                            if index === 0
+                                a(href='javascript:void(0)').search-tab.tag-link.active= tab
+                            else
+                                a(href='javascript:void(0)').search-tab.tag-link= tab
+                    .services-page__search-results
+                        a(href='service.html').services-page__search-result
+                            span Название услуги
+                            .arrow-up-link.arrow-up-link--black
+                        - var n = 11;
+                        while n > 0
+                            a(href='service.html').services-page__search-result
+                                span Лечение грыжи межпозвонкового диска
+                                .arrow-up-link.arrow-up-link--black
+                            - n--;
+                    a(href='javascript:void(0)').btn.btn--transparent-blue-dark Показать еще
+
+    section.services-page__popular
+        .container
+            .services-page__popular-inner
+                .h2-title Популярные направления
+                .services-page__popular-items
+                    -
+                        var services = [
+                            "Гинекология и акушерство","Неврология",
+                            "Педиатрия","Хирургия","Ортопедия и травматология",
+                            "Гастроэнтерология","Офтальмология","Оториноларингология (ЛОР)",
+                        ]
+                    each service, index in services
+                        a(href='direction.html').services-page__popular-item
+                            p= service
+                            .arrow-up-link.arrow-up-link--blue
+                            .services-page__popular-item-image
+                                +img(`services-page-image-${index + 1}.png`)
+                            .services-page__popular-item-crosses
+                                +img('crosses-1.png')
+
+    section.services-page__directions
+        .container
+            .section-title Все направления
+            .services-page__directions-items
+                -
+                    var directions = [
+                        {
+                            letter: "А",
+                            list: [
+                                "Аллергология и иммунология", "Андрология", "Артимология"
+                            ]
+                        },
+                        {
+                            letter: "Г",
+                            list: [
+                                "Гастроэнтерология", "Гематология"
+                            ]
+                        },
+                        {
+                            letter: "Д",
+                            list: [
+                                "Дерматовенерология", "Диетология"
+                            ]
+                        },
+                        {
+                            letter: "И",
+                            list: [
+                                "Инфекционные болезни"
+                            ]
+                        },
+                        {
+                            letter: "К",
+                            list: [
+                                "Кардиология", "Клиника лечения боли", "Колопроктология"
+                            ]
+                        },
+                        {
+                            letter: "М",
+                            list: [
+                                "Маммология"
+                            ]
+                        },
+                        {
+                            letter: "Н",
+                            list: [
+                                "Нефрология"
+                            ]
+                        },
+                        {
+                            letter: "О",
+                            list: [
+                                "Онкология (химиотерапия)", "Ортодонтия", "Отоларингология", "Офтальмология"
+                            ]
+                        },
+                        {
+                            letter: "П",
+                            list: [
+                                "Пластическая хирургия", "Проктология", "Психиатрия",
+                                "Психология", "Психотерапия", "Пульмонология"
+                            ]
+                        },
+                        {
+                            letter: "Р",
+                            list: [
+                                "Ревматология", "Рефлексотерапия"
+                            ]
+                        },
+                        {
+                            letter: "С",
+                            list: [
+                                "Сосудистая хирургия"
+                            ]
+                        },
+                        {
+                            letter: "Т",
+                            list: [
+                                "Терапия", "Травматология и ортопедия"
+                            ]
+                        },
+                        {
+                            letter: "У",
+                            list: [
+                                "Урология"
+                            ]
+                        },
+                        {
+                            letter: "Ф",
+                            list: [
+                                "Физиотерапия", "Флебология"
+                            ]
+                        },
+                        {
+                            letter: "Х",
+                            list: [
+                                "Хирургия"
+                            ]
+                        },
+                        {
+                            letter: "Э",
+                            list: [
+                                "Эндокринная хирургия", "Эндокринология", "Эндоскопия", "Эстетическая гинекология"
+                            ]
+                        }
+                    ]
+                each direction in directions
+                    .services-page__directions-item
+                        p= direction.letter
+                        ul
+                            each item in direction.list
+                                li
+                                    a(href='direction.html')= item
+    include ../components/sections/_section-programs
+    section.services-page__popular-notes
+        .container
+            .section-top.section-top--with-btn
+                .section-title Популярные справки
+                a(href='javascript:void(0)').btn.btn--transparent-blue-secondary Все справки
+            .services-page__popular-notes-wrapper
+
+                -
+                    var noteCards = [
+                        {
+                            name: "Справка в бассейн детям",
+                            serviceItems: [
+                                {
+                                    title: "Оформление справки для посещения бассейна с заключением врача по допуску к оздоровительному плаванию (без стоимости обследования)",
+                                    price: 1000
+                                }
+
+                            ]
+
+                        },
+                        {
+                            name: "Справка в лагерь  (079/У)",
+                            serviceItems: [
+                                {
+                                    title: "Прием (осмотр, консультация) врача-педиатра первичный",
+                                    price: 1000
+                                },
+                                {
+                                    title: "Оформление справки на ребенка, отъезжающего в санаторный оздоровительный лагерь с заключением врача (форма 079/у) (без стоимости обследования) (у детей)",
+                                    price: 1000
+                                },
+
+                            ]
+
+                        },
+                        {
+                            name: "Справка в ГИБДД",
+                            serviceItems: [
+                                {
+                                    title: 'Программа медицинского обследования для взрослых "Медицинское освидетельствование водителей транспортных средств для ГИБДД (категории прав "M", "A", "A1", "B", "B1", "BE") (КДЦ)"',
+                                    price: 8000
+                                }
+
+                            ]
+
+                        },
+                    ]
+                include ../components/_note-card
+                each noteCard in noteCards
+                    +noteCard(noteCard.name, noteCard.serviceItems)
+    include ../components/_seo-content
+
+

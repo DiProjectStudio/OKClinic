@@ -1,0 +1,179 @@
+extends ../layout/layout
+
+block title
+    - title = 'Катенина Светлана Петровна'
+    - page = 'page-doctors'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Врачи', 'Катенина Светлана Петровна')
+    section.doctor
+        .container
+            .doctor__inner
+                h1.not-main Катенина Светлана Петровна
+                .doctor__links.anchor-links
+                    a(href='#about').anchor-link.active О враче
+                    a(href='#education').anchor-link Образование и опыт
+                    a(href='#specialization').anchor-link Специализация
+                    a(href='#treatment').anchor-link Лечение
+                    a(href='#reviews').anchor-link Отзывы ()
+    section.doctor__about#about
+        .container
+            .h2-title О враче
+            .doctor__about-content
+                .doctor__about-content-image
+                    +img('specialists-4.png')
+
+                .doctor__about-content-worker
+                    .h2-title Катенина Светлана Петровна
+                    .worker__item
+                        .worker__item-title Должность
+                        .worker__item-details
+                            p.
+                                Заведующая терапевтическим отделением,
+                                врач-терапевт, гирудотерапевт, гастроэнтеролог
+                    .worker__item
+                        .worker__item-title Специализация
+                        .worker__item-details
+                            p.
+                                Проблемы кардиологии, пульмонологии:
+                                нестабильность артериального давления, нарушения
+                                ритма пульса, дыхательные нарушения различной
+                                природы (инфекционной, кардиогенной).
+                    .worker__item
+                        .worker__item-title Заголовок
+                        .worker__item-details
+                            p.
+                                Lörem ipsum dekadade spessa dol nyrat.
+                                Supras pronäliga eller miledes, pånera
+                                semiss bende. Prens vik ett matyk punade
+                                så krora. Diasamma epiplande, iliga
+                                nälig pred. Mitässade val, rynde. Benera
+                                kabibel völig migon mol. Olålassade ryktig
+                                kyssa filostik. Tärynänisk vören i odenat
+                                med segasm vint. Krovaktigt. Mibel tölig.
+                                Epilysa oska då transism mityning tills
+                                astrora kvasisade. Nissa antis.
+                                Du kan vara drabbad.
+                    .worker__item
+                        .worker__item-title Заголовок
+                        .worker__item-details
+                            p.
+                                Lörem ipsum dekadade spessa dol nyrat.
+                                Supras pronäliga eller miledes, pånera
+                                semiss bende. Prens vik ett matyk punade
+                                så krora. Diasamma epiplande, iliga
+                                nälig pred. Mitässade val, rynde. Benera
+                                kabibel völig migon mol. Olålassade ryktig
+                                kyssa filostik. Tärynänisk vören i odenat
+                                med segasm vint. Krovaktigt. Mibel tölig.
+                                Epilysa oska då transism mityning tills
+                                astrora kvasisade. Nissa antis.
+                                Du kan vara drabbad.
+                    a(data-src='#doctorInfo' data-fancybox).btn-zoom.btn-zoom--in
+                    include ../components/_doctor-info-popup
+                .doctor__about-content-details
+                    .details__experience
+                        p Врачебный Стаж
+                        ul
+                            li 26 лет
+                    .details__treating
+                        p Кого лечит
+                        ul
+                            li Взрослые
+                            li Дети
+                    .details__buttons
+                        a(href='javascript:void(0)').btn.btn--blue-dark Запись онлайн
+                        a(data-src='#popupConsultation' data-fancybox).btn.btn--gray-subdied Заказать звонок
+
+    section.doctor__education.section-block#education
+        .container
+            .h2-title Образование и опыт работы
+            .doctor__education-block
+                .h4-title Образование
+                .doctor__education-block-item
+                    p 1990–1996 гг.
+                    p Смоленская Государственная Медицинская Академия по специальности лечебное дело.
+                .doctor__education-block-item
+                    p 2001 г.
+                    p Первичная специализация по гирудотерапии при МАПО, врач первой категории.
+                .doctor__education-block-item
+                    p 2004 г.
+                    p Первичная специализация по пульмонологии при ВМедА.
+            .doctor__education-block
+                .h4-title Курсы повышения квалификации
+                .doctor__education-block-item
+                    p 1994, 2004, 2009 гг.
+                    p Курсы повышения квалификации по специальности терапия при ВМедА.
+                .doctor__education-block-item
+                    p 2008 г.
+                    p Курсы повышения квалификации по гирудотерапии при МАПО.
+                .doctor__education-block-item
+                    p 2009 г.
+                    p Курсы повышения квалификации по пульмонологии при ВМедА.
+            .doctor__education-block
+                .h4-title Опыт работы
+                .doctor__education-block-item
+                    p 1996–1997 гг.
+                    p Клиническая интернатура при СГМА
+                .doctor__education-block-item
+                    p 1998–2007 гг.
+                    p 1 Военно-Морской Клинический Госпиталь врач-ординатор отделения кардиоревматологии, пульмонологии.
+                .doctor__education-block-item
+                    p 2002–2005 гг
+                    p ЛГУ - отделение клинической психологии (работа с пациентами с бронхиальной астмой).
+                .doctor__education-block-item
+                    p 2007 г.
+                    p Клиника «Красоты и здоровья» - врач-терапевт, гирудотерапевт.
+                .doctor__education-block-item
+                    p 2008 г.
+                    p Клиника «Гранд Вита» - врач-терапевт, гирудотерапевт.
+                .doctor__education-block-item
+                    p 2009 г.
+                    p Клиника «Проксимед» - врач-терапевт, пульмонолог, гирудотерапевт.
+                .doctor__education-block-item
+                    p 2009 - 2022 гг.
+                    p ЛГУ - отделение клинической психологии (работа с пациентами с бронхиальной астмой).
+                .doctor__education-block-item
+                    p 2022 г.
+                    p По настоящее время "ОКclinic" - заведующая терапевтическим отделением.
+
+    section.doctor__specialization#specialization
+        -
+            var tagBlock = {
+                title: "Специализация",
+                description: "Специализируется на проблемах кардиологии и пульмонологии:",
+                tags: [
+                    "Артериальное давление", "Дискинезия", "Эмфизема", "Дисбактериоз", "Нарушение ритма пульса",
+                    "Холецистит", "Гепатиты", "Муковисцидоз", "Пульмонологические заболевания", "Гастрит",
+                    "Последствия Covid-19", "Панкреатит", "Хронический бронхит", "Бронхиальная астма", "Бронхоэктаза",
+                    "Расстройства работы ЖКТ", "Колиты", "Язвенная болезнь желудка и двенадцатиперстной кишки"
+                ]
+            }
+
+        .container
+            include ../components/_tag-block
+            +tag-block(tagBlock.title, tagBlock.description, tagBlock.tags)
+
+    section.doctor__treatment#treatment
+        .container
+            .h2-title Лечение
+            .doctor__treatment-prices
+
+                -
+                    var priceNames = [
+                        "Первичный прием (осмотр, консультация) врача-терапевта",
+                        "Назначение лекарственных препаратов при заболеваниях (схемы лечения)",
+                        "Консультация профессора",
+                        "Выезд врача-терапевта на дом"
+                    ]
+                include ../components/_price-card
+                each priceName in priceNames
+                    +priceCard(priceName)
+
+    include ../components/_reviews-section
+    +reviews-section('doctor')
+
+    include ../components/_feedback
+
+

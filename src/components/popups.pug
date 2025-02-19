@@ -36,6 +36,21 @@
             include _popup-agree
             button.btn.btn--blue-dark Отправить запрос
 
+// ПОПАП ОСТАВИТЬ ОТЗЫВ
+.popup.popup--big#popupReview
+    .popup__inner
+        .popup__title Оставить отзыв
+        form
+            .popup__form_inputs
+                input(type='text' placeholder='Имя' required).input
+                input(type='text' placeholder='E-mail' required).input
+                input(type='text' placeholder='Телефон' required data-phone-number).input
+                textarea(placeholder='Расскажите о посещении клиники' required).input
+                .input-wrapper.input--video-link
+                    input(type='text' placeholder='Ссылка на видео отзыв').input
+            .popup__form_bottom
+                include _popup-agree
+                button.btn.btn--blue-dark Отправить запрос
 
 
 // ПОПАП ПОИСКА
@@ -46,3 +61,4 @@
                     input(type='search' placeholder='Поиск по сайту').input
                     span
                 button.btn.btn--blue-dark Найти
+

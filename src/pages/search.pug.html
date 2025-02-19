@@ -1,0 +1,46 @@
+extends ../layout/layout
+
+block title
+    - var title = 'Результаты поиска'
+    - var page = 'page-search'
+
+block main
+    include ../components/_breadcrumbs
+    section.search
+        +breadcrumbs('Результаты поиска')
+        .container
+            h1.not-main Вы искали
+            .search__inner
+                .search__inner-search
+                    form
+                        .input-wrapper.has--close-btn
+                            input(type='text' placeholder='Поиск по сайту').input
+                            span
+                        button.btn.btn--blue-dark Найти
+                .search__inner-filter.filter-tabs
+                    a(href='javascript:void(0)').filer-item.filter-tab.active Все
+                    a(href='javascript:void(0)').filer-item.filter-tab Болезни
+                    a(href='javascript:void(0)').filer-item.filter-tab Симптомы
+                    a(href='javascript:void(0)').filer-item.filter-tab Услуги
+                    a(href='javascript:void(0)').filer-item.filter-tab Направления
+                    a(href='javascript:void(0)').filer-item.filter-tab Новости
+                    a(href='javascript:void(0)').filer-item.filter-tab Статьи
+                .search__inner-results
+                    a(href='javascript:void(0)').result-item
+                        .result-item__name Головная боль
+                        .result-item__tag.tag Болезнь
+                    a(href='javascript:void(0)').result-item
+                        .result-item__name Мигрень
+                        .result-item__tag.tag Болезнь
+                    a(href='javascript:void(0)').result-item
+                        .result-item__name Головная боль
+                        .result-item__tag.tag Симптом
+                    a(href='javascript:void(0)').result-item
+                        .result-item__name Боль в затылке
+                        .result-item__tag.tag Симптом
+                    a(href='javascript:void(0)').result-item
+                        .result-item__name Как лечить головную боль
+                        .result-item__tag.tag Статья
+
+
+

@@ -1,0 +1,87 @@
+extends ../layout/layout
+
+block title
+    - title = 'Болезни органов дыхания'
+    - page = 'page-diseases-category'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Заболевания', 'Болезни органов дыхания')
+    section.diseases-category-wrapper
+        .container
+            h1.not-main Заболевания
+            .diseases-category-wrapper__inner
+                .diseases-category-wrapper__inner-leftside
+                    include ../components/_dropdown
+                    -
+                        var dropdown = {
+                            title: 'Болезни органов дыхания',
+                            content: [
+                                "Урологические заболевания", "Болезни уха, горла, носа",
+                                "Глазные болезни", "Биохимические исследования",
+                                "Болезни органов дыхания", "Диагностика инфекций",
+                                "Болезни сердца и сосудов", "Инфекционные болезни",
+                                "Заболевания молочных желез", "Опорно-двигательная система",
+                                "Болезни органов пищеварения", "Болезни толстого кишечника",
+                                "Венерические болезни", "Психические расстройства",
+                                "Ревматические заболевания", "Эндокринные болезни"
+                            ],
+                            href: 'disease.html'
+                        }
+                    +dropdown(dropdown.title, dropdown.content, dropdown.href)
+                .diseases-category-wrapper__inner-rightside
+                    section.diseases-category-alphabet
+                        .diseases-category-alphabet__items
+                            .alphabet-item
+                                .alphabet-item__title А
+                                ul.alphabet-item__list
+                                    li
+                                        a(href='disease.html') Название болезни
+                                    li
+                                        a(href='disease.html') Название болезни
+                                    li
+                                        a(href='disease.html') Название болезни
+                            .alphabet-item
+                                .alphabet-item__title Г
+                                ul.alphabet-item__list
+                                    li
+                                        a(href='disease.html') Название болезни
+                                    li
+                                        a(href='disease.html') Название болезни
+                            .alphabet-item
+                                .alphabet-item__title Ж
+                                ul.alphabet-item__list
+                                    li
+                                        a(href='disease.html') Название болезни
+                            .alphabet-item
+                                .alphabet-item__title Т
+                                ul.alphabet-item__list
+                                    li
+                                        a(href='disease.html') Название болезни
+                                    li
+                                        a(href='disease.html') Название болезни
+                                    li
+                                        a(href='disease.html') Название болезни
+                                    li
+                                        a(href='disease.html') Название болезни
+                            .alphabet-item
+                                .alphabet-item__title О
+                                ul.alphabet-item__list
+                                    li
+                                        a(href='disease.html') Название болезни
+                            .alphabet-item
+                                .alphabet-item__title Ц
+                                ul.alphabet-item__list
+                                    li
+                                        a(href='disease.html') Название болезни
+                                    li
+                                        a(href='disease.html') Название болезни
+                                    li
+                                        a(href='disease.html') Название болезни
+
+                    section.diseases-category-seo-text
+                        include ../components/_seo-text-only
+
+    include ../components/_seo-content
+
+    include ../components/_feedback

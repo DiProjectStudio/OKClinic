@@ -1,0 +1,365 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.disease-wrapper {
+  &__inner {
+    @include flexColumn;
+    gap: 32px;
+
+    @include breakpoint(lg) {
+      display: grid;
+      grid-template-columns: minmax(0, 9fr) 3fr;
+      gap: 12px;
+    }
+
+    &-leftside {
+      order: 2;
+
+      @include breakpoint(lg) {
+        order: 1;
+      }
+
+      .anchor-links {
+        margin-bottom: 24px;
+
+        @include breakpoint(lg) {
+          margin-bottom: 32px;
+        }
+      }
+
+      .subtitle {
+        font-size: 19px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%; /* 22.8px */
+        margin-top: 24px;
+
+        @include breakpoint(md) {
+          margin-top: 32px;
+        }
+      }
+    }
+
+    &-rightside {
+      order: 1;
+
+      @include breakpoint(lg) {
+        order: 2;
+      }
+
+      .rightside-content {
+        display: grid;
+        gap: 12px;
+
+        @include breakpoint(lg) {
+          position: sticky;
+          top: 120px;
+        }
+
+        &__group {
+          border-radius: 24px;
+          background: $gray-subdied;
+          padding: 24px;
+          display: grid;
+          gap: 4px;
+
+          @include breakpoint(md) {
+            border-radius: 32px;
+            padding: 32px;
+          }
+
+          p {
+            &:first-child {
+              font-size: 11px;
+              line-height: 16px; /* 145.455% */
+            }
+
+            &:last-child {
+              color: $blue-dark;
+              font-size: 20px;
+              font-weight: 600;
+              line-height: 120%; /* 24px */
+              letter-spacing: -0.2px;
+
+              @include breakpoint(md) {
+                font-size: 23px;
+                letter-spacing: -0.23px;
+              }
+            }
+          }
+        }
+
+        &__service {
+          border-radius: var(--space-x6, 24px);
+          border: 1px solid $blue-secondary;
+          padding: 24px;
+          display: grid;
+          gap: 24px;
+
+          @include breakpoint(md) {
+            border-radius: 32px;
+            padding: 32px;
+            grid-template-columns: 1fr min-content;
+          }
+
+          @include breakpoint(lg) {
+            grid-template-columns: 1fr;
+          }
+
+          &-top {
+            display: grid;
+            gap: 20px;
+            grid-auto-rows: min-content;
+
+            &-title {
+              font-size: 20px;
+              font-weight: 600;
+              line-height: 120%; /* 24px */
+              letter-spacing: -0.2px;
+            }
+
+            .custom-list {
+              display: grid;
+              gap: 8px;
+            }
+          }
+
+          &-bottom {
+            display: grid;
+            gap: 24px;
+
+            &-price {
+              font-size: 20px;
+              font-weight: 600;
+              line-height: 120%; /* 24px */
+              letter-spacing: -0.2px;
+
+              @include breakpoint(md) {
+                font-size: 23px;
+                letter-spacing: -0.23px;
+              }
+            }
+
+            &-buttons {
+              display: grid;
+              gap: 8px;
+
+              .btn {
+                font-size: 13px;
+                width: 100%;
+                padding: 14px;
+
+                @include breakpoint(md) {
+                  width: 196px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.disease-about {
+  p {
+    color: $gray-dark;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 21px */
+    margin-top: 24px;
+
+    @include breakpoint(md) {
+      margin-top: 32px;
+      font-size: 16px;
+    }
+  }
+}
+
+.disease-reasons {
+
+
+  ul {
+    display: grid;
+    gap: 8px;
+    margin-top: 24px;
+
+    & + p {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 21px */
+      margin-top: 24px;
+
+      @include breakpoint(md) {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.disease-types {
+  border-radius: 24px;
+  background: $gray-subdied;
+  padding: 24px;
+
+  @include breakpoint(md) {
+    padding: 32px;
+    border-radius: 32px;
+  }
+
+  &__title {
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 39.6px */
+    letter-spacing: -0.99px;
+  }
+
+  &__items {
+    margin-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    @include breakpoint(md) {
+      margin-top: 32px;
+    }
+  }
+}
+
+.disease-symptoms {
+  ul {
+    margin-top: 24px;
+    display: grid;
+    gap: 8px;
+
+    li {
+      align-items: baseline;
+    }
+  }
+}
+
+.disease-treatment {
+  &__items {
+    display: grid;
+    gap: 12px;
+    margin-top: 24px;
+
+    @include breakpoint(md) {
+      margin-top: 32px;
+    }
+  }
+}
+
+.disease-diagnostics {
+  p {
+    color: $gray-dark;
+    font-size: 14px;
+    line-height: 150%; /* 21px */
+    margin-top: 24px;
+
+    @include breakpoint(md) {
+      font-size: 16px;
+      margin-top: 32px;
+    }
+  }
+
+  &__wrapper {
+    &-tabs {
+      margin-top: 24px;
+    }
+
+    &-items {
+      display: none;
+      margin-top: 24px;
+
+      @include breakpoint(md) {
+        margin-top: 32px;
+      }
+
+      &.showed {
+        display: grid;
+        gap: 12px;
+
+        @include breakpoint(md) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .disease-diagnostics__wrapper-item {
+        border-radius: 24px;
+        background: $gray-subdied;
+        padding: 24px;
+
+        p {
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 120%; /* 24px */
+          letter-spacing: -0.2px;
+          color: $black;
+          margin-top: 0;
+        }
+
+        ul {
+          display: grid;
+          gap: 8px;
+          margin-top: 20px;
+
+          li {
+            a {
+              width: fit-content;
+              color: $blue-dark;
+              font-size: 14px;
+              line-height: 150%; /* 21px */
+              transition: $transition;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.disease-specialists {
+  &__inner {
+    display: grid;
+    gap: 24px;
+
+    @include breakpoint(md) {
+      grid-template-columns: 1fr min-content;
+      align-items: flex-start;
+    }
+
+    &-top {
+      display: grid;
+      gap: 12px;
+
+
+
+      p {
+        color: $gray-dark;
+        font-size: 14px;
+        line-height: 150%; /* 21px */
+
+        @include breakpoint(md) {
+          font-size: 16px;
+          max-width: 503px;
+        }
+      }
+    }
+  }
+
+  &__slider {
+    margin-top: 12px;
+
+    @include breakpoint(md) {
+      margin-top: 40px;
+    }
+  }
+}

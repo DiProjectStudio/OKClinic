@@ -1,0 +1,55 @@
+extends ../layout/layout
+
+block title
+    - title = 'Чекапы гинекология'
+    - page = 'page-checkups-category'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Чекапы', 'Чекапы гинекология')
+    .checkups-category-wrapper.side-wrapper
+        .container
+            h1.not-main Чекапы гинекология
+            .checkups-category-wrapper__inner
+                .checkups-category-wrapper__leftside
+                    .checkups-category-wrapper__leftside-dropdowns
+                        .dropdown
+                            .dropdown__top
+                                .dropdown__top-title Для кого
+                                .dropdown__top-arrow
+                                    include ../icons/icon_chevron-down--black.svg
+                            .dropdown__content
+                                ul
+                                    li
+                                        a(href='checkups-category.html') Для женщин
+                                    li
+                                        a(href='javascript:void(0)') Для мужчин
+                                .dropdown__content-title Возраст
+                                ul
+                                    li
+                                        a(href='javascript:void(0)') Моложе 40 лет
+                                    li
+                                        a(href='javascript:void(0)') Cтарше 40 лет
+
+
+                        include ../components/_dropdown
+                        -
+                            var dropdown = {
+                                title: 'По направлениям',
+                                content: [
+                                    'Гинекология', 'Гастроэнтерология', 'Иммунология',
+                                    'Кардиология', 'Пульмонология', 'Урология'
+                                ],
+                                href: 'checkups-category.html'
+                            }
+                        +dropdown(dropdown.title, dropdown.content, dropdown.href)
+
+                .checkups-category-wrapper__main
+                    section.checkups-category__items
+                        - var n = 4;
+                        while n > 0
+                            include ../components/_checkup-card
+                            - n--;
+                    section.checkups-category__seo
+                        include ../components/_seo-text-only
+    include ../components/sections/_section-installment

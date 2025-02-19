@@ -377,4 +377,27 @@ export function initializeSlider() {
             }
         }
     });
+
+    const diseasePageSpecialistsSlider = new Swiper(".disease-specialists .swiper", {
+        modules: [Navigation, Grid],
+        slidesPerView: 1,
+        spaceBetween: 4,
+        grid: {
+            rows: 3,
+            fill: "row"
+        },
+        navigation: {
+            prevEl: ".disease-specialists .arrow-prev",
+            nextEl: ".disease-specialists .arrow-next"
+        },
+        breakpoints: {
+            744: {
+                grid: {
+                    rows: 1
+                },
+                slidesPerView: 3,
+                spaceBetween: 12
+            }
+        }
+    })
 }

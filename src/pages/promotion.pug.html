@@ -1,0 +1,67 @@
+extends ../layout/layout
+
+block title
+    - title = 'Акции'
+    - page = 'page-promotion'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Клиника', 'Акции', 'Пенсионерам и инвалидам скидка 5%')
+    section.promotion
+        .container
+            .promotion__inner
+                .promotion__inner-main
+                    h1 Пенсионерам и инвалидам скидка 5%
+                    p.
+                        Для пенсионеров и инвалидов всех
+                        групп действует постоянная скидка на все услуги 5%
+                    .btn.btn--white Запись на прием
+                    .promotion__inner-main-image
+                        +img('promotion-image.png')
+                    .promotion__inner-main-cross-1
+                        +img('cross-one.svg')
+                    .promotion__inner-main-cross-2
+                        +img('cross-one.svg')
+                .promotion__inner-terms
+                    p Срок действия акции
+                    p до 31.12.2024
+
+            .promotion__conditions
+                .h2-title Условия акции
+                ol
+                    li Lorem ipsum dolor sit amet consectetur. Pretium sed id tempus volutpat
+                    li Lorem ipsum dolor sit amet consectetur. Pretium sed id tempus volutpat
+                    li Lorem ipsum dolor sit amet consectetur. Pretium sed id tempus volutpat
+
+    section.promotion-another
+        .container
+            .promotion-another__inner
+                .promotion-another__inner-top
+                    .h2-title Другие акции
+                    .swiper-nav
+                        button.arrow-prev
+                        button.arrow-next
+                .promotion-another__inner-swiper.swiper
+                    .swiper-wrapper
+                        include ../components/_promo-card
+                        -
+                            var promos = [
+                                {
+                                    title: 'Скидка до 20% на комплексное обследование',
+                                    description: 'Существенная экономия времени и денег'
+                                },
+                                {
+                                    title: 'Анализ COVID-19 -5%',
+                                    description: 'Выявление РНК коронавируса SARS-CoV-2, включая британский и южноафриканские штаммы'
+                                },
+                                {
+                                    title: 'Пенсионерам и инвалидам скидка 5% ',
+                                    description: 'Пенсионеры и инвалиды всех постоянная скидка'
+                                },
+                            ]
+                        - var n = 2;
+                        while n > 0
+                            each promo, index in promos
+                                .swiper-slide
+                                    +promoCard(promo.title, promo.description, index)
+                            - n--;

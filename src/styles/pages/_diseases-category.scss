@@ -1,0 +1,83 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.diseases-category-wrapper {
+  &__inner {
+    display: grid;
+    gap: 24px;
+
+    @include breakpoint(lg) {
+      grid-template-columns: 3fr 9fr;
+      gap: 12px;
+    }
+    &-leftside {
+      .dropdown {
+
+        @include breakpoint(md) {
+          @include columCountMaxWidth(6);
+        }
+        @include breakpoint(lg) {
+          position: sticky;
+          top: 120px;
+        }
+      }
+    }
+
+    &-rightside {
+
+    }
+  }
+}
+
+.diseases-category-alphabet {
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(2, 158px);
+    column-gap: 12px;
+    row-gap: 20px;
+    justify-content: space-between;
+
+    @include breakpoint(md) {
+      grid-template-columns: repeat(3, 158px);
+    }
+
+    .alphabet-item {
+      display: grid;
+      gap: 12px;
+      grid-auto-rows: fit-content(100%);
+
+      &__title {
+        font-size: 29px;
+        font-weight: 600;
+        line-height: 120%; /* 34.8px */
+
+        @include breakpoint(md) {
+          font-size: 33px;
+        }
+      }
+
+      &__list {
+        display: grid;
+        grid-auto-rows: fit-content(100%);
+        gap: 12px;
+
+        li {
+          a {
+            width: fit-content;
+            color: $blue-dark;
+            font-size: 14px;
+            line-height: 150%; /* 21px */
+
+            @include breakpoint(md) {
+              font-size: 16px;
+            }
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}

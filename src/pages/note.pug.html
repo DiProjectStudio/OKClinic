@@ -1,0 +1,201 @@
+extends ../layout/layout
+
+block title
+    - title = 'Справка 070/у для получения путевки'
+    - page = 'page-note'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Услуги', 'Справки', 'Справка 070/у для получения путевки')
+    .note-wrapper
+        .container
+            h1.not-main Справка 070/у для получения путевки
+            .note-wrapper__inner
+                .note-wrapper__inner-leftside
+                    .anchor-links
+                        a(href='#about').anchor-link.active Об услуге
+                        a(href='#why').anchor-link Зачем нужна справка
+                        a(href='#how').anchor-link Как получить
+                        a(href='#deadlines').anchor-link Срок выдачи
+                    section.note-about#about
+                        .note-about__inner
+                            .h2-title Об услуге
+                            p.
+                                Справка 070/у — это медицинский документ,
+                                в котором отражают состояние здоровья пациента,
+                                потребность в санаторно-курортном лечении и
+                                рекомендации относительно оздоровительных
+                                мероприятий. Справку предоставляют в службы
+                                социального обеспечения для получения бюджетной
+                                путевки в здравницу. С учетом рекомендаций врачей
+                                и имеющихся у пациента противопоказаний определяют
+                                тип лечебно-оздоровительного учреждения и перечень
+                                необходимых процедур для реабилитации.
+                        .note-about__inner-image
+                            +img('note-image.png')
+
+                    section.note-why#why
+                        .note-why__inner
+                            .h2-title Зачем нужна справка 070/у
+                            p.
+                                Справка 070/у для получения путевки в санаторий
+                                требуется отдельным категориям населения. Документ
+                                выступает основанием для направления пациента на курорт
+                                за счет бюджета ФСС. Справка не гарантирует получение
+                                бесплатной путевки, а входит в пакет документов, который
+                                рассматривает служба перед принятием решения о направлении
+                                больного на санаторно-курортное лечение.Медсправка 070/-у не
+                                заменяет курортную карту.
+                                <br>
+                                <br>
+                                В этом документе указывают рекомендации и ограничения
+                                относительно оздоровительных мероприятий.Информацию
+                                используют для выбора санатория или здравницы под потребности
+                                конкретного пациента. Справка позволяет социальной службе
+                                отправить человека в условия, оптимальные для его состояния
+                                здоровья.
+
+                    section.note-how#how
+                        .note-how__inner
+                            .h2-title Как получить медицинскую справку
+                            .note-how__inner-items
+                                .note-how__inner-item
+                                    .note-how__inner-item-number.h2-title 1
+                                    .note-how__inner-item-title Оставить заявку
+                                    .note-how__inner-item-text
+                                        p.
+                                            Lorem ipsum dolor sit amet consectetur.
+                                            In in felis varius magnis.
+                                .note-how__inner-item
+                                    .note-how__inner-item-number.h2-title 2
+                                    .note-how__inner-item-title Сдать анализы
+                                    .note-how__inner-item-text
+                                        p.
+                                            Lorem ipsum dolor sit amet consectetur.
+                                            In in felis varius magnis.
+                                .note-how__inner-item
+                                    .note-how__inner-item-number.h2-title 3
+                                    .note-how__inner-item-title Консультация врача
+                                    .note-how__inner-item-text
+                                        p.
+                                            Lorem ipsum dolor sit amet consectetur.
+                                            In in felis varius magnis.
+                                .note-how__inner-item
+                                    .note-how__inner-item-number.h2-title 4
+                                    .note-how__inner-item-title Получить справку
+                                    .note-how__inner-item-text
+                                        p.
+                                            Lorem ipsum dolor sit amet consectetur.
+                                            In in felis varius magnis.
+                    section.note-deadlines#deadlines
+                        .note-deadlines__inner
+                            .h2-title Сроки выдачи справок
+                            p.
+                                Оформление медицинской справки занимает от 1 до 5 дней,
+                                что зависит от ее типа, количества необходимых анализов
+                                и врачебных осмотров. Некоторые медсправки может оформлять
+                                терапевт “день в день” после общего осмотра и оценки
+                                состояния здоровья. В таком случае время выдачи документов
+                                составляет 20-30 минут.
+                                <br>
+                                <br>
+                                Обратите внимание, что медсправки действуют в среднем 6-12
+                                месяцев. Состояние здоровья может измениться, и по истечению
+                                этого срока вам потребуется получить новую справку после
+                                прохождения такого же перечня методов диагностики.
+
+                    section.note-advantages
+                        .note-advantages__inner
+                            .h2-title Преимущества услуги
+                            include ../components/_advantages-block
+                .note-wrapper__inner-rightside
+                    .rightside-content
+                        .rightside-content__inner
+                            .rightside-content__inner-top
+                                p Код 070/у
+                                ul.custom-list
+                                    li 1 рабочий день
+                                    li Обследования
+                            .rightside-content__inner-bottom
+                                p от 1500 ₽
+                                .rightside-content__inner-bottom-buttons
+                                    a(href='javascript:void(0)').btn.btn--blue-dark Запись на прием
+                                    a(href='javascript:void(0)').btn.btn--gray-subdied Пример справки
+    section.note-additional
+        .container
+            .note-additional__inner
+                .note-additional__inner-top
+                    .h2-title С этой справкой смотрят
+                    .swiper-nav
+                        button.arrow-prev
+                        button.arrow-next
+                .note-additional__inner-swiper.swiper
+                    -
+                        var noteCards = [
+                            {
+                                name: "Справка в бассейн детям",
+                                serviceItems: [
+                                    {
+                                        title: "Оформление справки для посещения бассейна с заключением врача по допуску к оздоровительному плаванию (без стоимости обследования)",
+                                        price: 1000
+                                    }
+                                ]
+                            },
+                            {
+                                name: "Справка в лагерь  (079/У)",
+                                serviceItems: [
+                                    {
+                                        title: "Прием (осмотр, консультация) врача-педиатра первичный",
+                                        price: 1000
+                                    },
+                                    {
+                                        title: "Оформление справки на ребенка, отъезжающего в санаторный оздоровительный лагерь с заключением врача (форма 079/у) (без стоимости обследования) (у детей)",
+                                        price: 1000
+                                    },
+                                ]
+                            },
+                            {
+                                name: "Справка в ГИБДД",
+                                serviceItems: [
+                                    {
+                                        title: 'Программа медицинского обследования для взрослых "Медицинское освидетельствование водителей транспортных средств для ГИБДД (категории прав "M", "A", "A1", "B", "B1", "BE") (КДЦ)"',
+                                        price: 8000
+                                    }
+                                ]
+                            },
+                            {
+                                name: "Справка в ГИБДД",
+                                serviceItems: [
+                                    {
+                                        title: 'Программа медицинского обследования для взрослых "Медицинское освидетельствование водителей транспортных средств для ГИБДД (категории прав "M", "A", "A1", "B", "B1", "BE") (КДЦ)"',
+                                        price: 8000
+                                    }
+                                ]
+                            },
+                            {
+                                name: "Справка в ГИБДД",
+                                serviceItems: [
+                                    {
+                                        title: 'Программа медицинского обследования для взрослых "Медицинское освидетельствование водителей транспортных средств для ГИБДД (категории прав "M", "A", "A1", "B", "B1", "BE") (КДЦ)"',
+                                        price: 8000
+                                    }
+                                ]
+                            },
+                            {
+                                name: "Справка в ГИБДД",
+                                serviceItems: [
+                                    {
+                                        title: 'Программа медицинского обследования для взрослых "Медицинское освидетельствование водителей транспортных средств для ГИБДД (категории прав "M", "A", "A1", "B", "B1", "BE") (КДЦ)"',
+                                        price: 8000
+                                    }
+                                ]
+                            },
+                        ]
+
+                    .swiper-wrapper
+                        each noteCard in noteCards
+                            .swiper-slide
+                                include ../components/_note-card
+                                +noteCard(noteCard.name, noteCard.serviceItems)
+
+    include ../components/_feedback

@@ -1,0 +1,155 @@
+extends ../layout/layout
+
+block title
+    - var title = 'Клиника'
+    - var page = 'page-clinic'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Клиника')
+    section.clinic-main
+        .container
+            .clinic-main__inner
+                .clinic-main__hero
+                    h1 Многопрофильная клиника Okclinik
+                    p.
+                        Эффективные технологии лечения, авторские наработки,
+                        гарантирующие высокий результат. В ОК.clinic главный
+                        ориентир в лечении - это комплексный взгляд на здоровье
+                        человека. Обывателю сложно найти причину самостоятельно.
+                        А мы решаем эту задачу приемом консилиума врачей разных
+                        профилей и специализаций. Это профессионально и обоснованно.
+                        Так лечат в серьезных медучреждениях Израиля, Швейцарии и Европы.
+                    a(href='javascript:void(0)').btn.btn--blue-dark Записаться на прием
+                    .clinic-main__hero-image
+                        +img('clinic-image.png')
+                    .clinic-main__hero-crosses
+                        +img('crosses.png')
+                .clinic-main__about
+                    .clinic-main__about-item
+                        .clinic-main__about-item-title 12+ лет
+                        .clinic-main__about-item-subtitle Лет работы
+                        .clinic-main__about-item-description Опыта на рынке медицинских услуг
+                    .clinic-main__about-item
+                        .clinic-main__about-item-title 15
+                        .clinic-main__about-item-subtitle Врачей
+                        .clinic-main__about-item-description Квалифицированных врачей по разным направлениям
+                    .clinic-main__about-item
+                        .clinic-main__about-item-title 10 000+
+                        .clinic-main__about-item-subtitle Клиентов ежегодно
+                        .clinic-main__about-item-description Клиентов воспользовались нашими услугами
+                    .clinic-main__about-item
+                        .clinic-main__about-item-title 50+
+                        .clinic-main__about-item-subtitle Видов диагностики
+                        .clinic-main__about-item-description Видов диагностики и методов лечения позвоночника
+
+    include ../components/_seo-content
+
+    section.clinic-mission
+        .container
+            .clinic-mission__inner
+                .h2-title Миссия и ценности
+                .clinic-mission__inner-items
+                    .clinic-mission__inner-item
+                        .clinic-mission__inner-item-title.h3-title Ориентированы на пациентов
+                        p.
+                            В центре нашего внимания – человек и его потребности.
+                            Мы создаем комфортные условия работы и возможности
+                            для самореализации наших сотрудников, поощряем инициативу,
+                            вовлеченность и непрерывное обучение, чтобы каждый день
+                            предлагать нашим пациентам и их близким наилучшее медицинское
+                            обслуживание и всю доступную информацию о здоровье.
+                    .clinic-mission__inner-item
+                        .clinic-mission__inner-item-title.h3-title Инновации
+                        p.
+                            Lörem ipsum dekadade spessa dol nyrat. Supras pronäliga
+                            eller miledes, pånera semiss bende. Prens vik ett matyk
+                            punade så krora. Diasamma epiplande, iliga nälig pred.
+                            Mitässade val, rynde. Benera kabibel völig migon mol.
+                            Olålassade ryktig kyssa filostik. Tärynänisk vören i
+                            odenat med segasm vint. Krovaktigt. Mibel tölig.
+                            Epilysa oska då transism mityning tills astrora
+                            kvasisade. Nissa antis. Du kan vara drabbad.
+                    .clinic-mission__inner-item
+                        .clinic-mission__inner-item-title.h3-title Партнерство
+                        p.
+                            Lörem ipsum dekadade spessa dol nyrat. Supras pronäliga
+                            eller miledes, pånera semiss bende. Prens vik ett matyk
+                            punade så krora. Diasamma epiplande, iliga nälig pred.
+                            Mitässade val, rynde. Benera kabibel völig migon mol.
+                            Olålassade ryktig kyssa filostik. Tärynänisk vören i
+                            odenat med segasm vint. Krovaktigt. Mibel tölig.
+                            Epilysa oska då transism mityning tills astrora
+                            kvasisade. Nissa antis. Du kan vara drabbad.
+
+    section.clinic-additional
+        .container
+            .clinic-additional__inner
+                a(href='javascript:void(0)').clinic-additional__inner-item.promo
+                    .clinic-additional__inner-item-title.h3-title Акции
+                    p Воспользуйтесь выгодой, получайте скидки на лечение и диагностику
+                    .arrow-up-link.arrow-up-link--white
+                    .promo-cross.small
+                        +img('cross-one.svg')
+                    .promo-cross.big
+                        +img('cross-one.svg')
+                a(href='javascript:void(0)').clinic-additional__inner-item.reviews
+                    .clinic-additional__inner-item-title.h3-title Отзывы
+                    p Читайте отзывы о нашей работе или оставьте отзыв сами
+                    .arrow-up-link.arrow-up-link--blue
+                    .reviews-line
+                        +img('cross-line-clinic.png')
+                    .reviews-image
+                        +img('clinic-reviews-image.png')
+                a(href='javascript:void(0)').clinic-additional__inner-item.services
+                    .clinic-additional__inner-item-title.h3-title Услуги
+                    p Подберем лечение индивидуально, исходя из особенностей болезни
+                    .arrow-up-link.arrow-up-link--white
+
+    section.clinic-licenses
+        .container
+            .clinic-licenses__inner
+                .clinic-licenses__inner-top
+                    .h2-title Лицензии
+                    .swiper-nav
+                        button.arrow-prev
+                        button.arrow-next
+                .clinic-licenses__inner-swiper.swiper
+                    .swiper-wrapper
+                        - var n = 0;
+                        while n < 5
+                            .swiper-slide
+                                .clinic-licenses__item
+                                    .clinic-licenses__item-image
+                                        +img('license.png')
+                                        button(data-src=`#licensePopup-${n + 1}` data-fancybox).btn-zoom.btn-zoom--blue.btn-zoom--in
+                                    .clinic-licenses__item-text
+                                        p Лицензия Л041-01148-78/00152383 от 28 апреля 2022
+                                        p Медицинская деятельность
+                                    .clinic-licenses__popup(id=`licensePopup-${n+ 1}`)
+                                            .clinic-licenses__popup-image
+                                                +img('license.png')
+                                                .btn-zoom.btn-zoom--out.btn-zoom--blue(data-fancybox-close)
+
+                            - n++;
+
+    section.clinic-news
+        .container
+            .clinic-news__inner
+                .clinic-news__inner-top
+                    .h2-title Новости и статьи
+                    .clinic-news__inner-top-nav
+                        a(href='javascript:void(0)').btn.btn--transparent-blue-secondary Все программы
+                        .swiper-nav
+                            button.arrow-prev
+                            button.arrow-next
+                .clinic-news__inner-swiper.swiper
+                    .swiper-wrapper
+                        - var n = 5;
+                        while n > 0
+                            .swiper-slide
+                                include ../components/news-n-article
+                            - n--;
+
+    include ../components/sections/_section-installment
+

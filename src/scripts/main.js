@@ -1,6 +1,5 @@
 // Import Plugins
 import Inputmask from 'inputmask';
-// import './includes/jquery-pincode-autotab.js';
 
 // Import Scripts
 import {getBrowserName} from './includes/utils/checkbrowser.js';

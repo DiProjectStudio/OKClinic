@@ -1,0 +1,117 @@
+extends ../layout/layout
+
+block title
+    - title = 'Заболевания'
+    - page = 'page-diseases'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Заболевания')
+    section.diseases-main
+        .container
+            h1.not-main Заболевания
+            .diseases-main__inner
+                .diseases-main__search
+                    form
+                        .input-wrapper.has--close-btn
+                            input(type='text' placeholder='Название заболевания, например головная боль').input
+                            span
+                        button.btn.btn--blue-dark Найти
+                    .tabs
+                        a(href='javascript:void(0)').tab.active Болезни
+                        a(href='javascript:void(0)').tab Симптомы
+                .diseases-main__alphabet-filter
+                    -
+                        var alphabet = [
+                            'а','б','в','г','д','ж','з','и','к','л','м','н','о','п','р','с',
+                            'т','у','ф','х','ц','ч','ш','щ','э','ю','я'
+                        ]
+                    each literal, index in alphabet
+                        if index === 0
+                            a(href='javascript:void(0)').alphabet-filter__item.active= literal
+                        else
+                            a(href='javascript:void(0)').alphabet-filter__item= literal
+                .diseases-main__popular-diseases
+                    -
+                        var popularDiseases = [
+                            'COVID-19','Головная боль','Отравление бактериальное',
+                            'Мигрень','Боль в шее','ОРВИ','Ветряная оспа','Аллергия','Насморк',
+                        ]
+                    each popularDisease in popularDiseases
+                        a(href='javascript:void(0)').tag-link= popularDisease
+                .diseases-main__results
+                    - var n = 0;
+                    while n < 12
+                        a(href='javascript:void(0)').link-hover Название заболевания
+                        - n++;
+                a(href='javascript:void(0)').btn.btn--transparent-blue-secondary.diseases-main__button Показать все
+
+    section.diseases-groups
+        .container
+            .h2-title Группы заболеваний
+            .diseases-groups__inner
+                .diseases-groups__inner-items
+                    -
+                        var diseasesGroups1 = [
+                            'Урологические заболевания', 'Болезни уха, горла, носа', 'Глазные болезни',
+                            'Кожные болезни', 'Болезни органов дыхания', 'Болезни сердца и сосудов',
+                            'Инфекционные болезни', 'Заболевания молочных желез',
+                        ]
+                    each diseasesGroup in diseasesGroups1
+                        a(href='diseases-category.html').diseases-groups__inner-item
+                            span= diseasesGroup
+                .diseases-groups__inner-image
+                    include ../../public/assets/images/diseases-body.svg
+                .diseases-groups__inner-items
+                    -
+                        var diseasesGroups2 = [
+                            'Опорно-двигательная система',
+                            'Болезни органов пищеварения',
+                            'Болезни толстого кишечника',
+                            'Венерические болезни',
+                            'Заболевания полости рта',
+                            'Психические расстройства',
+                            'Ревматические заболевания',
+                            'Эндокринные болезни',
+                        ]
+                    each diseasesGroup in diseasesGroups2
+                        a(href='diseases-category.html').diseases-groups__inner-item
+                            span= diseasesGroup
+
+    section.diseases-classification
+        .container
+            .diseases-classification__inner
+                .h2-title Классификация заболеваний
+                ul.custom-list
+                    li.
+                        Внутренние болезни — различные заболевания внутренних органов,
+                        лечение которых проводится с помощью медикаментов и нехирургических методов.
+                    li.
+                        Наследственные болезни — это заболевания, причиной которых является дефект гена.
+                    li.
+                        Венерические болезни — это болезни, которые передаются главным образом половым путем.
+                    li.
+                        Болезни уха, носа и горла.
+                    li.
+                        Аномалии строения органов
+                    li.
+                        Хирургические болезни — это заболевания, главным методом лечения которых является операция.
+                    li.
+                        Болезни органов, участвующих в вынашивании беременности и родах.
+                    li.
+                        Кожные болезни — это болезни, ключевым клиническим проявлением которых является поражение кожи.
+                    li.
+                        Болезни неправильного питания
+                    li.
+                        Злокачественные заболевания — это заболевания, в основе которых лежит
+                        неконтролируемый процесс размножения одного из видов клеток.
+                    li.
+                        Инфекционные болезни — это болезни, вызванные микроорганизмами или паразитами.
+                    li.
+                        Глазные болезни — это болезни, ключевым клиническим проявлением которых являются поражения глаза.
+
+    include ../components/sections/_section-installment
+
+    include ../components/_seo-content
+
+    include ../components/_feedback
